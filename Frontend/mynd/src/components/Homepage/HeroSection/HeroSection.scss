@@ -1,0 +1,49 @@
+.hero-container {
+    background: linear-gradient(rgba(122, 255, 233, 0.322), rgba(255, 200, 21, 0.226)),url('./../../../img/home.jpg') center center/cover no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    object-fit:contain;
+    box-shadow: 0px 10px 20px #aaaaaa;
+}
+
+.bg-text {
+    margin-top: 300px;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4);
+    color: white;
+    border: 3px solid #f1f1f1;
+    z-index: 2;
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.bg-buttons {
+    margin-top: 64px;
+    width: 50%;
+    font-weight: bold;
+    z-index: 2;
+    padding: 6px;
+    text-align: center;
+
+    .h-btn {
+        margin: 20px;
+    }
+  }
+
+@media screen and (max-width: 960px) {
+    .bg-text {
+        margin-top: 150px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .bg-text {
+        margin-top: 50px;
+    }
+}
