@@ -9,8 +9,10 @@ function App() {
     <Router>
       <Switch>
         <Route path="/home">
-          <HeroSection name="Alex"/>
-          <StudentReviewsPage />
+        </Route>
+        <Route>
+          {/* TODO If user logged in show Home-user, otherwise Home */}
+          <Home />
         </Route>
       </Switch>
     </Router>
