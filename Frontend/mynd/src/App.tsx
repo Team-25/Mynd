@@ -6,8 +6,7 @@ import Banner from './components/Homepage/Banner/banner';
 function App() {
   return (
     <Router>
-      <h1>Mynd</h1>
-      <Banner />
+      <Banner title="Mynd" description="test test test description"/>
       <Switch>
         <Route path="/home">
           <StudentReviewsPage />

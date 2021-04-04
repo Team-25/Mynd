@@ -1,11 +1,21 @@
 import React from 'react';
+import img from '../../../img/bg-1.jpg';
 
 
-const Banner = () => {
+interface IProps {
+    title: string;
+    description: string;
+}
+
+const Banner = (props: IProps) => {
 
     return (
         <div className="homepage-banner-img">
-            <img src="https://source.unsplash.com/1920x1080/?nature,water" alt="homepage banner"/>
+            <img src={img} alt="homepage banner"/>
+            <div className="homepage-banner-text">
+                <h1>{props.title}</h1>
+                <span>{props.description}</span>
+            </div>
         </div>
     )
 }
