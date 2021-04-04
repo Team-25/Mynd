@@ -1,3 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+
+
 .App {
   text-align: center;
+  margin: 0;
+  font-family: 'Lato';
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Lato';
+}
+
+/* Homepage Banner */
+
+.homepage-banner-img {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.homepage-banner-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-55%);
+    color: white;
+    text-align: center;
+    
+    h1 {
+      font-weight: bold;
+      color: aqua;
+      font-size: 36pt;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 16pt;
+    }
+}
+
+.homepage-banner-img, .homepage-banner-text {
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
