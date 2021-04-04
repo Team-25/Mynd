@@ -14,7 +14,7 @@ const Banner = (props: IProps) => {
             <img src={img} alt="homepage banner"/>
             <div className="homepage-banner-text">
                 <h1>{props.title}</h1>
-                <span>{props.description}</span>
+                <p>{props.description}</p>
             </div>
         </div>
     )
