@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import "./App.css";
+import "./App.scss";
 import StudentReviewsPage from './components/Homepage/StudentReviews/student-reviews';
 
 function App() {
