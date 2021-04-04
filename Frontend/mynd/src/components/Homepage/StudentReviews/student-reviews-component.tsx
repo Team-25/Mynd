@@ -13,7 +13,6 @@ interface IProps {
 }
 
 const StudentReviewComponent: React.FC<IProps> = (props: IProps) => {
-
     return (
         <Card className="card_reviews_component">
             <CardActionArea>
