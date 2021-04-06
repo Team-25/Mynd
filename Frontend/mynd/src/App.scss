@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato');
 
 $primary: rgb(0, 0, 0);
+$background: rgb(223, 253, 255);
 
 .App {
   text-align: center;
@@ -22,6 +23,7 @@ body {
   height: 100vh;
   position: relative;
   overflow: hidden;
+  border-bottom: 5px solid aqua;
 
   img {
     height: 100%;
@@ -57,12 +59,42 @@ body {
   user-select: none; /* Standard */
 }
 
+/* Page Divider */
+.custom-shape-divider-top-1617724181 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1617724181 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 130px;
+}
+
+.custom-shape-divider-top-1617724181 .shape-fill {
+  fill: aqua;
+}
+
+#background-stripe {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%);
+  background-color: $background;
+  height: 100%;
+}
+
 /* Homepage Description Block*/
 
 .content {
   padding-top: 90px;
   padding-bottom: 90px;
-  background-color: rgb(247, 247, 247);
+  background-color: $background;
 }
 
 .content-divider {
@@ -87,6 +119,12 @@ body {
 
 .homepage-user-testimonial {
   padding: 21px;
+}
+
+@media only screen and (max-width: 900px) {
+  .homepage-user-testimonial {
+    display: none;
+  }
 }
 
 .user-testimonial {
