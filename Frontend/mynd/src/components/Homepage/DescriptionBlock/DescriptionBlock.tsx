@@ -32,7 +32,7 @@ const DescriptionBlock = (props: IProps) => {
                         <UserTestimonial 
                             name="John Doe"
                             title="I like it"
-                            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a felis non quam tincidunt pulvinar. Aliquam sed pulvinar nisi, quis pellentesque diam. "
+                            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a felis non quam tincidunt pulvinar. Aliquam sed pulvinar nisi, quis pellentesque diam."
                             image={props.image}   
                         />
                     </div>

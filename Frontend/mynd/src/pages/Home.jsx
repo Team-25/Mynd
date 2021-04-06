@@ -3,7 +3,7 @@ import DescriptionBlock from '../components/Homepage/DescriptionBlock/Descriptio
 import Container from '@material-ui/core/Container';
 
 
-import img from '../img/person1.jpg';
+import img from '../img/face.jpg';
 
 const Home = () => {
     return (
