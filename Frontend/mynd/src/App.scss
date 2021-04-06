@@ -168,3 +168,11 @@ body {
   }
 
 }
+
+/* 404 */
+#not-found {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
