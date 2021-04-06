@@ -8,6 +8,8 @@ const Home = () => {
         <>
             <Banner title="Mynd" description="An awesome description about our site"/>
             <DescriptionBlock image={img} />
+            {/* Temporary space filler */}
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         </>
     );
 }

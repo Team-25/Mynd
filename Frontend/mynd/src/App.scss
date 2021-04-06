@@ -13,6 +13,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   font-family: 'Lato';
+  background-color: rgb(255, 255, 255);
 }
 
 /* Homepage Banner */
@@ -59,11 +60,33 @@ body {
 /* Homepage Description Block*/
 
 .content {
-  margin-top: 90px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: rgb(247, 247, 247);
+}
+
+.content-divider {
+  border-top: 5px dashed rgb(0, 0, 0);
+  width: 50%;
 }
 
 .homepage-description {
+  padding: 21px;
+  h1 {
 
+  }
+
+  p {
+    line-height: 24px;
+  }
+
+  ul {
+    line-height: 34px;
+  }
+}
+
+.homepage-user-testimonial {
+  padding: 21px;
 }
 
 .user-testimonial {
@@ -87,8 +110,8 @@ body {
   }
 
   .user-image {
-    height: 90px;
-    width: 90px;
+    height: 75px;
+    width: 75px;
     position: absolute;
     right: 0;
     top: 0;
