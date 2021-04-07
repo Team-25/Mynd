@@ -478,5 +478,5 @@ docs_site/
 # Output files produced by the storybook build
 docs/reference_guides/_storybook_build_output/
 .env
-Backend/Mynd/.vs/Mynd/v16/.suo
-Backend/Mynd/.vs/Mynd/v16/.suo
+*.suo
+*.suo
