@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mynd", "Mynd\Mynd.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mynd.Data", "Mynd.Data\Mynd.Data.csproj", "{A7A389FC-2440-4617-A24A-7BE60E820A9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mynd.Services", "Mynd.Services\Mynd.Services.csproj", "{B9AEA08E-9CD1-440B-B4D2-693E0B38EC80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A7A389FC-2440-4617-A24A-7BE60E820A9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7A389FC-2440-4617-A24A-7BE60E820A9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7A389FC-2440-4617-A24A-7BE60E820A9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9AEA08E-9CD1-440B-B4D2-693E0B38EC80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9AEA08E-9CD1-440B-B4D2-693E0B38EC80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9AEA08E-9CD1-440B-B4D2-693E0B38EC80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9AEA08E-9CD1-440B-B4D2-693E0B38EC80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
