@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mynd", "Mynd\Mynd.csproj", "{BC6AFC9D-A26F-44FB-B2B6-4B9EB2F64ABB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B9AEA08E-9CD1-440B-B4D2-693E0B38EC80} = {B9AEA08E-9CD1-440B-B4D2-693E0B38EC80}
+		{A7A389FC-2440-4617-A24A-7BE60E820A9D} = {A7A389FC-2440-4617-A24A-7BE60E820A9D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mynd.Data", "Mynd.Data\Mynd.Data.csproj", "{A7A389FC-2440-4617-A24A-7BE60E820A9D}"
 EndProject
