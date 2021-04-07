@@ -1,6 +1,7 @@
 import React from "react"
 import { format, startOfMonth, startOfWeek, getDate, isBefore, endOfWeek, add , endOfMonth} from 'date-fns'
 import './user-calendar.scss'
+import Day from './day'
 
 interface IProps {
 
@@ -38,18 +39,18 @@ class Calendar extends React.Component<IProps> {
                     <h1>{format(this.state.currentDate,'MMMM yyyy')}</h1>
                 </header>
                 <ul className="weekdays">
-                    <li className="day-name" key="Sun">Sunday</li>
-                    <li className="day-name" key="Mon">Monday</li>
-                    <li className="day-name" key="Tue">Tuesday</li>
-                    <li className="day-name" key="Wed">Wednesday</li>
-                    <li className="day-name" key="Thu">Thursday</li>
-                    <li className="day-name" key="Fri">Friday</li>
-                    <li className="day-name" key="Sat">Saturday</li>
+                    <li className="day-name" key="Sun"><abbr title="S">Sunday</abbr></li>
+                    <li className="day-name" key="Mon"><abbr title="M">Monday</abbr></li>
+                    <li className="day-name" key="Tue"><abbr title="T">Tuesday</abbr></li>
+                    <li className="day-name" key="Wed"><abbr title="W">Wednesday</abbr></li>
+                    <li className="day-name" key="Thu"><abbr title="T">Thursday</abbr></li>
+                    <li className="day-name" key="Fri"><abbr title="F">Friday</abbr></li>
+                    <li className="day-name" key="Sat"><abbr title="S">Saturday</abbr></li>
                 </ul>
                 <div className="calendar-grid">
                     <ol className="day">
                         {this.getFullMonth(this.state.currentDate).map(
-                            (date) => <li key={date.toString()}>{getDate(date)}</li>
+                            (date) => <li key={date.toString()}><Day date={date}/></li>
                         )}
                     </ol>
                 </div>
