@@ -1,4 +1,5 @@
 import React from "react"
+import { format, startOfMonth, startOfWeek, getDate, isBefore, endOfWeek, add , endOfMonth} from 'date-fns'
 
 interface IProps {
 
@@ -11,10 +12,23 @@ interface IState {
 class Calendar extends React.Component<IProps> {
     constructor(props: IProps) {
         super(props);
+        this.getFullMonth = this.getFullMonth.bind(this)
     }
 
     state: IState = {
         currentDate: new Date(),
+    }
+
+    getFullMonth(start: Date) {
+        const month = []
+        let day = startOfWeek(startOfMonth(start));
+        let endDay = endOfWeek(endOfMonth(start));
+        while (isBefore(day,endDay)) {
+            month.push(day);
+            day = add(day,{days:1});
+        }
+        console.log(month)
+        return month;
     }
 
     render() {
@@ -31,11 +45,12 @@ class Calendar extends React.Component<IProps> {
                 </ul>
                 <div className="calendar-grid">
                     <ol className="day">
-                        Hewwo
+                        {this.getFullMonth(this.state.currentDate).map(
+                            (date) => <li key={date.toString()}>{getDate(date)}</li>
+                        )}
                     </ol>
                 </div>
-            </div>
-            
+            </div>      
         )
     }
 }
