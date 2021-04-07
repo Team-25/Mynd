@@ -2,7 +2,6 @@ import Banner from '../components/Homepage/Banner/banner';
 import DescriptionBlock from '../components/Homepage/DescriptionBlock/DescriptionBlock';
 import Container from '@material-ui/core/Container';
 
-
 import img from '../img/face.jpg';
 
 const Home = () => {
