@@ -1,0 +1,46 @@
+$primary: rgb(0, 0, 0);
+$background: rgb(248, 248, 248);
+$dividerColor: black;
+$stripeWidth: 1200px;
+
+/* Homepage Banner */
+
+.homepage-banner-img {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 5px solid $dividerColor;
+  
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  .homepage-banner-text {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-55%);
+      color: white;
+      text-align: center;
+      
+      h1 {
+        font-weight: bold;
+        color: $primary;
+        font-size: 36pt;
+      }
+  
+      p {
+        font-weight: 500;
+        font-size: 16pt;
+      }
+  }
+  
+  .homepage-banner-img, .homepage-banner-text {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+  }
