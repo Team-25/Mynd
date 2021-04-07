@@ -1,0 +1,84 @@
+.calendar-container {
+    font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+    justify-content: center;
+    background: rgb(225, 244, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border-radius: 25px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    box-shadow: 0px 1px 10px #aaaaaa;
+    width:80%;
+}
+
+.month-name {
+    font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+    justify-content: center;
+    background: rgb(213, 240, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 25px;
+  }
+
+.weekdays {
+    justify-content: center;
+    color: rgb(70, 70, 70);
+    text-align: center;
+}
+
+.calendar-grid {
+    padding-bottom: 50px;
+}
+
+ul, ol {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 0.5em;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin-left: 0;
+    font-size: calc(16px + (21 - 16) * ((100vw - 300px) / (1600 - 300)));
+  }
+  
+  ul.weekdays {
+    margin-bottom: 1em;
+  }
+  
+  ul.weekdays li {
+    height: 4vw;
+  }
+  
+  ol.calendar-grid li {
+    background-color: #252424;
+    border: 1px solid #eaeaea;
+    height: 12vw;
+    max-height: 125px;
+  }
+  
+  ul.weekdays abbr[title] {
+    font-weight: bolder;
+    text-decoration: none;
+  }
+  
+  @media all and (max-width: 800px) {
+    ul, ol {
+      grid-gap: .25em;
+    }
+    
+    ul.weekdays li {
+      font-size: 0;
+    }
+    
+    ul.weekdays > li abbr:after {
+        content: attr(title);
+        font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+      text-align: center;
+      }
+  }

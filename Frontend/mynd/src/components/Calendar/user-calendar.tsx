@@ -1,5 +1,6 @@
 import React from "react"
 import { format, startOfMonth, startOfWeek, getDate, isBefore, endOfWeek, add , endOfMonth} from 'date-fns'
+import './user-calendar.scss'
 
 interface IProps {
 
@@ -27,13 +28,15 @@ class Calendar extends React.Component<IProps> {
             month.push(day);
             day = add(day,{days:1});
         }
-        console.log(month)
         return month;
     }
 
     render() {
         return (
             <div className="calendar-container">
+                <header className="month-name">
+                    <h1>{format(this.state.currentDate,'MMMM yyyy')}</h1>
+                </header>
                 <ul className="weekdays">
                     <li className="day-name" key="Sun">Sunday</li>
                     <li className="day-name" key="Mon">Monday</li>
@@ -50,7 +53,8 @@ class Calendar extends React.Component<IProps> {
                         )}
                     </ol>
                 </div>
-            </div>      
+            </div>
+            
         )
     }
 }
