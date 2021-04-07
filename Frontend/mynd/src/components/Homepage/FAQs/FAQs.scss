@@ -1,0 +1,36 @@
+$primary: rgb(0, 0, 0);
+$background: rgb(248, 248, 248);
+$dividerColor: black;
+$stripeWidth: 1200px;
+$paragraphLineHeight: 24px;
+
+.FAQSegment-container {
+    max-width: 500px;
+    min-height: 300px;
+    padding: 25px;
+    margin: 0 auto;
+    
+    h2 {
+        padding-left: 20px;
+    }
+
+    .top-layer {
+        display: flex;
+        align-items: center;
+    }
+
+    p {
+        margin-left: 75px;
+        line-height: $paragraphLineHeight;
+    }
+
+    .FAQ-image {
+        height: 55px;
+        width: 55px;
+    }
+}
+
+.faqs-container {
+    padding: 35px;
+
+}

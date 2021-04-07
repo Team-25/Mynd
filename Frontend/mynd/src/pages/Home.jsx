@@ -6,6 +6,7 @@ import Container from '@material-ui/core/Container';
 
 
 import img from '../img/face.jpg';
+import FAQs from '../components/Homepage/FAQs/FAQs';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
 
                 <Quote quote="An awesome quote from our company!" author="Mynd CEO"/>
 
+                <FAQs />
 
                 {/* Temporary space filler */}
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
