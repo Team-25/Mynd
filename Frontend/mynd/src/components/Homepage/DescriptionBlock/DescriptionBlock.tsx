@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
 import UserTestimonial from './UserTestimonial';
 
 
@@ -12,7 +11,7 @@ interface IProps {
 const DescriptionBlock = (props: IProps) => {
 
     return (
-        <Container maxWidth="lg" className="content">
+        
             <Grid container>
                 <Grid item xs={12} sm={8}>
                     <div className="homepage-description">
@@ -38,7 +37,7 @@ const DescriptionBlock = (props: IProps) => {
                     </div>
                 </Grid>
             </Grid>
-        </Container>
+        
     )
 }
 
