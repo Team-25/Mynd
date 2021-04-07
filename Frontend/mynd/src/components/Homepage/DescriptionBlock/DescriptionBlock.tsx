@@ -11,12 +11,13 @@ interface IProps {
 const DescriptionBlock = (props: IProps) => {
 
     return (
-        
+            <div className="container">
             <Grid container>
                 <Grid item xs={12} sm={8}>
                     <div className="homepage-description">
                         <h1>What is Mynd?</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue dui, luctus in lobortis eget, ullamcorper tristique ante. Duis sit amet elit maximus, fringilla diam vel, pretium ex. Morbi elit erat, volutpat quis nibh sit amet, egestas interdum nunc. Aliquam justo dui, bibendum non risus non, tincidunt finibus mauris.</p>
+                        <hr />
                         <ul>
                             <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
                             <li>Aliquam tincidunt mauris eu risus.</li>
@@ -37,8 +38,8 @@ const DescriptionBlock = (props: IProps) => {
                     </div>
                 </Grid>
             </Grid>
-        
-    )
+        </div>
+    );
 }
 
 export default DescriptionBlock;

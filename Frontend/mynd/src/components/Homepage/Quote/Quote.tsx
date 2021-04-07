@@ -8,7 +8,7 @@ interface IProps {
 const Quote = (props: IProps) => {
 
     return (
-        <div className="quote">
+        <div className="quote container">
             "{props.quote}" - <span>{props.author}</span>
         </div>
     )

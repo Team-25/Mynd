@@ -91,12 +91,18 @@ body {
   transform: translateX(-50%);
   background-color: $background;
   height: 100%;
+  width: $stripeWidth;
 }
 
 .content {
   background-color: $background;
   max-width: $stripeWidth;
   margin: 0 auto;
+}
+
+.container {
+  width: 100%;
+  margin: 120px 0;
 }
 
 /* Homepage Description Block*/
@@ -108,6 +114,7 @@ body {
 
 .homepage-description {
   padding-left: 32px;
+  padding-right: 32px;
   padding-top: 32px;
 
   p {
@@ -115,9 +122,12 @@ body {
   }
 
   ul {
-    line-height: 45px;
+    line-height: 50px;
     margin-left: 0;
     padding-left: 21px;
+    li {
+      padding-left: 12px;
+    }
   }
 }
 
@@ -131,6 +141,7 @@ body {
   .homepage-user-testimonial {
     display: none;
   }
+
 }
 
 .user-testimonial {
