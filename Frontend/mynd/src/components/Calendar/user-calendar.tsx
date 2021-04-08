@@ -42,10 +42,9 @@ class Calendar extends React.Component<IProps> {
     render() {
         return (
             <>
-            {/* !!!TODO!!! Add click on date to show its events */}
                 <div className="calendar-container">
                     <header className="month-name">
-                        <h1>{format(this.state.selectedDate,'MMMM yyyy')}</h1>
+                        <h1> <i className="arrow left" onClick={() => this.setState({selectedDate: add(this.state.selectedDate, {months:-1})})}/> {format(this.state.selectedDate,'MMMM yyyy')} <i className="arrow right" onClick={() => this.setState({selectedDate: add(this.state.selectedDate, {months:1})})}/> </h1>
                     </header>
                     <ul className="weekdays">
                         <li className="day-name" key="Sun"><abbr title="S">Sunday</abbr></li>
@@ -60,7 +59,6 @@ class Calendar extends React.Component<IProps> {
                         <ol className="day">
                             {this.getFullMonth(this.state.selectedDate).map(
                                 (date) => <li key={date.toString()}>
-                                        {/* TODO ONCLICK GET THE DAYS EVENTS  */}
                                         <div className={this.dayColour(date)} onClick={() => this.setState({selectedDate: date})}>
                                             {format(date,'dd')}
                                         </div>
