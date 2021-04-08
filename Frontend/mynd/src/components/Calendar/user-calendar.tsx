@@ -1,5 +1,5 @@
 import React from "react"
-import { format, startOfMonth, startOfWeek, getDate, isBefore, endOfWeek, add , endOfMonth} from 'date-fns'
+import { format, startOfMonth, startOfWeek, isBefore, endOfWeek, add , endOfMonth, isSameMonth, isSameDay} from 'date-fns'
 import './user-calendar.scss'
 import Day from './day'
 
@@ -15,6 +15,7 @@ class Calendar extends React.Component<IProps> {
     constructor(props: IProps) {
         super(props);
         this.getFullMonth = this.getFullMonth.bind(this)
+        this.dayColour = this.dayColour.bind(this)
     }
 
     state: IState = {
@@ -32,8 +33,13 @@ class Calendar extends React.Component<IProps> {
         return month;
     }
 
+    dayColour(day: Date) {
+        return isSameDay(day, this.state.currentDate) ? 'calendar-current-day' : isSameMonth(day,this.state.currentDate) ? 'calendar-current-month': 'calendar-standard'; 
+    }
+
     render() {
         return (
+            // !!!TODO!!! Add click on date to show its events
             <div className="calendar-container">
                 <header className="month-name">
                     <h1>{format(this.state.currentDate,'MMMM yyyy')}</h1>
@@ -50,7 +56,7 @@ class Calendar extends React.Component<IProps> {
                 <div className="calendar-grid">
                     <ol className="day">
                         {this.getFullMonth(this.state.currentDate).map(
-                            (date) => <li key={date.toString()}><Day date={date}/></li>
+                            (date) => <li key={date.toString()}><Day date={date} class = {this.dayColour(date)}/></li>
                         )}
                     </ol>
                 </div>
