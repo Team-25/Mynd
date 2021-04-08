@@ -47,13 +47,9 @@ class Calendar extends React.Component<IProps> {
                         <h1> <i className="arrow left" onClick={() => this.setState({selectedDate: add(this.state.selectedDate, {months:-1})})}/> {format(this.state.selectedDate,'MMMM yyyy')} <i className="arrow right" onClick={() => this.setState({selectedDate: add(this.state.selectedDate, {months:1})})}/> </h1>
                     </header>
                     <ul className="weekdays">
-                        <li className="day-name" key="Sun"><abbr title="S">Sunday</abbr></li>
-                        <li className="day-name" key="Mon"><abbr title="M">Monday</abbr></li>
-                        <li className="day-name" key="Tue"><abbr title="T">Tuesday</abbr></li>
-                        <li className="day-name" key="Wed"><abbr title="W">Wednesday</abbr></li>
-                        <li className="day-name" key="Thu"><abbr title="T">Thursday</abbr></li>
-                        <li className="day-name" key="Fri"><abbr title="F">Friday</abbr></li>
-                        <li className="day-name" key="Sat"><abbr title="S">Saturday</abbr></li>
+                        {["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"].map((day) =>
+                            <li className="day-name" key={day}><abbr title={day[0]}>{day}</abbr></li>
+                        )}
                     </ul>
                     <div className="calendar-grid">
                         <ol className="day">

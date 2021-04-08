@@ -74,7 +74,9 @@
     padding: 8px;
     height: 25px;
     width: 50px;
-    background: rgb(120, 167, 255);
+    font-weight: bolder;
+    background: rgb(160, 193, 255);
+    border-radius:4px;
     border: 2px solid #666;
     color: rgb(255, 255, 255);
     text-align: center;
@@ -102,9 +104,10 @@
   padding: 8px;
   height: 25px;
   width: 50px;
+  border-radius:4px;
   color: rgb(255, 255, 255);
-  background:rgb(255, 0, 0);
-  border: 1px solid rgb(0, 0, 0);
+  background:rgb(255, 142, 142);
+  border: 2px solid rgb(0, 0, 0);
 }
 
 .calendar-upcoming-events {
