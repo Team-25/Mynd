@@ -6,11 +6,18 @@
 @import './components/Homepage/FAQs/FAQs.scss';
 @import './components/Footer/Footer.scss';
 
+/*
+*   Primary BG: #2c2c2c
+*   Secondary BG: rgb(29, 29, 29)
+*   Primary Text: white
+*/
 
+
+// These r not currently persistent across scss files
 $primary: white;
 $background: #2c2c2c;
 $dividerColor: black;
-$stripeWidth: 100%;
+$stripeWidth: 1000px;
 
 .App {
   text-align: center;
@@ -23,7 +30,6 @@ body {
   padding: 0;
   overflow-x: hidden;
   font-family: 'Lato';
-  background-color: #454545;
   color: white;
 }
 
@@ -67,14 +73,14 @@ p {
 }
 
 .content {
-  background-color: $background;
-  max-width: $stripeWidth;
   margin: 0 auto;
+  max-width: $stripeWidth;
 }
 
 .container {
   width: 100%;
-  margin: 120px 0;
+  padding: 120px 0;
+  background-color: $background;
 }
 
 

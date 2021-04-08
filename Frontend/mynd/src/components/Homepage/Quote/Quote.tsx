@@ -9,7 +9,9 @@ const Quote = (props: IProps) => {
 
     return (
         <div className="quote container">
-            "{props.quote}" - <span>{props.author}</span>
+            <div className="content">
+                "{props.quote}" - <span>{props.author}</span>
+            </div>
         </div>
     )
 }

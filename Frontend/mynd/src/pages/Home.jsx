@@ -12,16 +12,16 @@ const Home = () => {
     return (
         <>
             <Banner title="Mynd" description="An awesome description about our site"/>
-            <div className="content">
-                <DescriptionBlock image={img} />
+            
+            <DescriptionBlock image={img} />
 
-                <Quote quote="An awesome quote from our company!" author="Mynd CEO"/>
+            <Quote quote="An awesome quote from our company!" author="Mynd CEO"/>
 
-                <FAQs />
+            <FAQs />
 
-                {/* Temporary space filler */}
-                <div id="background-stripe"></div>
-            </div>
+            {/* Temporary space filler */}
+            <div id="background-stripe"></div>
+            
         </>
     );
 }
