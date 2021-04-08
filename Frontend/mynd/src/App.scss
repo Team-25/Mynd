@@ -1,8 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato');
 
-$primary: rgb(0, 0, 0);
-$background: rgb(248, 248, 248);
+@import './components/Homepage/Banner/Banner.scss';
+@import './components/Homepage/DescriptionBlock/DescriptionBlock.scss';
+@import './components/Homepage/Quote/Quote.scss';
+@import './components/Homepage/FAQs/FAQs.scss';
+@import './components/Footer/Footer.scss';
+
+/*
+*   Primary BG: #2c2c2c
+*   Secondary BG: rgb(29, 29, 29)
+*   Primary Text: white
+*/
+
+
+// These r not currently persistent across scss files
+$primary: white;
+$background: #2c2c2c;
 $dividerColor: black;
+$stripeWidth: 1000px;
 
 .App {
   text-align: center;
@@ -15,50 +30,16 @@ body {
   padding: 0;
   overflow-x: hidden;
   font-family: 'Lato';
-  background-color: rgb(255, 255, 255);
+  color: white;
 }
 
-/* Homepage Banner */
-
-.homepage-banner-img {
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 5px solid $dividerColor;
-
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
+p {
+  line-height: 25px;
+  word-spacing: .5px;
+  font-size: 17px;
 }
 
-.homepage-banner-text {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-55%);
-    color: white;
-    text-align: center;
-    
-    h1 {
-      font-weight: bold;
-      color: $primary;
-      font-size: 36pt;
-    }
 
-    p {
-      font-weight: 500;
-      font-size: 16pt;
-    }
-}
-
-.homepage-banner-img, .homepage-banner-text {
-  -webkit-user-select: none; /* Safari */        
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
-}
 
 /* Page Divider */
 .custom-shape-divider-top-1617724181 {
@@ -88,86 +69,21 @@ body {
   transform: translateX(-50%);
   background-color: $background;
   height: 100%;
+  width: $stripeWidth;
 }
 
 .content {
-  padding-top: 90px;
-  padding-bottom: 90px;
+  margin: 0 auto;
+  max-width: $stripeWidth;
+}
+
+.container {
+  width: 100%;
+  padding: 120px 0;
   background-color: $background;
 }
 
-/* Homepage Description Block*/
 
-.content-divider {
-  border-top: 5px dashed rgb(0, 0, 0);
-  width: 50%;
-}
-
-.homepage-description {
-  padding: 21px;
-
-  p {
-    line-height: 24px;
-  }
-
-  ul {
-    line-height: 45px;
-    margin-left: 0;
-    padding-left: 21px;
-  }
-}
-
-.homepage-user-testimonial {
-  padding: 21px 21px 0 21px;
-  height: 100%;
-}
-
-@media only screen and (max-width: 900px) {
-  .homepage-user-testimonial {
-    display: none;
-  }
-}
-
-.user-testimonial {
-  position: relative;
-  border: 2px solid $primary;
-  height: 100%;
-
-  .user-testimonial-content {
-    padding: 18px;
-  }
-
-  .user-testimonial-text {
-    line-height: 22px;
-    word-wrap: break-word;
-  }
-
-  .user-testimonial-name {
-    border-top: 2px solid $primary;
-    padding: 6px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .user-image {
-    height: 80px;
-    width: 80px;
-    position: absolute;
-    right: 12px;
-    top: 12px;
-    transform: translateX(50%) translateY(-50%);
-    border: 2px solid $primary;
-  }
-
-  h2 {
-    text-align: center;
-    margin-top: 5px;
-    margin-bottom: 22px;
-  }
-
-}
 
 /* 404 */
 #not-found {
