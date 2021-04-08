@@ -26,7 +26,9 @@ const FAQs = (props: IProps) => {
     return (
         <div className="faqs-container container">
             <h1>FAQs</h1>
+            <div className="question-container">
             {questions.map((q) => <FAQSegment question={q.question} answer={q.answer} />)}
+            </div>
         </div>
     )
 }
