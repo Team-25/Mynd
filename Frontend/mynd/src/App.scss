@@ -7,8 +7,8 @@
 @import './components/Footer/Footer.scss';
 
 
-$primary: rgb(0, 0, 0);
-$background: rgb(248, 248, 248);
+$primary: white;
+$background: #2c2c2c;
 $dividerColor: black;
 $stripeWidth: 1200px;
 
@@ -23,7 +23,8 @@ body {
   padding: 0;
   overflow-x: hidden;
   font-family: 'Lato';
-  background-color: rgb(255, 255, 255);
+  background-color: #454545;
+  color: white;
 }
 
 

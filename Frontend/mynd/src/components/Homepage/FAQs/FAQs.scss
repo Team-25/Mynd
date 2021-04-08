@@ -1,4 +1,4 @@
-$primary: rgb(0, 0, 0);
+$primary: white;
 $background: rgb(248, 248, 248);
 $dividerColor: black;
 $stripeWidth: 1200px;
@@ -31,4 +31,7 @@ $paragraphLineHeight: 24px;
 }
 
 .faqs-container {
+    h1 {
+        color: #ed4f3a;
+    }
 }

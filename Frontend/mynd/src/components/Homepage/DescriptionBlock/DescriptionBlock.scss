@@ -1,4 +1,4 @@
-$primary: rgb(0, 0, 0);
+$primary: white;
 $background: rgb(248, 248, 248);
 $dividerColor: black;
 $stripeWidth: 1200px;
@@ -10,7 +10,12 @@ $stripeWidth: 1200px;
     padding-left: 32px;
     padding-right: 32px;
     padding-top: 32px;
-  
+    
+    h1 {
+      color: #40e2b4;
+    }
+
+
     p {
       line-height: 24px;
     }
