@@ -1,23 +1,35 @@
 .calendar-container {
-  
     font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
     justify-content: center;
-    background: rgba(225, 244, 255, 0.774);
+    background: rgba(225, 244, 255, 0.521);
     color: rgb(0, 0, 0);
     text-align: center;
     border-radius: 25px;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 25px;
     box-shadow: 10px 1px 10px #00000041;
     width:95%;
+}
+
+.selected-day-events {
+  text-align: center;
+  background: rgba(225, 244, 255, 0.493);
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  margin: 0 auto;
+  width:95%;
+  overflow-y:auto;
+  box-shadow: 10px 1px 10px #00000041;
+  max-height: 35vh;
 }
 
 .month-name {
     font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
     justify-content: center;
-    background: rgba(185, 215, 231, 0.774);
+    background: rgba(225, 244, 255, 0.521);
     color: rgb(0, 0, 0);
-    border-radius: 25px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
   }
 
 .weekdays {
@@ -32,36 +44,53 @@
 }
 
 .calendar-current-day {
-    border-radius: 50%;
     padding: 8px;
-    height: 20px;
-    width: 20px;
-
-    background: rgb(255, 255, 255);
+    height: 25px;
+    width: 50px;
+    background: rgb(120, 167, 255);
     border: 2px solid #666;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 
 .calendar-current-month {
+  padding: 8px;
+  height: 25px;
+  width: 50px;
   color: rgb(0, 0, 0);
+  background:rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .calendar-standard {
+  padding: 8px;
+  height: 25px;
+  width: 50px;
+  background:rgba(255, 255, 255, 0.418);
+  border: 1px solid rgba(0, 0, 0, 0.418);
   color: rgb(185, 185, 185);
 }
 
+.calendar-selected-day {
+  padding: 8px;
+  height: 25px;
+  width: 50px;
+  color: rgb(255, 255, 255);
+  background:rgb(255, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
+}
+
 .calendar-upcoming-events {
-  background: rgba(174, 208, 230, 0.527);
-  border: 3px solid #f1f1f1;
+  background: rgba(225, 244, 255, 0.493);
   text-align: center;
-  border-radius: 25px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
   justify-content: center;
-  overflow-y: scroll;
-  max-height: 70vh;
-  padding-bottom: 20px;
+  overflow-y:auto;
+  max-height: 90vh;
   margin: 0 auto;
-  margin-top: 25px;
+  margin-top: 38px;
+  margin-left: 25px;
   box-shadow: 10px 1px 10px #00000041;
 }
 
