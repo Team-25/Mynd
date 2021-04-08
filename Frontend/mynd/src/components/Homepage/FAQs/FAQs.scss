@@ -5,9 +5,9 @@ $stripeWidth: 1200px;
 $paragraphLineHeight: 24px;
 
 .FAQSegment-container {
-    width: 600px;
     min-height: 300px;
     padding: 25px;
+    position: relative;
 
     
     h2 {
@@ -21,29 +21,38 @@ $paragraphLineHeight: 24px;
 
     p {
         margin-left: 75px;
-        line-height: $paragraphLineHeight;
+        
     }
 
     .FAQ-image {
         height: 55px;
         width: 55px;
     }
+
+    .vl {
+        position: absolute;
+        border-left: 4px dashed rgb(255, 255, 255);
+        height: 160px;
+
+        left: 50px;
+        top: 150px;
+      }
 }
 
 .faqs-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 35px;
+    
 
     
     h1 {
         color: #ed4f3a;
-        width: 100%;
+        padding-left: 35px;
     }
 
     .question-container {
-        width: 600px;
+        max-width: 600px;
         margin: 0 auto;
     }
 }

@@ -26,7 +26,9 @@ $stripeWidth: 1200px;
       color: white;
       display: flex;
       align-items: flex-end;
-      
+      flex-wrap: wrap;
+
+
       h1 {
         font-weight: bold;
         font-size: 36pt;

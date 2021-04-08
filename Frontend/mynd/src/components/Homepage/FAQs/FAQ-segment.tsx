@@ -18,6 +18,7 @@ const FAQSegment = (props: IProps) => {
                 <h2>{props.question}</h2>
             </div>
             <p>{props.answer}</p>
+            <div className="vl"></div>
         </div>
     )
 }
