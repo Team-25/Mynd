@@ -28,7 +28,21 @@
   width:95%;
   overflow-y:auto;
   box-shadow: 10px 1px 10px #00000041;
-  max-height: 38vh;
+  max-height: 37vh;
+}
+
+.calendar-upcoming-events {
+  background: rgba(225, 244, 255, 0.493);
+  text-align: center;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  justify-content: center;
+  overflow-y:auto;
+  max-height: 90vh;
+  margin: 0 auto;
+  margin-top: 38px;
+  margin-left: 25px;
+  box-shadow: 10px 1px 10px #00000041;
 }
 
 .month-name {
@@ -86,20 +100,6 @@
   border: 2px solid rgb(0, 0, 0);
 }
 
-.calendar-upcoming-events {
-  background: rgba(225, 244, 255, 0.493);
-  text-align: center;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-  justify-content: center;
-  overflow-y:auto;
-  max-height: 90vh;
-  margin: 0 auto;
-  margin-top: 38px;
-  margin-left: 25px;
-  box-shadow: 10px 1px 10px #00000041;
-}
-
 .calendar-events-items {
   padding:10px;
 }
@@ -116,54 +116,111 @@
 }
 
 .weekdays, .day {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-gap: 0.5em;
-    margin: 0 auto;
-    padding: 0;
-  }
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 0.5em;
+  margin: 0 auto;
+  padding: 0;
+}
   
 li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    margin-left: 0;
-    font-size: calc(16px + (21 - 16) * ((100vw - 300px) / (1600 - 300)));
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin-left: 0;
+  font-size: calc(16px + (21 - 16) * ((100vw - 300px) / (1600 - 300)));
+}
+
+ul.weekdays {
+  margin-bottom: 1em;
+}
+
+ul.weekdays li {
+  height: 4vw;
+}
+
+ol.calendar-grid li {
+  background-color: #252424;
+  border: 1px solid #eaeaea;
+  height: 12vw;
+  max-height: 125px;
+}
+
+ul.weekdays abbr[title] {
+  font-weight: bolder;
+  text-decoration: none;
+}
   
-  ul.weekdays {
-    margin-bottom: 1em;
+@media all and (max-width: 900px) {
+  ul, ol {
+    grid-gap: .25em;
   }
   
   ul.weekdays li {
-    height: 4vw;
+    font-size: 0;
   }
   
-  ol.calendar-grid li {
-    background-color: #252424;
-    border: 1px solid #eaeaea;
-    height: 12vw;
-    max-height: 125px;
-  }
-  
-  ul.weekdays abbr[title] {
-    font-weight: bolder;
-    text-decoration: none;
-  }
-  
-  @media all and (max-width: 900px) {
-    ul, ol {
-      grid-gap: .25em;
+  ul.weekdays > li abbr:after {
+      content: attr(title);
+      font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+    text-align: center;
     }
-    
-    ul.weekdays li {
-      font-size: 0;
+}
+
+  @mixin dark-mode {
+    .calendar-event-card {
+      color: rgb(255, 255, 255);
     }
-    
-    ul.weekdays > li abbr:after {
-        content: attr(title);
-        font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
-      text-align: center;
-      }
+
+    .calendar-container {
+      background: rgba(79, 81, 82, 0.63);
+    }
+
+    .selected-day-events {
+      background: rgba(79, 81, 82, 0.63);
+      color:#40d5aa; 
+    }
+
+    .calendar-upcoming-events {
+      background: rgba(79, 81, 82, 0.63);
+      color: #40d5aa;
+    }
+
+    .month-name {
+      background: rgba(0, 0, 0, 0.308);
+      color: #40d5aa;
+    }
+
+    .weekdays {
+      color:rgb(238, 149, 198);
+    }
+
+    .calendar-current-day {
+      background: #34ac8a;
+      border: 2px solid rgb(255, 255, 255);
+      color: rgb(255, 255, 255);
+    }
+
+    .calendar-current-month {
+      color: rgb(255, 255, 255);
+      background:rgba(129, 129, 129, 0.521);
+    }
+
+    .calendar-standard {
+      background:rgba(0, 0, 0, 0.192);
+      border: 1px solid rgba(0, 0, 0, 0.418);
+    }
+
+    .calendar-selected-day {
+      color: rgb(255, 255, 255);
+      border: 2px solid rgb(255, 255, 255);
+      background-color:rgb(31, 70, 107)
+    }
+
+    .calendar-page {
+      background: url('../../img/calendar-bg.jpg') center center/cover no-repeat;
+    }
   }
+  
+  @include dark-mode;
