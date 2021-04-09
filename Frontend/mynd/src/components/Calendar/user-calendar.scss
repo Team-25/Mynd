@@ -1,3 +1,4 @@
+// RESET SCSS
 *{margin:0px;padding:0px;cursor: default;}
 ::selection {
   color: none;
@@ -10,6 +11,14 @@ body {
   overflow: hidden;
 }
 
+//full page
+.calendar-page {
+  background: linear-gradient(rgba(122, 255, 233, 0.322), rgba(255, 200, 21, 0.226)),url('../../img/home.jpg') center center/cover no-repeat;
+  height: 100vh;
+  display:flex;
+}
+
+//div container for calendar
 .calendar-container {
   font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
   background: rgba(225, 244, 255, 0.521);
@@ -25,6 +34,7 @@ body {
   width:95%;
 }
 
+//div container for events on selected day
 .selected-day-events {
   text-align: center;
   background: rgba(225, 244, 255, 0.493);
@@ -37,6 +47,7 @@ body {
   max-height: 35vh;
 }
 
+//div container for todays day events
 .calendar-upcoming-events {
   background: rgba(225, 244, 255, 0.493);
   text-align: center;
@@ -49,17 +60,21 @@ body {
   box-shadow: 10px 1px 10px #00000041;
 }
 
+//header container for calendar month title
 .month-name {
   background: rgba(225, 244, 255, 0.521);
   color: rgb(0, 0, 0);
   border-radius: 25px;
 }
 
+//calendar day headers
 .weekdays {
   color: #ff47a0;
   font-weight: bolder;
+  height: 4vw;
 }
 
+// calendar current day
 .calendar-current-day {
   padding: 8px;
   width: 70%;
@@ -74,6 +89,7 @@ body {
   }
 }
 
+// calendar days within same month
 .calendar-current-month {
   padding: 8px;
   width: 70%;
@@ -85,6 +101,7 @@ body {
   }
 }
 
+// calendar days not in month
 .calendar-standard {
   padding: 8px;
   width: 70%;
@@ -96,6 +113,7 @@ body {
   }
 }
 
+//calendar current selected day
 .calendar-selected-day {
   padding: 8px;
   width: 77%;
@@ -109,22 +127,19 @@ body {
   }
 }
 
+//event cards
 .calendar-events-items {
   padding:5px;
 }
 
-.calendar-page {
-  background: linear-gradient(rgba(122, 255, 233, 0.322), rgba(255, 200, 21, 0.226)),url('../../img/home.jpg') center center/cover no-repeat;
-  height: 100vh;
-  display:flex;
-}
-
+//formating calendar grid
 .weekdays, .day {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-gap: 0.5em;
 }
   
+//all list items (event cards and days)
 li {
   display: flex;
   align-items: center;
@@ -132,15 +147,13 @@ li {
   font-size: calc(20px + (21 - 16) * ((100vw - 300px) / (1600 - 300)));
 }
 
-ul.weekdays li {
-  height: 4vw;
-}
-
+//Weekdays when abrieviated
 ul.weekdays abbr[title] {
   font-weight: bolder;
   text-decoration: none;
 }
-  
+
+//Responsive design
 @media all and (max-width: 900px) {
   ul, ol {
     grid-gap: .25em;
@@ -157,6 +170,7 @@ ul.weekdays abbr[title] {
     }
 }
 
+//dark mode
   @mixin dark-mode {
     .calendar-event-card {
       color: rgb(255, 255, 255);
@@ -186,12 +200,12 @@ ul.weekdays abbr[title] {
     }
 
     .calendar-current-day {
-      background: #34ac8a;
+      
       border: 2px solid rgb(255, 255, 255);
       color: rgb(255, 255, 255);
-
+      background-color:rgb(31, 70, 107);
       &:hover {
-        background: #3bbd98;
+        background-color:rgb(42, 87, 129)
       }
     }
 
@@ -215,9 +229,9 @@ ul.weekdays abbr[title] {
     .calendar-selected-day {
       color: rgb(255, 255, 255);
       border: 2px solid rgb(255, 255, 255);
-      background-color:rgb(31, 70, 107);
+      background: #34ac8a;
       &:hover {
-        background-color:rgb(42, 87, 129)
+        background: #3bbd98;
       }
     }
 
