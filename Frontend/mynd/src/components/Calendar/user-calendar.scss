@@ -7,9 +7,6 @@
 ::-webkit-scrollbar {
   display: none;
 }
-body {
-  overflow: hidden;
-}
 
 $light-container: rgba(225, 244, 255, 0.493);
 $dark-container:rgba(79, 81, 82, 0.63);
@@ -143,7 +140,7 @@ $box-shadow: 10px 1px 10px #00000041;
 }
   
 //all list items (event cards and days)
-li {
+.calendar-events-items, .calendar-li, .day-name {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -158,7 +155,7 @@ ul.weekdays abbr[title] {
 
 //Responsive design
 @media all and (max-width: 900px) {
-  ul, ol {
+  .weekdays, .day {
     grid-gap: .25em;
   }
 
