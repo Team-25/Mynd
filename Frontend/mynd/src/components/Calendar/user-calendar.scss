@@ -1,3 +1,8 @@
+*{margin:0px;padding:0px;}
+::selection {
+  color: none;
+  background: none;
+}
 .calendar-container {
     font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
     justify-content: center;
@@ -6,36 +11,12 @@
     text-align: center;
     border-radius: 25px;
     margin: 0 auto;
+    margin-top: 35px;
     margin-bottom: 25px;
+    padding: 10px;
+    padding-bottom: 30px;
     box-shadow: 10px 1px 10px #00000041;
     width:95%;
-}
-
-.arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-}
-
-.right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-
-.left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-}
-
-.up {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-}
-
-.down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
 }
 
 .selected-day-events {
@@ -47,7 +28,7 @@
   width:95%;
   overflow-y:auto;
   box-shadow: 10px 1px 10px #00000041;
-  max-height: 35vh;
+  max-height: 38vh;
 }
 
 .month-name {
@@ -55,8 +36,7 @@
     justify-content: center;
     background: rgba(225, 244, 255, 0.521);
     color: rgb(0, 0, 0);
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    border-radius: 25px;
   }
 
 .weekdays {
@@ -64,10 +44,6 @@
     color: #ff47a0;
     font-weight: bolder;
     text-align: center;
-}
-
-.calendar-grid {
-    padding-bottom: 50px;
 }
 
 .calendar-current-day {

@@ -21,7 +21,7 @@ class Calendar extends React.Component<IProps> {
 
     state: IState = {
         currentDate: new Date(),
-        selectedDate: new Date(),
+        selectedDate: add(new Date(), {days:1}),
     }
 
     getFullMonth(start: Date) {
@@ -44,7 +44,9 @@ class Calendar extends React.Component<IProps> {
             <>
                 <div className="calendar-container">
                     <header className="month-name">
-                        <h1> <i className="arrow left" onClick={() => this.setState({selectedDate: add(this.state.selectedDate, {months:-1})})}/> {format(this.state.selectedDate,'MMMM yyyy')} <i className="arrow right" onClick={() => this.setState({selectedDate: add(this.state.selectedDate, {months:1})})}/> </h1>
+                        <h2>  {format(this.state.selectedDate,'MMMM yyyy')}  </h2>
+                        <span className="calendar-arrow" onClick={() => this.setState({selectedDate: add(this.state.selectedDate, {months:-1})})}>&#8592;</span>
+                        <span className="calendar-arrow" onClick={() => this.setState({selectedDate: add(this.state.selectedDate, {months:1})})}>&#8594;</span>
                     </header>
                     <ul className="weekdays">
                         {["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"].map((day) =>
@@ -64,7 +66,7 @@ class Calendar extends React.Component<IProps> {
                     </div>
                 </div>
                 <div className="selected-day-events">
-                    <h1> Events on {format(this.state.selectedDate, 'dd/MM/YYY')}</h1>
+                    <h1> Events on {format(this.state.selectedDate, 'dd MMMM YYY')}</h1>
                     <ol className="day">
                         {/* TODO MAP OVER SOME QUERY OF EVENTS OF SELECTED DAY */}
                         <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex, James, Catherine" time="9:15"/></li>
