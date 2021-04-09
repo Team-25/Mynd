@@ -11,6 +11,10 @@ body {
   overflow: hidden;
 }
 
+$light-container: rgba(225, 244, 255, 0.493);
+$dark-container:rgba(79, 81, 82, 0.63);
+$box-shadow: 10px 1px 10px #00000041;
+
 //full page
 .calendar-page {
   background: linear-gradient(rgba(122, 255, 233, 0.322), rgba(255, 200, 21, 0.226)),url('../../img/home.jpg') center center/cover no-repeat;
@@ -21,8 +25,7 @@ body {
 //div container for calendar
 .calendar-container {
   font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
-  background: rgba(225, 244, 255, 0.521);
-  color: rgb(0, 0, 0);
+  background: $light-container;
   text-align: center;
   border-radius: 25px;
   margin: 0 auto;
@@ -30,26 +33,26 @@ body {
   margin-bottom: 25px;
   padding: 10px;
   padding-bottom: 30px;
-  box-shadow: 10px 1px 10px #00000041;
+  box-shadow: $box-shadow;
   width:95%;
 }
 
 //div container for events on selected day
 .selected-day-events {
   text-align: center;
-  background: rgba(225, 244, 255, 0.493);
+  background: $light-container;
   border-radius: 25px;
   margin: 0 auto;
   width:95%;
   overflow-y:auto;
   overflow-x: hidden;
-  box-shadow: 10px 1px 10px #00000041;
+  box-shadow: $box-shadow;
   max-height: 35vh;
 }
 
 //div container for todays day events
 .calendar-upcoming-events {
-  background: rgba(225, 244, 255, 0.493);
+  background: $light-container;
   text-align: center;
   border-radius: 25px;
   overflow-y:auto;
@@ -57,12 +60,12 @@ body {
   margin: 0 auto;
   margin-top: 10px;
   margin-left: 25px;
-  box-shadow: 10px 1px 10px #00000041;
+  box-shadow: $box-shadow;
 }
 
 //header container for calendar month title
 .month-name {
-  background: rgba(225, 244, 255, 0.521);
+  background: $light-container;
   color: rgb(0, 0, 0);
   border-radius: 25px;
 }
@@ -177,16 +180,16 @@ ul.weekdays abbr[title] {
     }
 
     .calendar-container {
-      background: rgba(79, 81, 82, 0.63);
+      background: $dark-container;
     }
 
     .selected-day-events {
-      background: rgba(79, 81, 82, 0.63);
+      background: $dark-container;
       color:#40d5aa; 
     }
 
     .calendar-upcoming-events {
-      background: rgba(79, 81, 82, 0.63);
+      background: $dark-container;
       color: #40d5aa;
     }
 
@@ -201,8 +204,8 @@ ul.weekdays abbr[title] {
 
     .calendar-current-day {
       
-      border: 2px solid rgb(255, 255, 255);
-      color: rgb(255, 255, 255);
+      border: 2px solid white;
+      color: white;
       background-color:rgb(31, 70, 107);
       &:hover {
         background-color:rgb(42, 87, 129)
@@ -210,7 +213,7 @@ ul.weekdays abbr[title] {
     }
 
     .calendar-current-month {
-      color: rgb(255, 255, 255);
+      color: white;
       background:rgba(129, 129, 129, 0.521);
 
       &:hover {
@@ -227,8 +230,8 @@ ul.weekdays abbr[title] {
     }
 
     .calendar-selected-day {
-      color: rgb(255, 255, 255);
-      border: 2px solid rgb(255, 255, 255);
+      color: white;
+      border: 2px solid white;
       background: #34ac8a;
       &:hover {
         background: #3bbd98;
