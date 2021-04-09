@@ -45,8 +45,9 @@ class Calendar extends React.Component<IProps> {
                 <div className="calendar-container">
                     <header className="month-name">
                         <h2>  {format(this.state.selectedDate,'MMMM yyyy')}  </h2>
-                        <span className="calendar-arrow" onClick={() => this.setState({selectedDate: add(this.state.selectedDate, {months:-1})})}>&#8592;</span>
-                        <span className="calendar-arrow" onClick={() => this.setState({selectedDate: add(this.state.selectedDate, {months:1})})}>&#8594;</span>
+                        <span className="calendar-arrows" onClick={() => this.setState({selectedDate: add(this.state.selectedDate, {months:-1})})}>&#8592;</span>
+                        <span className="calendar-arrows" onClick={() => this.setState({selectedDate: this.state.currentDate})}>Today</span>
+                        <span className="calendar-arrows" onClick={() => this.setState({selectedDate: add(this.state.selectedDate, {months:1})})}>&#8594;</span>
                     </header>
                     <ul className="weekdays">
                         {["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"].map((day) =>
