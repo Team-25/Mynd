@@ -6,6 +6,10 @@
 ::-webkit-scrollbar {
   display: none;
 }
+body {
+  overflow: hidden;
+}
+
 .calendar-container {
   font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
   background: rgba(225, 244, 255, 0.521);
@@ -30,7 +34,7 @@
   overflow-y:auto;
   overflow-x: hidden;
   box-shadow: 10px 1px 10px #00000041;
-  max-height: 37vh;
+  max-height: 35vh;
 }
 
 .calendar-upcoming-events {
@@ -38,9 +42,9 @@
   text-align: center;
   border-radius: 25px;
   overflow-y:auto;
-  max-height: 90vh;
+  max-height: 88vh;
   margin: 0 auto;
-  margin-top: 38px;
+  margin-top: 10px;
   margin-left: 25px;
   box-shadow: 10px 1px 10px #00000041;
 }
@@ -95,6 +99,7 @@
 .calendar-selected-day {
   padding: 8px;
   width: 77%;
+  height:77%;
   border-radius:4px;
   color: rgb(255, 255, 255);
   background:rgb(255, 142, 142);
@@ -221,4 +226,7 @@ ul.weekdays abbr[title] {
     }
   }
   
-  @include dark-mode;
+  .dark-mode {
+    @include dark-mode;
+  }
+  

@@ -1,7 +1,7 @@
 import React from "react"
 import { format} from 'date-fns'
 import CalendarEvent from "./calendar-event";
-import './user-calendar.scss'
+
 
 interface IProps {
 
@@ -23,12 +23,11 @@ class CalendarUpcoming extends React.Component<IProps> {
     render() {
         return (
             <div className="calendar-upcoming-events">
-                <h2>{format(this.state.currentDate,'EEEE d MMMM yyyy')}</h2>
-                <h1>Your Events Today:</h1>
+                <h1>{format(this.state.currentDate,'EEEE d MMMM yyyy')}</h1>
+                <h2>Your Events Today:</h2>
                 <div className="calender-events-list">
                     <ul>
-                        {/* TODO MAP OVER SOME QUERY OF EVENTS OF CURRENT DAY */}
-                        {/* TODO MAP OVER SOME QUERY OF EVENTS OF SELECTED DAY */}
+                        {/* TODO QUERY EVENTS OF CURRENT DAY */}
                         {[{
                         "title": "Some kinda speaking event",
                         "speakers": "Alex, Sam",

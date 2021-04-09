@@ -1,6 +1,5 @@
 import React from "react"
 import { format, startOfMonth, startOfWeek, isBefore, endOfWeek, add , endOfMonth, isSameMonth, isSameDay} from 'date-fns'
-import './user-calendar.scss'
 import CalendarEvent from "./calendar-event";
 import { Grid } from "@material-ui/core";
 
@@ -70,7 +69,7 @@ class Calendar extends React.Component<IProps> {
                 <div className="selected-day-events">
                     <h1> Events on {format(this.state.selectedDate, 'dd MMMM YYY')}</h1>
                     <Grid container spacing={2}>
-                        {/* TODO MAP OVER SOME QUERY OF EVENTS OF SELECTED DAY */}
+                        {/* TODO QUERY EVENTS OF SELECTED DAY */}
                         {[{
                         "title": "Some kinda speaking event",
                         "speakers": "Alex, Sam",

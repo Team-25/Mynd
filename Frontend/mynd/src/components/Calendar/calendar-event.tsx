@@ -1,6 +1,5 @@
 import { Card, CardActionArea, CardContent, Typography } from "@material-ui/core";
 import React from "react"
-import './user-calendar.scss'
 
 interface IProps {
     time: string,
