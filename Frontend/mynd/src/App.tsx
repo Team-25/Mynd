@@ -3,8 +3,7 @@ import "./App.scss";
 import Home from './pages/Home';
 import HeroSection from './components/Homepage/HeroSection/user-hero-section';
 import Footer from './components/Footer/Footer';
-
-
+import CalendarPage from './pages/CalendarPage';
 import NotFound from './pages/404';
 
 function App() {
@@ -13,6 +12,9 @@ function App() {
       <Switch>
         <Route path="/home">
           <HeroSection name="Jimmy"/>
+        </Route>
+        <Route path="/Calendar">
+          <CalendarPage />
         </Route>
         <Route exact path="/">
           {/* TODO If user logged in show Home-user, otherwise Home */}
