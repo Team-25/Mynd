@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import "./App.scss";
 import Home from './pages/Home';
-import StudentReviewsPage from './components/Homepage/StudentReviews/student-reviews';
 import HeroSection from './components/Homepage/HeroSection/user-hero-section';
+import Footer from './components/Footer/Footer';
 import CalendarPage from './pages/CalendarPage';
 import NotFound from './pages/404';
 
@@ -22,7 +22,10 @@ function App() {
         </Route>
         <Route path='*' exact={true} component={NotFound} />
       </Switch>
+
+      <Footer />
     </Router>
+    
   );
 }
 

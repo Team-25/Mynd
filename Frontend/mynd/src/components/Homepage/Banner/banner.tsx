@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../../img/bg-1.jpg';
+import img from '../../../img/colouful-bg-1.png'; // HAving an issue moving this to be a prop
 
 
 interface IProps {

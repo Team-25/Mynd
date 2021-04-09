@@ -481,3 +481,4 @@ docs/reference_guides/_storybook_build_output/
 *.suo
 *.suo
 Backend/Mynd/.vs/Mynd/v16/.suo
+*.v2
