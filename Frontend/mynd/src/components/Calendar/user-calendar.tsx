@@ -2,6 +2,7 @@ import React from "react"
 import { format, startOfMonth, startOfWeek, isBefore, endOfWeek, add , endOfMonth, isSameMonth, isSameDay} from 'date-fns'
 import './user-calendar.scss'
 import CalendarEvent from "./calendar-event";
+import { Grid } from "@material-ui/core";
 
 interface IProps {
 
@@ -58,7 +59,7 @@ class Calendar extends React.Component<IProps> {
                         <ol className="day">
                             {this.getFullMonth(this.state.selectedDate).map(
                                 (date) => <li key={date.toString()}>
-                                        <div className={this.dayColour(date)} onClick={() => this.setState({selectedDate: date})}>
+                                        <div style={{width:100}} className={this.dayColour(date)} onClick={() => this.setState({selectedDate: date})}>
                                             {format(date,'dd')}
                                         </div>
                                 </li>
@@ -68,17 +69,33 @@ class Calendar extends React.Component<IProps> {
                 </div>
                 <div className="selected-day-events">
                     <h1> Events on {format(this.state.selectedDate, 'dd MMMM YYY')}</h1>
-                    <ol className="day">
+                    <Grid container spacing={2}>
                         {/* TODO MAP OVER SOME QUERY OF EVENTS OF SELECTED DAY */}
-                        <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex, James, Catherine" time="9:15"/></li>
-                        <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="10:15"/></li>
-                        <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Sam" time="11:30"/></li>
-                        <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Sam, Alex, Harvey" time="12:15"/></li>
-                        <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="13:45"/></li>
-                        <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="13:45"/></li>
-                        <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="13:45"/></li>
-                        <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="13:45"/></li>
-                    </ol>
+                        <Grid item xs={4}>
+                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex, James, Catherine" time="9:15"/></li>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="10:15"/></li>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Sam" time="11:30"/></li>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Sam, Alex, Harvey" time="12:15"/></li>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="13:45"/></li>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="13:45"/></li>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="13:45"/></li>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="13:45"/></li>
+                        </Grid>
+                    </Grid>
                 </div>
             </>    
         )

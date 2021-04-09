@@ -1,7 +1,10 @@
-*{margin:0px;padding:0px;}
+*{margin:0px;padding:0px;cursor: default;}
 ::selection {
   color: none;
   background: none;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 .calendar-container {
     font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
@@ -22,11 +25,11 @@
 .selected-day-events {
   text-align: center;
   background: rgba(225, 244, 255, 0.493);
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
+  border-radius: 25px;
   margin: 0 auto;
   width:95%;
   overflow-y:auto;
+  overflow-x: hidden;
   box-shadow: 10px 1px 10px #00000041;
   max-height: 37vh;
 }
@@ -34,8 +37,7 @@
 .calendar-upcoming-events {
   background: rgba(225, 244, 255, 0.493);
   text-align: center;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
+  border-radius: 25px;
   justify-content: center;
   overflow-y:auto;
   max-height: 90vh;
@@ -63,7 +65,7 @@
 .calendar-current-day {
     padding: 8px;
     height: 25px;
-    width: 50px;
+    width: 80%;
     font-weight: bolder;
     background: rgb(160, 193, 255);
     border-radius:4px;
@@ -75,7 +77,7 @@
 .calendar-current-month {
   padding: 8px;
   height: 25px;
-  width: 50px;
+  width: 80%;
   color: rgb(0, 0, 0);
   background:rgb(255, 255, 255);
   border: 1px solid rgb(0, 0, 0);
@@ -84,7 +86,7 @@
 .calendar-standard {
   padding: 8px;
   height: 25px;
-  width: 50px;
+  width: 80%;
   background:rgba(255, 255, 255, 0.418);
   border: 1px solid rgba(0, 0, 0, 0.418);
   color: rgb(185, 185, 185);
@@ -93,7 +95,7 @@
 .calendar-selected-day {
   padding: 8px;
   height: 25px;
-  width: 50px;
+  width: 80;
   border-radius:4px;
   color: rgb(255, 255, 255);
   background:rgb(255, 142, 142);
@@ -156,7 +158,7 @@ ul.weekdays abbr[title] {
   ul, ol {
     grid-gap: .25em;
   }
-  
+
   ul.weekdays li {
     font-size: 0;
   }
@@ -200,22 +202,36 @@ ul.weekdays abbr[title] {
       background: #34ac8a;
       border: 2px solid rgb(255, 255, 255);
       color: rgb(255, 255, 255);
+
+      &:hover {
+        background: #3bbd98;
+      }
     }
 
     .calendar-current-month {
       color: rgb(255, 255, 255);
       background:rgba(129, 129, 129, 0.521);
+
+      &:hover {
+        background:rgba(165, 165, 165, 0.521);
+      }
     }
 
     .calendar-standard {
       background:rgba(0, 0, 0, 0.192);
       border: 1px solid rgba(0, 0, 0, 0.418);
+      &:hover {
+        background:rgba(24, 24, 24, 0.192);
+      }
     }
 
     .calendar-selected-day {
       color: rgb(255, 255, 255);
       border: 2px solid rgb(255, 255, 255);
-      background-color:rgb(31, 70, 107)
+      background-color:rgb(31, 70, 107);
+      &:hover {
+        background-color:rgb(42, 87, 129)
+      }
     }
 
     .calendar-page {
