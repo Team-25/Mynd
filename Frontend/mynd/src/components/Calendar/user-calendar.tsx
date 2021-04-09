@@ -59,7 +59,7 @@ class Calendar extends React.Component<IProps> {
                         <ol className="day">
                             {this.getFullMonth(this.state.selectedDate).map(
                                 (date) => <li key={date.toString()}>
-                                        <div style={{width:100}} className={this.dayColour(date)} onClick={() => this.setState({selectedDate: date})}>
+                                        <div className={this.dayColour(date)} onClick={() => this.setState({selectedDate: date})}>
                                             {format(date,'dd')}
                                         </div>
                                 </li>
@@ -71,30 +71,39 @@ class Calendar extends React.Component<IProps> {
                     <h1> Events on {format(this.state.selectedDate, 'dd MMMM YYY')}</h1>
                     <Grid container spacing={2}>
                         {/* TODO MAP OVER SOME QUERY OF EVENTS OF SELECTED DAY */}
-                        <Grid item xs={4}>
-                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex, James, Catherine" time="9:15"/></li>
+                        {[{
+                        "title": "Some kinda speaking event",
+                        "speakers": "Alex, Sam",
+                        "time": "9:15",
+                        }, {
+                        "title": "Some kinda speaking event",
+                        "speakers": "Alex",
+                        "time": "10:15",
+                        }, {
+                        "title": "This is just dummy data lmao",
+                        "speakers": "Alex, Harvey",
+                        "time": "19:15",
+                        }, {
+                        "title": "hiya",
+                        "speakers": "Bob",
+                        "time": "21:15",
+                        }, {
+                        "title": "This is gettin late",
+                        "speakers": "Bob",
+                        "time": "23:15",
+                        }, {
+                        "title": "Lorem Ipsum amiright",
+                        "speakers": "Bob",
+                        "time": "23:35",
+                        }, {
+                        "title": "John i think",
+                        "speakers": "John",
+                        "time": "23:45",
+                        }].map(
+                            (data) => <Grid item xs={4}>
+                            <li className="calendar-events-items"><CalendarEvent title={data.title} speakers={data.speakers} time={data.time}/></li>
                         </Grid>
-                        <Grid item xs={4}>
-                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="10:15"/></li>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Sam" time="11:30"/></li>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Sam, Alex, Harvey" time="12:15"/></li>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="13:45"/></li>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="13:45"/></li>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="13:45"/></li>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <li className="calendar-events-items"><CalendarEvent title="Some kinda speaking event" speakers="Alex" time="13:45"/></li>
-                        </Grid>
+                        )}
                     </Grid>
                 </div>
             </>    
