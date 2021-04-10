@@ -26,3 +26,4 @@ C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\obj\Debug\net5.0\Mynd.dll
 C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\obj\Debug\net5.0\ref\Mynd.dll
 C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\obj\Debug\net5.0\Mynd.pdb
 C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\obj\Debug\net5.0\Mynd.genruntimeconfig.cache
+C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\obj\Debug\net5.0\Mynd.csprojAssemblyReference.cache
