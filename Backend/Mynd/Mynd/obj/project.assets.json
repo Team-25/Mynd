@@ -241,6 +241,19 @@
         "runtime": {
           "lib/net5.0/System.Diagnostics.DiagnosticSource.dll": {}
         }
+      },
+      "Mynd.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.5"
+        },
+        "compile": {
+          "bin/placeholder/Mynd.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mynd.Data.dll": {}
+        }
       }
     }
   },
@@ -786,12 +799,18 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Mynd.Data/1.0.0": {
+      "type": "project",
+      "path": "../Mynd.Data/Mynd.Data.csproj",
+      "msbuildProject": "../Mynd.Data/Mynd.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.EntityFrameworkCore >= 5.0.5",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.10.13",
+      "Mynd.Data >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -821,7 +840,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd.Data\\Mynd.Data.csproj": {
+              "projectPath": "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd.Data\\Mynd.Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

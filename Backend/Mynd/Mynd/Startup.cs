@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Mynd.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,7 +55,7 @@ namespace Mynd
                 "; Port=" + uri.Port +
                 "; SSL Mode=Require; Trust Server Certificate=true;";
             }
-            services.AddDbContext<YourDataContext>(opt =>
+            services.AddDbContext<MyndDbContext>(opt =>
                   opt.UseNpgsql(connectionString)
             );
 
