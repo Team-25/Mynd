@@ -27,3 +27,12 @@ C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\obj\Debug\net5.0\ref\Mynd.dll
 C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\obj\Debug\net5.0\Mynd.pdb
 C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\obj\Debug\net5.0\Mynd.genruntimeconfig.cache
 C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\obj\Debug\net5.0\Mynd.csprojAssemblyReference.cache
+C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\bin\Debug\net5.0\Npgsql.dll
+C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\bin\Debug\net5.0\Mynd.Data.dll
+C:\Projects\Mynd\Mynd\Backend\Mynd\Mynd\bin\Debug\net5.0\Mynd.Data.pdb

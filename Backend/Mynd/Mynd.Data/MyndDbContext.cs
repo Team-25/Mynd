@@ -7,5 +7,11 @@ namespace Mynd.Data.Models
 {
     public class MyndDbContext : DbContext
     {
+        public MyndDbContext(DbContextOptions<MyndDbContext> options)
+          : base(options)
+        {
+        }
+
+
     }
 }
