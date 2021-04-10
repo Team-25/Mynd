@@ -83,7 +83,21 @@ p {
   background-color: $background;
 }
 
+.loading {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100%;
+}
 
+.loadingContents {
+  text-align: center;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 /* 404 */
 #not-found {
