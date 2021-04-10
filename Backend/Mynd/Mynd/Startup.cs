@@ -32,6 +32,32 @@ namespace Mynd
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Mynd", Version = "v1" });
             });
+
+            //other service configuration goes here...
+            //pull in connection string
+            string connectionString = null;
+            string envVar = Environment.GetEnvironmentVariable("DATABASE_URL");
+            if (string.IsNullOrEmpty(envVar))
+            {
+                connectionString = Configuration["Connectionstrings:database"];
+            }
+            else
+            {
+                //parse database URL. Format is postgres://<username>:<password>@<host>/<dbname>
+                var uri = new Uri(envVar);
+                var username = uri.UserInfo.Split(':')[0];
+                var password = uri.UserInfo.Split(':')[1];
+                connectionString =
+                "; Database=" + uri.AbsolutePath.Substring(1) +
+                "; Username=" + username +
+                "; Password=" + password +
+                "; Port=" + uri.Port +
+                "; SSL Mode=Require; Trust Server Certificate=true;";
+            }
+            services.AddDbContext<YourDataContext>(opt =>
+                  opt.UseNpgsql(connectionString)
+            );
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
