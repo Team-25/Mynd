@@ -36,27 +36,57 @@ const Navbar = (props: IProps) => {
         navbarClasses.push('scrolled');
     }
 
+
+    const [mobileMenuClasses, setMobileMenuClasses] = React.useState(['navbar-mobile-menu']);
+
+    function showHideMenu() {
+        if (mobileMenuClasses.includes('hide-menu')) {
+            setMobileMenuClasses(['navbar-mobile-menu'])
+        } else {
+            setMobileMenuClasses(['navbar-mobile-menu', 'hide-menu']);
+        }
+    }
+
     return (
         <div className={navbarClasses.join(" ")}>
             <div className="navbar-inner">
-            <div className="nav-brand">
-                <Link to="/">Mynd</Link>
+                <div className="nav-brand">
+                    <Link to="/">Mynd</Link>
+                </div>
+                <div className="nav-item">
+                    <Link to="/">Home</Link>
+                </div>
+                <div className="nav-item">
+                    <Link to="/Calendar">Calendar</Link>
+                </div>
+                <div className="nav-item">
+                    <Link to="/">Temp 1</Link>
+                </div>
+                <div className="nav-item">
+                    <Link to="/">Temp 2</Link>
+                </div>
+                <div className="nav-user">
+                    <Link to="/">
+                        <Avatar src={img} alt="user"/>
+                    </Link>     
+                </div>
             </div>
-            <div className="nav-item">
-                <Link to="/">Home</Link>
-            </div>
-            <div className="nav-item">
-                <Link to="/Calendar">Calendar</Link>
-            </div>
-            <div className="nav-item">
-                    Temp 1
-            </div>
-            <div className="nav-item">
-                    Temp 2
-            </div>
-            <div className="nav-user">
-                    <Avatar src={img} alt="user"/>
-            </div>
+            <div className="navbar-mobile">
+                <div className="navbar-mobile-main">
+                    <Link to="/">Mynd</Link>
+                    <button onClick={() => showHideMenu()}>+</button>
+                </div>
+                <div className={mobileMenuClasses.join(" ")}>
+                    <ul>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/Calendar">Calendar</Link></li>
+                        <li><Link to="/">Temp 1</Link></li>
+                        <li><Link to="/">Temp 2</Link></li>
+                        <li><Link to="/">
+                            <Avatar src={img} alt="user"/>
+                        </Link> </li>
+                    </ul>
+                </div>
             </div>
         </div>
     );
