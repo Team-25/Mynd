@@ -23,7 +23,7 @@ namespace Mynd.Data.Models
         {
             modelBuilder.Entity<Creator>(entity =>
             {
-                entity.HasKey(x => x.Email);
+                entity.HasKey(x => x.Id);
             });
         }
     }
