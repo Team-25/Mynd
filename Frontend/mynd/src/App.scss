@@ -5,6 +5,8 @@
 @import './components/Homepage/Quote/Quote.scss';
 @import './components/Homepage/FAQs/FAQs.scss';
 @import './components/Footer/Footer.scss';
+@import './components/Navbar/navbar.scss';
+
 
 /*
 *   Primary BG: #2c2c2c
@@ -31,12 +33,17 @@ body {
   overflow-x: hidden;
   font-family: 'Lato';
   color: white;
+  background-color: $background;
 }
 
 p {
   line-height: 25px;
   word-spacing: .5px;
   font-size: 17px;
+}
+
+main {
+  padding-top: 60px;
 }
 
 

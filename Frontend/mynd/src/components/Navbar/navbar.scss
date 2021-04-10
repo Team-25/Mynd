@@ -1,0 +1,57 @@
+.navbar {
+    color: rgb(255, 255, 255);
+    z-index: 999;
+    transition: all .2s ease-in;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    background-color: #262525;
+    // Matches dimmed bg banner image
+}
+
+.nav-user, .nav-item, .nav-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.navbar-inner {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 60px;
+}
+
+.nav-brand {
+    width: 190px;
+    font-size: 20pt;
+    font-weight: 700;
+    a:hover {
+        color: #ed4f3a;
+    }
+}
+
+.nav-item {
+    display: flex;
+    letter-spacing: .5px;
+    &:hover {
+        /* These will be individually set later */
+        color: rgb(233, 171, 171);
+    }
+}
+
+.nav-user {
+    width: 100px;
+}
+
+.scrolled {
+    background-color: rgb(31, 31, 31);
+}
