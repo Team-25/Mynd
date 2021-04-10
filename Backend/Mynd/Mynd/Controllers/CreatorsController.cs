@@ -22,9 +22,9 @@ namespace Mynd.Controllers
         }
 
         [HttpGet("creators")]
-        public async Task<List<Creator>> GetCreators()
+        public async Task<List<Creator>> GetCreators(bool PPisBig)
         {
-            var creators = await _dbContext.Creators.ToListAsync();
+            var creators = await _dbContext.Creators.Where(x => x.BigPP == PPisBig).ToListAsync();
 
             return creators;
 
