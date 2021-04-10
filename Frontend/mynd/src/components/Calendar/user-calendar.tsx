@@ -57,7 +57,7 @@ class Calendar extends React.Component<IProps> {
                     <div className="calendar-grid">
                         <ol className="day">
                             {this.getFullMonth(this.state.selectedDate).map(
-                                (date) => <li key={date.toString()}>
+                                (date) => <li className="calendar-li" key={date.toString()}>
                                         <div className={this.dayColour(date)} onClick={() => this.setState({selectedDate: date})}>
                                             {format(date,'dd')}
                                         </div>
