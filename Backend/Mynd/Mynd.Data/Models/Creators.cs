@@ -3,7 +3,7 @@
 namespace Mynd.Data.Models
 {
     [Table("creators")]
-    class Creators
+    public class Creator
     {
         [Column("email")]
         public string Email { get; set; }
