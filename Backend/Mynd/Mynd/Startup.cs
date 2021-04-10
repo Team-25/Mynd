@@ -50,10 +50,10 @@ namespace Mynd
                 var username = uri.UserInfo.Split(':')[0];
                 var password = uri.UserInfo.Split(':')[1];
                 connectionString =
-                "; Database=" + uri.AbsolutePath.Substring(1) +
-                "; Username=" + username +
-                "; Password=" + password +
-                "; Port=" + uri.Port +
+                "; ec2-34-252-251-16.eu-west-1.compute.amazonaws.com=" + uri.AbsolutePath.Substring(1) +
+                "; khcqjignpthynu=" + username +
+                "; 829eab283b39cf51a98cc67d69feecae5172397d8bcea741fb9a05b03b03f404=" + password +
+                "; 5432=" + uri.Port +
                 "; SSL Mode=Require; Trust Server Certificate=true;";
             }
             services.AddDbContext<MyndDbContext>(opt =>
