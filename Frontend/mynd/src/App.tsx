@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import "./App.scss";
 import Home from './pages/Home';
@@ -10,9 +11,33 @@ import { auth } from './firebase';
 import Login from './components/Login/Login';
 import Spinner from 'react-spinkit';
 import Navbar from './components/Navbar/navbar';
+import Register from './components/Login/Register';
+import { useDispatch } from 'react-redux';
+import { login, logout } from './extra/appSlice';
 
 function App() {
   const [user, loading] = useAuthState(auth);
+  const dispatch = useDispatch();
+  let displayName: string = user?.displayName || '';
+
+  useEffect(() => {
+    auth.onAuthStateChanged(userAuth => {
+      if (userAuth) {
+        // user is logged in
+        dispatch(
+          login({
+            email: userAuth.email,
+            uid: userAuth.uid,
+            displayName: userAuth.displayName,
+            photoUrl: userAuth.photoURL,
+          })
+        );
+      } else {
+        // user is logged out
+        dispatch(logout());
+      }
+    });
+  }, [dispatch]);
 
   if (loading) {
     return (
@@ -29,27 +54,47 @@ function App() {
   }
 
   return (
-    <main>
-
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route path="/home">
-            <HeroSection name="Jimmy" />
-          </Route>
-          <Route path="/Calendar">
-            <CalendarPage />
-          </Route>
-          <Route exact path="/">
-            {/* TODO If user logged in show Home-user, otherwise Home */}
-            <Home />
-          </Route>
-          <Route path='*' exact={true} component={NotFound} />
-        </Switch>
-
-        <Footer />
-      </Router>
-    </main>
+    <Router>
+      {!user ? (
+        <>
+          <Switch>
+            <Route exact path='/'>
+              <Redirect to='/login' />
+            </Route>
+            <Route path='/login'>
+              <Login />
+            </Route>
+            <Route path='/register'>
+              <Register />
+            </Route>
+            <Route path='*' exact={true} component={Login} />
+          </Switch>
+        </>
+      ) : (
+        <>
+          <Navbar />
+          <Switch>
+            <Route path='/login'>
+              <Redirect to='/' />
+            </Route>
+            <Route path='/register'>
+              <Redirect to='/' />
+            </Route>
+            <Route path="/home">
+              <HeroSection name={displayName} />
+            </Route>
+            <Route path="/calendar">
+              <CalendarPage />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path='*' exact={true} component={NotFound} />
+          </Switch>
+        </>
+      )}
+      <Footer />
+    </Router>
   );
 }
 

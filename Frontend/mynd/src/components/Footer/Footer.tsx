@@ -33,6 +33,6 @@ const Footer = (props: IProps) => {
             </div>
         </footer>
     );
-}
+};
 
 export default Footer;

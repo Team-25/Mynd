@@ -21,6 +21,10 @@ $background: #2c2c2c;
 $dividerColor: black;
 $stripeWidth: 1000px;
 
+* {
+  margin: 0;
+}
+
 .App {
   text-align: center;
   margin: 0;
@@ -46,10 +50,6 @@ a {
   text-decoration: none;
   color: white;
   cursor: pointer;
-}
-
-main {
-  padding-top: 60px;
 }
 
 
