@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+/* 
+  when chat is implemented specific ones can be entered depending on the user
+  most of the user stuff is useless cos of firebase hooks but put them in anyway
+*/
 export const appSlice = createSlice({
   name: 'app',
   initialState: {

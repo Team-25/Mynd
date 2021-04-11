@@ -10,6 +10,7 @@ const Footer = (props: IProps) => {
     const [user] = useAuthState(auth);
 
     return (
+        // mostly just used for checking if thing worked
         <footer>
             <div className="footerLeft">
                 This is a footer.

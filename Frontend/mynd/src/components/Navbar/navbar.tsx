@@ -87,12 +87,12 @@ const Navbar = (props: IProps) => {
                 <div className={mobileMenuClasses.join(" ")}>
                     <ul>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/Calendar">Calendar</Link></li>
+                        <li><Link to="/calendar">Calendar</Link></li>
                         <li><Link to="/">Temp 1</Link></li>
                         <li><Link to="/">Temp 2</Link></li>
                         <li>
                             <Link to="/">
-                                <Avatar src={photoURL} alt="user" />
+                                <Avatar src={photoURL} alt={displayName} />
                             </Link>
                         </li>
                         <li>

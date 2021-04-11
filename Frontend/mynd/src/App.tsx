@@ -16,7 +16,9 @@ import { useDispatch } from 'react-redux';
 import { login, logout } from './extra/appSlice';
 
 function App() {
+  // loads user from firebase
   const [user, loading] = useAuthState(auth);
+  // redux stuff
   const dispatch = useDispatch();
   let displayName: string = user?.displayName || '';
 
@@ -39,6 +41,7 @@ function App() {
     });
   }, [dispatch]);
 
+  // when content is loading it shows a nice ball spinning
   if (loading) {
     return (
       <div className="loading">
@@ -54,7 +57,12 @@ function App() {
   }
 
   return (
+    /*
+      very poorly done but ensures you remain on either login or register
+      will add a specific home page and a user one later
+    */
     <Router>
+      /* */
       {!user ? (
         <>
           <Switch>
