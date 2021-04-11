@@ -3,6 +3,7 @@ import { Avatar } from '@material-ui/core';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 interface IProps {
 
@@ -72,6 +73,11 @@ const Navbar = (props: IProps) => {
                         <Avatar src={photoURL} alt={displayName} />
                     </Link>
                 </div>
+                <div className="nav-icon">
+                    <ExitToAppIcon
+                        onClick={() => auth.signOut()}
+                    />
+                </div>
             </div>
             <div className="navbar-mobile">
                 <div className="navbar-mobile-main">
@@ -84,9 +90,14 @@ const Navbar = (props: IProps) => {
                         <li><Link to="/Calendar">Calendar</Link></li>
                         <li><Link to="/">Temp 1</Link></li>
                         <li><Link to="/">Temp 2</Link></li>
-                        <li><Link to="/">
-                            <Avatar src={photoURL} alt="user" />
-                        </Link> </li>
+                        <li>
+                            <Link to="/">
+                                <Avatar src={photoURL} alt="user" />
+                            </Link>
+                        </li>
+                        <li>
+                            <ExitToAppIcon />
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import { auth, provider } from '../../firebase';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../../extra/appSlice';
+import GoogleIcon from '../../img/googleIcon.png';
 
 interface IProps {
 }
@@ -46,40 +47,44 @@ const Register = (props: IProps) => {
 
   return (
     <RegisterContainer>
-      <h1>Register</h1>
-      <form>
-        <input
-          type="text"
-          value={name}
-          onChange={e => setName(e.target.value)}
-          placeholder="Full name (required if registering)"
-        />
-        <input
-          type="text"
-          value={profilePic}
-          onChange={e => setProfilePic(e.target.value)}
-          placeholder="Profile picture URL (optional)"
-        />
-        <input
-          type="email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          placeholder="Email"
-        />
-        <input
-          type="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <Button type="submit" onClick={register}>Register</Button>
-      </form>
-      <Button onClick={signUpGoogle}>
-        Google Sign Up
-      </Button>
-      <Button href='/login'>
-        Or Login
-      </Button>
+      <RegisterInnerContainer>
+        <h1>Mynd</h1>
+        <h2>Register</h2>
+        <form>
+          <input
+            type="text"
+            value={name}
+            onChange={e => setName(e.target.value)}
+            placeholder="Full name"
+          />
+          <input
+            type="text"
+            value={profilePic}
+            onChange={e => setProfilePic(e.target.value)}
+            placeholder="Profile picture URL"
+          />
+          <input
+            type="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            placeholder="Email"
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            placeholder="Password"
+          />
+          <Button className='button' type="submit" onClick={register}>Register</Button>
+          <Button className='button' onClick={signUpGoogle}>
+            <img src={GoogleIcon} />
+            Google Register
+          </Button>
+          <Button className='button' href='/login'>
+            Or Login
+          </Button>
+        </form>
+      </RegisterInnerContainer>
     </RegisterContainer>
   );
 };
@@ -87,12 +92,64 @@ const Register = (props: IProps) => {
 export default Register;
 
 const RegisterContainer = styled.div`
-  background-color: #f2f2f2;
+  background-color: #2c2c2c;
   height: 100vh;
+  display: grid;
+  place-items: center;
+`;
+
+const RegisterInnerContainer = styled.div`
+  padding: 100px;
+  text-align: center;
+  background: linear-gradient(to bottom, #66ffcc 0%, #99ff99 100%);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 255, 0, 1), 0 1px 2px rgba(0, 0, 0, 0.24);
   display: grid;
   place-items: center;
 
   > h1 {
+    color: #ed4f3a;
+  }
+
+  > h2 {
     color: black;
+  }
+
+  > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > input {
+      width: 35vw;
+      height: 5vh;
+      font-size: 20px;
+      padding-left: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    > .button {
+      width: 36vw;
+      height: 5vh;
+      font-size: medium;
+      color: #fff;
+      background-color: #26a8ff;
+      border-radius: 5px;
+      margin-bottom: 7px;
+
+      :hover {
+        background-color: white;
+        transition: 0.2s;
+        color: black;
+        cursor: pointer;
+      }
+
+      img {
+        object-fit: contain;
+        height: 15px;
+        margin-right: 5px;
+      }
+    }
   }
 `;

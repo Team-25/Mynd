@@ -10,19 +10,17 @@ footer {
 }
 
 .footerLeft {
-    flex: 0.4;
+    flex: 0.33;
     display: flex;
-    align-items: center;
-    margin-left: 20px;
 }
 
 .footerCenter {
-    flex: 0.3;
+    flex: 0.33;
     display: flex;
 }
 
 .footerRight {
-    flex: 0.3;
+    flex: 0.33;
     display: flex;
     align-items: flex-end;
 }

@@ -67,7 +67,9 @@ function App() {
             <Route path='/register'>
               <Register />
             </Route>
-            <Route path='*' exact={true} component={Login} />
+            <Route path='*' exact={true}>
+              <Redirect to='/login' />
+            </Route>
           </Switch>
         </>
       ) : (

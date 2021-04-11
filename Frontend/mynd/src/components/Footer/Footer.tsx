@@ -28,7 +28,7 @@ const Footer = (props: IProps) => {
                         Sign Out {user?.displayName}
                     </Button>
                 ) : (
-                    <p>:)</p>
+                    <p>Logged Out</p>
                 )}
             </div>
         </footer>
