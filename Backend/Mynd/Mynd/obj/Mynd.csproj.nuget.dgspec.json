@@ -4,14 +4,14 @@
     "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd\\Mynd.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd\\Mynd.csproj": {
+    "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd.Data\\Mynd.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd\\Mynd.csproj",
-        "projectName": "Mynd",
-        "projectPath": "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd\\Mynd.csproj",
+        "projectUniqueName": "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd.Data\\Mynd.Data.csproj",
+        "projectName": "Mynd.Data",
+        "projectPath": "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd.Data\\Mynd.Data.csproj",
         "packagesPath": "C:\\Users\\Bistra\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd\\obj\\",
+        "outputPath": "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bistra\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,101 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd\\Mynd.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd\\Mynd.csproj",
+        "projectName": "Mynd",
+        "projectPath": "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd\\Mynd.csproj",
+        "packagesPath": "C:\\Users\\Bistra\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Bistra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd.Data\\Mynd.Data.csproj": {
+                "projectPath": "C:\\Projects\\Mynd\\Mynd\\Backend\\Mynd\\Mynd.Data\\Mynd.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.10.13, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

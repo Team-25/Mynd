@@ -26,7 +26,7 @@ $box-shadow: 10px 1px 10px #00000041;
   text-align: center;
   border-radius: 25px;
   margin: 0 auto;
-  margin-top: 35px;
+  margin-top:2%;
   margin-bottom: 25px;
   padding: 10px;
   padding-bottom: 30px;
@@ -37,6 +37,7 @@ $box-shadow: 10px 1px 10px #00000041;
 //div container for events on selected day
 .selected-day-events {
   text-align: center;
+  color: black;
   background: $light-container;
   border-radius: 25px;
   margin: 0 auto;
@@ -50,12 +51,13 @@ $box-shadow: 10px 1px 10px #00000041;
 //div container for todays day events
 .calendar-upcoming-events {
   background: $light-container;
+  color: black;
   text-align: center;
   border-radius: 25px;
   overflow-y:auto;
-  max-height: 88vh;
+  max-height: 89vh;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top:1%;
   margin-left: 25px;
   box-shadow: $box-shadow;
 }
@@ -82,7 +84,7 @@ $box-shadow: 10px 1px 10px #00000041;
   background: rgb(160, 193, 255);
   border-radius:4px;
   border: 2px solid #666;
-  color: rgb(255, 255, 255);
+  color: white;
   text-align: center;
   &:hover {
     background: rgb(166, 195, 248);
@@ -140,7 +142,7 @@ $box-shadow: 10px 1px 10px #00000041;
 }
   
 //all list items (event cards and days)
-li {
+.calendar-events-items, .calendar-li, .day-name {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,7 +157,7 @@ ul.weekdays abbr[title] {
 
 //Responsive design
 @media all and (max-width: 900px) {
-  ul, ol {
+  .weekdays, .day {
     grid-gap: .25em;
   }
 

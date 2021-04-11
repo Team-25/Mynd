@@ -482,3 +482,6 @@ docs/reference_guides/_storybook_build_output/
 *.suo
 Backend/Mynd/.vs/Mynd/v16/.suo
 *.v2
+*.cache
+*.cache
+*.cache

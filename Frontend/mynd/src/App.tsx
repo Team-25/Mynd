@@ -9,6 +9,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebase';
 import Login from './components/Login/Login';
 import Spinner from 'react-spinkit';
+import Navbar from './components/Navbar/navbar';
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -28,30 +29,27 @@ function App() {
   }
 
   return (
-    <Router>
-      {!user ? (
-        <Login />
-      ) : (
-        <>
-          <Switch>
-            <Route path="/home">
-              <HeroSection name="Jimmy" />
-            </Route>
-            <Route path="/calendar">
-              <CalendarPage />
-            </Route>
-            <Route exact path="/">
-              {/* TODO If user logged in show Home-user, otherwise Home */}
-              <Home />
-            </Route>
-            <Route path='*' exact={true} component={NotFound} />
-          </Switch>
-        </>
-      )}
+    <main>
 
-      <Footer />
-    </Router>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/home">
+            <HeroSection name="Jimmy" />
+          </Route>
+          <Route path="/Calendar">
+            <CalendarPage />
+          </Route>
+          <Route exact path="/">
+            {/* TODO If user logged in show Home-user, otherwise Home */}
+            <Home />
+          </Route>
+          <Route path='*' exact={true} component={NotFound} />
+        </Switch>
 
+        <Footer />
+      </Router>
+    </main>
   );
 }
 
