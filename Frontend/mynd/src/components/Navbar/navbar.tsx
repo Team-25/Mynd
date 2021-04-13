@@ -1,22 +1,18 @@
 import { Link } from 'react-router-dom';
 import { Avatar } from '@material-ui/core';
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+
 
 interface IProps {
 
 }
 
-interface IState {
-    currentDate: Date;
-    selectedDate: Date;
-}
-
 const Navbar = (props: IProps) => {
     const [user] = useAuthState(auth);
-    const [scrolled, setScrolled] = React.useState(false);
+    const [scrolled, setScrolled] = useState(false);
     let photoURL: string = user?.photoURL || '';
     let displayName: string = user?.displayName || '';
 
@@ -30,7 +26,7 @@ const Navbar = (props: IProps) => {
         }
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         window.addEventListener('scroll', handleScroll);
     });
 
@@ -40,7 +36,7 @@ const Navbar = (props: IProps) => {
     }
 
 
-    const [mobileMenuClasses, setMobileMenuClasses] = React.useState(['navbar-mobile-menu']);
+    const [mobileMenuClasses, setMobileMenuClasses] = useState(['navbar-mobile-menu', 'hide-menu']);
 
     function showHideMenu() {
         if (mobileMenuClasses.includes('hide-menu')) {
