@@ -3,7 +3,7 @@
     z-index: 999;
     transition: all .2s ease-in;
     width: 100%;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     height: 60px;
@@ -11,12 +11,18 @@
     // Matches dimmed bg banner image
 }
 
-.nav-user, .nav-item, .nav-brand {
+.nav-user, .nav-item, .nav-brand, .nav-icon {
     display: flex;
     justify-content: center;
     align-items: center;
 
     a {
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+    }
+    
+    > .MuiSvgIcon-root {
         text-decoration: none;
         color: white;
         cursor: pointer;
@@ -53,6 +59,14 @@
     width: 100px;
     img {
         cursor: pointer;
+    }
+}
+
+.nav-icon {
+    display: flex;
+    :hover {
+        /* These will be individually set later */
+        color: rgb(16, 187, 0);
     }
 }
 

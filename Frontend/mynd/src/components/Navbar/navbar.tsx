@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-
 import { Avatar } from '@material-ui/core';
 import React from 'react';
-import img from '../../img/person1.jpg';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../firebase';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 interface IProps {
 
@@ -14,25 +15,27 @@ interface IState {
 }
 
 const Navbar = (props: IProps) => {
+    const [user] = useAuthState(auth);
+    const [scrolled, setScrolled] = React.useState(false);
+    let photoURL: string = user?.photoURL || '';
+    let displayName: string = user?.displayName || '';
 
-    const [scrolled,setScrolled] = React.useState(false);
-
-    const handleScroll=() => {
-        const offset=window.scrollY;
-        if(offset > 1 ){
+    const handleScroll = () => {
+        const offset = window.scrollY;
+        if (offset > 1) {
             setScrolled(true);
         }
-        else{
+        else {
             setScrolled(false);
         }
-    }
+    };
 
     React.useEffect(() => {
-        window.addEventListener('scroll',handleScroll)
-    })
+        window.addEventListener('scroll', handleScroll);
+    });
 
     let navbarClasses = ['navbar'];
-    if(scrolled){
+    if (scrolled) {
         navbarClasses.push('scrolled');
     }
 
@@ -41,7 +44,7 @@ const Navbar = (props: IProps) => {
 
     function showHideMenu() {
         if (mobileMenuClasses.includes('hide-menu')) {
-            setMobileMenuClasses(['navbar-mobile-menu'])
+            setMobileMenuClasses(['navbar-mobile-menu']);
         } else {
             setMobileMenuClasses(['navbar-mobile-menu', 'hide-menu']);
         }
@@ -54,10 +57,10 @@ const Navbar = (props: IProps) => {
                     <Link to="/">Mynd</Link>
                 </div>
                 <div className="nav-item">
-                    <Link to="/">Home</Link>
+                    <Link to="/home">Home</Link>
                 </div>
                 <div className="nav-item">
-                    <Link to="/Calendar">Calendar</Link>
+                    <Link to="/calendar">Calendar</Link>
                 </div>
                 <div className="nav-item">
                     <Link to="/">Temp 1</Link>
@@ -67,8 +70,13 @@ const Navbar = (props: IProps) => {
                 </div>
                 <div className="nav-user">
                     <Link to="/">
-                        <Avatar src={img} alt="user"/>
-                    </Link>     
+                        <Avatar src={photoURL} alt={displayName} />
+                    </Link>
+                </div>
+                <div className="nav-icon">
+                    <ExitToAppIcon
+                        onClick={() => auth.signOut()}
+                    />
                 </div>
             </div>
             <div className="navbar-mobile">
@@ -79,17 +87,22 @@ const Navbar = (props: IProps) => {
                 <div className={mobileMenuClasses.join(" ")}>
                     <ul>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/Calendar">Calendar</Link></li>
+                        <li><Link to="/calendar">Calendar</Link></li>
                         <li><Link to="/">Temp 1</Link></li>
                         <li><Link to="/">Temp 2</Link></li>
-                        <li><Link to="/">
-                            <Avatar src={img} alt="user"/>
-                        </Link> </li>
+                        <li>
+                            <Link to="/">
+                                <Avatar src={photoURL} alt={displayName} />
+                            </Link>
+                        </li>
+                        <li>
+                            <ExitToAppIcon />
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     );
-}
+};
 
 export default Navbar;
