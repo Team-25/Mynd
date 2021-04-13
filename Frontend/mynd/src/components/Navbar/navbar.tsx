@@ -8,11 +8,6 @@ interface IProps {
 
 }
 
-interface IState {
-    currentDate: Date;
-    selectedDate: Date;
-}
-
 const Navbar = (props: IProps) => {
 
     const [scrolled,setScrolled] = React.useState(false);
@@ -37,7 +32,7 @@ const Navbar = (props: IProps) => {
     }
 
 
-    const [mobileMenuClasses, setMobileMenuClasses] = React.useState(['navbar-mobile-menu']);
+    const [mobileMenuClasses, setMobileMenuClasses] = React.useState(['navbar-mobile-menu', 'hide-menu']);
 
     function showHideMenu() {
         if (mobileMenuClasses.includes('hide-menu')) {
