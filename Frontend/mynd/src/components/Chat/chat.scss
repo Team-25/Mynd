@@ -1,0 +1,32 @@
+$container: #1f1f1f;
+$background: #2c2c2c;
+
+.chat-page-container {
+    background: $background;
+}
+
+.chat-container {
+    background: $container;
+    height: 100vh;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    overflow-y:auto;
+}
+.message {
+    border-radius: 25px;
+    width: fit-content;
+    max-width: 50%;
+    margin: 10px;
+    padding: 5px;
+    text-align:left;
+}
+
+.matcher {
+    background:teal;
+}
+
+.user {
+    margin-left: auto;
+    background:steelblue;
+}
