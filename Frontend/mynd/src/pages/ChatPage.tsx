@@ -4,33 +4,21 @@ import Chat from '../components/Chat/chat'
 import '../components/Chat/chat.scss'
 
 interface IProps {
-
 }
 
-interface IState {
-}
-
-class CalendarPage extends React.Component<IProps> {
-    constructor(props: IProps) {
-        super(props);
-    }
-
-    state: IState = {
-    }
-
-    render() {
-        return (
-            <div className="chat-page-container">
-                <Grid container spacing={2}>
-                    <Grid item xs={3}>
-                        <div className="people">HELLO</div>
-                    </Grid>
-                    <Grid item xs={9}>
-                        <Chat />
-                    </Grid>
+const ChatPage = (props: IProps) => {
+    return (
+        <div className="chat-page-container">
+            <Grid container spacing={2}>
+                <Grid item xs={2}>
+                    <div className="people">HELLO</div>
                 </Grid>
-            </div>
-        )
-    }
+                <Grid item xs={10}>
+                    <Chat />
+                </Grid>
+            </Grid>
+        </div>
+    )
 }
-export default CalendarPage;
+
+export default ChatPage;

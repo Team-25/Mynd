@@ -1,4 +1,4 @@
-$container: #1f1f1f;
+$chat-container: #1f1f1f;
 $background: #2c2c2c;
 
 .chat-page-container {
@@ -6,9 +6,9 @@ $background: #2c2c2c;
 }
 
 .chat-container {
-    background: $container;
-    height: 100vh;
-    padding: 5%;
+    background: $chat-container;
+    height: 75vh;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     overflow-y:auto;
@@ -18,7 +18,7 @@ $background: #2c2c2c;
     width: fit-content;
     max-width: 50%;
     margin: 10px;
-    padding: 5px;
+    padding: 10px;
     text-align:left;
 }
 
@@ -29,4 +29,11 @@ $background: #2c2c2c;
 .user {
     margin-left: auto;
     background:steelblue;
+}
+
+.chat-message-input {
+    background: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 auto;
 }
