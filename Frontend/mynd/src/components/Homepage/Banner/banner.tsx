@@ -11,7 +11,7 @@ const Banner = (props: IProps) => {
 
     return (
         <div className="homepage-banner-img">
-            <img src={img} alt="homepage banner"/>
+            <img src={img} alt="homepage banner" />
             <div className="homepage-banner-text">
                 <h1>{props.title}</h1>
                 <p>{props.description}</p>
