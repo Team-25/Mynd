@@ -5,13 +5,13 @@ import Quote from '../components/Homepage/Quote/Quote';
 import Container from '@material-ui/core/Container';
 
 
-import img from '../img/face.jpg';
+import img from '../img/test.png';
 import FAQs from '../components/Homepage/FAQs/FAQs';
 
 const Home = () => {
     return (
         <>
-            <Banner title="Mynd" description="An awesome description about our site"/>
+            <Banner title="" description="Join hundreds of others giving and receiving peer support now! En stuff"/>
             
             <DescriptionBlock image={img} />
 

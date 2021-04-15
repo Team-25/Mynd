@@ -31,6 +31,10 @@ $stripeWidth: 1000px;
   font-family: 'Lato';
 }
 
+.app-container {
+  min-height: 80vh;
+}
+
 body {
   margin: 0;
   padding: 0;
