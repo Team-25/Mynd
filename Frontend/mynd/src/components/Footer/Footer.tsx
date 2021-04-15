@@ -12,25 +12,44 @@ const Footer = (props: IProps) => {
     return (
         // mostly just used for checking if thing worked
         <footer>
-            <div className="footerLeft">
-                This is a footer.
+            <div className="inner-footer">
+                <div className="footer-top">
+                    <h1>Mynd</h1>
+                    <span>General</span>
+                    <span>Features</span>
+                    <span>User</span>
+                </div>
+                <div className="footer-bottom">
+                    <div className="footer-brand">
+                    </div>
+                    <div className="footer-section">
+                        <p>Link 1</p>
+                        <p>Link 2</p>
+                        <p>Link 3</p>
+                        <p>Link 4</p>
+                    </div>
+                    <div className="footer-section">
+                        <p>Link 1</p>
+                        <p>Link 2</p>
+                        <p>Link 3</p>
+                        <p>Link 4</p>
+                    </div>
+                    <div className="footer-section">
+                        {user ? (
+                            <button onClick={() => auth.signOut()}>
+                                Sign Out
+                            </button>
+                        ) : (
+                            <p>Logged Out</p>
+                        )}
+                        <p>My Chats</p>
+                        <p>Recent</p>
+                        <p>Link 4</p>
+                    </div>
+                </div>
             </div>
-            <div className="footerCenter">
-                <Link to='/home'>
-                    Home
-                </Link>
-                <Link to='/calendar'>
-                    Calendar
-                </Link>
-            </div>
-            <div className="footerRight">
-                {user ? (
-                    <Button onClick={() => auth.signOut()}>
-                        Sign Out {user?.displayName}
-                    </Button>
-                ) : (
-                    <p>Logged Out</p>
-                )}
+            <div className="copyright">
+                Made by Mynd
             </div>
         </footer>
     );
