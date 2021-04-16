@@ -35,7 +35,7 @@ namespace Mynd
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Mynd", Version = "v1" });
             });
 
-            services.AddDbContext<MyndDbContext>(options => options.UseNpgsql("Host=ec2-34-252-251-16.eu-west-1.compute.amazonaws.com;Port=5432;Database=dcb4tfra5s5jra;Username=khcqjignpthynu;Password=829eab283b39cf51a98cc67d69feecae5172397d8bcea741fb9a05b03b03f404;SSL Mode=Require;Trust Server Certificate=true"));
+            services.AddDbContext<MyndDbContext>(options => options.UseNpgsql("Host=mynd-database.ccmbomihbgdq.eu-west-2.rds.amazonaws.com;Port=1500;Database=postgres;Username=postgres;Password=mynd-database;Trust Server Certificate=true"));
 
 
             //other service configuration goes here...
