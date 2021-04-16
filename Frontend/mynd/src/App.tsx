@@ -62,6 +62,7 @@ function App() {
       will add a specific home page and a user one later
     */
     <Router>
+      <div className="app-container">
       {!user ? (
         <>
           <Switch>
@@ -102,6 +103,7 @@ function App() {
           </Switch>
         </>
       )}
+      </div>
       <Footer />
     </Router>
   );
