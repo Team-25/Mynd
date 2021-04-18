@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import "./App.scss";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
+import './App.scss';
 import Home from './pages/Home';
 import HeroSection from './components/Homepage/HeroSection/user-hero-section';
 import Footer from './components/Footer/Footer';
@@ -23,7 +28,7 @@ function App() {
   let displayName: string = user?.displayName || '';
 
   useEffect(() => {
-    auth.onAuthStateChanged(userAuth => {
+    auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
         // user is logged in
         dispatch(
@@ -44,13 +49,9 @@ function App() {
   // when content is loading it shows a nice ball spinning
   if (loading) {
     return (
-      <div className="loading">
-        <div className="loadingContents">
-          <Spinner
-            name='ball-spin-fade-loader'
-            color='purple'
-            fadeIn='none'
-          />
+      <div className='loading'>
+        <div className='loadingContents'>
+          <Spinner name='ball-spin-fade-loader' color='purple' fadeIn='none' />
         </div>
       </div>
     );
@@ -62,47 +63,44 @@ function App() {
       will add a specific home page and a user one later
     */
     <Router>
-      <div className="app-container">
-      {!user ? (
-        <>
-          <Switch>
-            <Route exact path='/'>
-              <Redirect to='/login' />
-            </Route>
-            <Route path='/login'>
-              <Login />
-            </Route>
-            <Route path='/register'>
-              <Register />
-            </Route>
-            <Route path='*' exact={true}>
-              <Redirect to='/login' />
-            </Route>
-          </Switch>
-        </>
-      ) : (
-        <>
-          <Navbar />
-          <Switch>
-            <Route path='/login'>
-              <Redirect to='/' />
-            </Route>
-            <Route path='/register'>
-              <Redirect to='/' />
-            </Route>
-            <Route path="/home">
-              <HeroSection name={displayName} />
-            </Route>
-            <Route path="/calendar">
-              <CalendarPage />
-            </Route>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path='*' exact={true} component={NotFound} />
-          </Switch>
-        </>
-      )}
+      <div className='app-container'>
+        {!user ? (
+          <>
+            <Switch>
+              <Route exact path='/'>
+                <Home />
+              </Route>
+              <Route path='/login'>
+                <Login />
+              </Route>
+              <Route path='/register'>
+                <Register />
+              </Route>
+            </Switch>
+          </>
+        ) : (
+          <>
+            <Navbar />
+            <Switch>
+              <Route path='/login'>
+                <Redirect to='/' />
+              </Route>
+              <Route path='/register'>
+                <Redirect to='/' />
+              </Route>
+              <Route path='/home'>
+                <HeroSection name={displayName} />
+              </Route>
+              <Route path='/calendar'>
+                <CalendarPage />
+              </Route>
+              <Route exact path='/'>
+                <Home />
+              </Route>
+              <Route path='*' exact={true} component={NotFound} />
+            </Switch>
+          </>
+        )}
       </div>
       <Footer />
     </Router>

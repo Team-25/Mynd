@@ -4,27 +4,27 @@ import Quote from '../components/Homepage/Quote/Quote';
 
 import Container from '@material-ui/core/Container';
 
-
 import img from '../img/test.png';
 import FAQs from '../components/Homepage/FAQs/FAQs';
 
 const Home = () => {
-    return (
-        <>
-            <Banner title="" description="Join hundreds of others giving and receiving peer support now! En stuff"/>
-            
-            <DescriptionBlock image={img} />
+  return (
+    <>
+      <Banner
+        title=''
+        description='Join hundreds of others giving and receiving peer support now! En stuff'
+      />
 
-            <Quote quote="An awesome quote from our company!" author="Mynd CEO"/>
+      <DescriptionBlock image={img} />
 
-            <FAQs />
+      <Quote quote='An awesome quote from our company!' author='Mynd CEO' />
 
-            {/* Temporary space filler */}
-            <div id="background-stripe"></div>
-            
-        </>
-    );
-}
+      <FAQs />
 
+      {/* Temporary space filler */}
+      <div id='background-stripe'></div>
+    </>
+  );
+};
 
 export default Home;
