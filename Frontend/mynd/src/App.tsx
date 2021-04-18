@@ -19,6 +19,8 @@ import Navbar from './components/Navbar/navbar';
 import Register from './components/Login/Register';
 import { useDispatch } from 'react-redux';
 import { login, logout } from './extra/appSlice';
+import ChatPage from './pages/ChatPage';
+import News from './components/News/News';
 
 function App() {
   // loads user from firebase
@@ -76,6 +78,9 @@ function App() {
               <Route path='/register'>
                 <Register />
               </Route>
+              <Route path='*' exact={true}>
+                <Home />
+              </Route>
             </Switch>
           </>
         ) : (
@@ -93,6 +98,12 @@ function App() {
               </Route>
               <Route path='/calendar'>
                 <CalendarPage />
+              </Route>
+              <Route path='/chat'>
+                <ChatPage />
+              </Route>
+              <Route path='/news'>
+                <News />
               </Route>
               <Route exact path='/'>
                 <Home />
