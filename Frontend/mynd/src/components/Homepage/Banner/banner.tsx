@@ -17,6 +17,7 @@ const Banner = (props: IProps) => {
           </h1>
           <p>{props.description}</p>
           <a href='/register'>Register!</a>
+          <a href='/login'>Login!</a>
           <a href='/about'>About Mynd</a>
         </div>
         <img src={img} alt='test' />

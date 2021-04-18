@@ -45,9 +45,13 @@ footer {
     padding-left: 30px;
 
     > button {
+      font: inherit;
+      color: white;
+      cursor: pointer;
       background: none;
       border: none;
       padding: 0;
+      line-height: 28px;
       text-decoration: none;
     }
   }

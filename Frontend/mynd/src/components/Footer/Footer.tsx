@@ -13,7 +13,9 @@ const Footer = (props: IProps) => {
     <footer>
       <div className='inner-footer'>
         <div className='footer-top'>
-          <h1>Mynd</h1>
+          <Link to='/'>
+            <h1>Mynd</h1>
+          </Link>
           <span>General</span>
           <span>Features</span>
           <span>User</span>
@@ -38,7 +40,9 @@ const Footer = (props: IProps) => {
             ) : (
               <p>Logged Out</p>
             )}
-            <p>My Chats</p>
+            <Link to='/chat'>
+              <p>My Chats</p>
+            </Link>
             <p>Recent</p>
             <p>Link 4</p>
           </div>

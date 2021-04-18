@@ -56,10 +56,10 @@ const Navbar = (props: IProps) => {
           <Link to='/calendar'>Calendar</Link>
         </div>
         <div className='nav-item'>
-          <Link to='/'>Temp 1</Link>
+          <Link to='/chat/'>Chat</Link>
         </div>
         <div className='nav-item'>
-          <Link to='/'>Temp 2</Link>
+          <Link to='/news'>News</Link>
         </div>
         <div className='nav-user'>
           <Link to='/'>
@@ -81,10 +81,10 @@ const Navbar = (props: IProps) => {
               <Link to='/calendar'>Calendar</Link>
             </li>
             <li>
-              <Link to='/'>Temp 1</Link>
+              <Link to='/'>Chat</Link>
             </li>
             <li>
-              <Link to='/'>Temp 2</Link>
+              <Link to='/'>News</Link>
             </li>
             <li>
               <Link to='/'>

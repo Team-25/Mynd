@@ -57,6 +57,10 @@
   img {
     cursor: pointer;
   }
+  :hover {
+    transition: 0.2s;
+    opacity: 0.9;
+  }
 }
 
 .scrolled {
