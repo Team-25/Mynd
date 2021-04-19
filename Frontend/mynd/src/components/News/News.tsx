@@ -1,7 +1,14 @@
+import { Button } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { auth, db } from '../../firebase';
+import { enterChat } from '../../extra/appSlice';
+import { Link } from 'react-router-dom';
 
 function News() {
+  const [user] = useAuthState(auth);
   const [cards, setCards] = useState([]);
 
   const endpoint =

@@ -9,8 +9,8 @@ interface IProps {}
 const Navbar = (props: IProps) => {
   const [user] = useAuthState(auth);
   const [scrolled, setScrolled] = useState(false);
-  let photoURL: string = user?.photoURL || '';
   let displayName: string = user?.displayName || '';
+  let photoURL: string = user?.photoURL || displayName[0];
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -63,7 +63,7 @@ const Navbar = (props: IProps) => {
         </div>
         <div className='nav-user'>
           <Link to='/'>
-            <Avatar src={photoURL} alt={displayName} />
+            <Avatar src={photoURL} alt={displayName[0]} />
           </Link>
         </div>
       </div>
@@ -88,7 +88,7 @@ const Navbar = (props: IProps) => {
             </li>
             <li>
               <Link to='/'>
-                <Avatar src={photoURL} alt={displayName} />
+                <Avatar src={photoURL} />
               </Link>
             </li>
           </ul>

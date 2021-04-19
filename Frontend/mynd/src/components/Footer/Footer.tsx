@@ -23,7 +23,9 @@ const Footer = (props: IProps) => {
         <div className='footer-bottom'>
           <div className='footer-brand'></div>
           <div className='footer-section'>
-            <p>Link 1</p>
+            <Link to='/news'>
+              <p>News</p>
+            </Link>
             <p>Link 2</p>
             <p>Link 3</p>
             <p>Link 4</p>
@@ -44,7 +46,7 @@ const Footer = (props: IProps) => {
               <p>My Chats</p>
             </Link>
             <p>Recent</p>
-            <p>Link 4</p>
+            <p>Profile</p>
           </div>
         </div>
       </div>

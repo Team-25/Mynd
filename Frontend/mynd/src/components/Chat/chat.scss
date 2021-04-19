@@ -7,11 +7,12 @@ $background: #2c2c2c;
 
 .chat-container {
   background: $chat-container;
-  height: 75vh;
+  height: 88vh;
   padding: 5px;
   display: flex;
   flex-direction: column-reverse;
   overflow-y: auto;
+  justify-content: space-between;
 }
 
 .message {
@@ -20,16 +21,31 @@ $background: #2c2c2c;
   max-width: 50%;
   margin: 10px;
   padding: 10px;
-  text-align: left;
+  display: flex;
+
+  > .avatar {
+    object-fit: contain;
+  }
 }
 
 .matcher {
   background: teal;
+
+  > .avatar {
+    margin-right: 10px;
+    order: 0;
+  }
 }
 
 .user {
   margin-left: auto;
   background: tomato;
+
+  > .avatar {
+    cursor: pointer;
+    margin-left: 10px;
+    order: 1;
+  }
 }
 
 .chat-message-input {

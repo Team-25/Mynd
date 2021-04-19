@@ -6,6 +6,7 @@ import firebase from 'firebase/app';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import ChatSidebar from './chat-sidebar';
 import { useParams } from 'react-router-dom';
+import { Avatar } from '@material-ui/core';
 
 interface IProps {}
 
@@ -32,6 +33,7 @@ const Chat = (props: IProps) => {
   }, [roomId, messages]);
 
   const handleChange = (e: any) => {
+    e.preventDefault();
     setMessage(e.target.value);
   };
 
@@ -45,6 +47,8 @@ const Chat = (props: IProps) => {
         text: message,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         user: user.uid,
+        photo: user.photoURL,
+        name: user.displayName,
       });
     }
   };
@@ -67,6 +71,11 @@ const Chat = (props: IProps) => {
                   }
                   key={doc.id}
                 >
+                  <Avatar
+                    className='avatar'
+                    src={doc.data().photo}
+                    alt={doc.data().name}
+                  />
                   <p>{doc.data().text}</p>
                 </div>
               ))}
