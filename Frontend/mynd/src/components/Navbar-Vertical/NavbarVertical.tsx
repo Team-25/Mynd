@@ -1,7 +1,7 @@
 import './NavbarVertical.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBrain, faCalendar, faComment, faComments, faHome, faInbox, faNewspaper, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faBrain, faCalendar, faComments, faHome, faInbox, faNewspaper, faUser } from '@fortawesome/free-solid-svg-icons'
 
 
 import { NavLink, Link } from 'react-router-dom';
@@ -9,17 +9,16 @@ import { Avatar } from '@material-ui/core';
 import { useState, useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 
 interface IProps {
 
 }
 
-const Navbar = (props: IProps) => {
+const NavbarVertical = (props: IProps) => {
     const [user] = useAuthState(auth);
     let photoURL: string = user?.photoURL || '';
-    let displayName: string = user?.displayName || '';
+    let displayName: string = "Hi, " + (user?.displayName?.split(" ")[0] || '');
 
     return (
         <nav id="navbar-vertical">
@@ -63,7 +62,7 @@ const Navbar = (props: IProps) => {
                 <li className="nv-item">
                     <NavLink to="/profile" activeClassName="active">
                         <img src={photoURL} alt={displayName} className="avatar" />
-                        <span className="link-text">Profile</span>
+                        <span className="link-text">{displayName}</span>
                     </NavLink>
                 </li>
             </ul>
@@ -71,4 +70,4 @@ const Navbar = (props: IProps) => {
     );
 };
 
-export default Navbar;
+export default NavbarVertical;
