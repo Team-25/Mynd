@@ -49,8 +49,17 @@ $navbar-color-secondary: rgb(1, 136, 125);
         width: 90px;
         margin-left: 30px;
         height: 90px;
-        
     }
+
+    img {
+        width: 45px;
+        height: 45px;
+        margin-left: 20px;
+        vertical-align: middle;
+        border-radius: 50%;
+    }
+    
+
     a {
         display: flex;
         align-items: center;
@@ -80,4 +89,47 @@ $navbar-color-secondary: rgb(1, 136, 125);
 /* --- Logo --- */
 .nv-logo {
     background-color: $navbar-background-secondary;
+    letter-spacing: .5px;
+    font-weight: 600;
+    font-size: 20pt;
 }
+
+
+/* --- Media Query for Mobile Menu --- */
+@media only screen and (max-width: 820px) {
+    #navbar-vertical {
+        width: 100vw;
+        height: 90px;
+        bottom: 0;
+        left: 0;
+        top: unset;
+
+        &:hover {
+            width: 100vw;
+        }
+    }
+
+    .nv-nav {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .app-container {
+        margin-left: 0;
+    }
+
+    .nv-item {
+        width: auto;
+        margin: 0;
+        svg {
+            margin: 0 15px;
+        }
+    }
+
+    .link-text {
+        display: none;
+    }
+
+    
+}
+

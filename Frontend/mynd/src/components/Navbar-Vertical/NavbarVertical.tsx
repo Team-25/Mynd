@@ -17,6 +17,9 @@ interface IProps {
 }
 
 const Navbar = (props: IProps) => {
+    const [user] = useAuthState(auth);
+    let photoURL: string = user?.photoURL || '';
+    let displayName: string = user?.displayName || '';
 
     return (
         <nav id="navbar-vertical">
@@ -59,7 +62,8 @@ const Navbar = (props: IProps) => {
                 </li>
                 <li className="nv-item">
                     <NavLink to="/profile" activeClassName="active">
-                        <FontAwesomeIcon icon={faUser} />
+                        <img src={photoURL} alt={displayName} className="avatar" />
+                        <span className="link-text">Profile</span>
                     </NavLink>
                 </li>
             </ul>
