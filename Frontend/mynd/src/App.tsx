@@ -11,7 +11,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebase';
 import Login from './components/Login/Login';
 import Spinner from 'react-spinkit';
-import Navbar from './components/Navbar/navbar';
+import NavbarVertical from './components/Navbar-Vertical/NavbarVertical';
 import Register from './components/Login/Register';
 import { useDispatch } from 'react-redux';
 import { login, logout } from './extra/appSlice';
@@ -63,51 +63,55 @@ function App() {
       will add a specific home page and a user one later
     */
     <Router>
-      <div className="app-container">
+      
       {!user ? (
         <>
-          <Switch>
-            <Route exact path='/'>
-              <Redirect to='/login' />
-            </Route>
-            <Route path='/login'>
-              <Login />
-            </Route>
-            <Route path='/register'>
-              <Register />
-            </Route>
-            <Route path='*' exact={true}>
-              <Redirect to='/login' />
-            </Route>
-          </Switch>
+          <div className="app-container">
+            <Switch>
+              <Route exact path='/'>
+                <Redirect to='/login' />
+              </Route>
+              <Route path='/login'>
+                <Login />
+              </Route>
+              <Route path='/register'>
+                <Register />
+              </Route>
+              <Route path='*' exact={true}>
+                <Redirect to='/login' />
+              </Route>
+            </Switch>
+          </div>
         </>
       ) : (
         <>
-          <Navbar />
-          <Switch>
-            <Route path='/login'>
-              <Redirect to='/' />
-            </Route>
-            <Route path='/register'>
-              <Redirect to='/' />
-            </Route>
-            <Route path="/home">
-              <HeroSection name={displayName} />
-            </Route>
-            <Route path="/calendar">
-              <CalendarPage />
-            </Route>
-            <Route path='/chat'>
-              <ChatPage />
-            </Route>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path='*' exact={true} component={NotFound} />
-          </Switch>
+          <NavbarVertical />
+          <div className="app-container">
+            <Switch>
+              <Route path='/login'>
+                <Redirect to='/' />
+              </Route>
+              <Route path='/register'>
+                <Redirect to='/' />
+              </Route>
+              <Route path="/home">
+                <HeroSection name={displayName} />
+              </Route>
+              <Route path="/calendar">
+                <CalendarPage />
+              </Route>
+              <Route path='/chat'>
+                <ChatPage />
+              </Route>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path='*' exact={true} component={NotFound} />
+            </Switch>
+          </div>
         </>
       )}
-      </div>
+      
       <Footer />
     </Router>
   );
