@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato');
+
+@import './components/Homepage/Banner/Banner.scss';
+@import './components/Homepage/DescriptionBlock/DescriptionBlock.scss';
+@import './components/Homepage/Quote/Quote.scss';
+@import './components/Homepage/FAQs/FAQs.scss';
+@import './components/Footer/Footer.scss';
+@import './components/Navbar/navbar.scss';
+
+
+/*
+*   Primary BG: #2c2c2c
+*   Secondary BG: rgb(29, 29, 29)
+*   Primary Text: white
+*/
+
+
+$primary: white;
+$background: #2c2c2c;
+$dividerColor: black;
+$stripeWidth: 1000px;
+
+* {
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+  margin: 0;
+  font-family: 'Lato';
+}
+
+.app-container {
+  min-height: 100vh;
+  margin-left: 90px;
+}
+
+.page-container {
+  overflow: scroll;
+  height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 20px 20px 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Lato';
+  color: white;
+  background-color: $background;
+}
+
+p {
+  line-height: 25px;
+  word-spacing: .5px;
+  font-size: 17px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+
+
+/* Page Divider */
+.custom-shape-divider-top-1617724181 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1617724181 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 130px;
+}
+
+.custom-shape-divider-top-1617724181 .shape-fill {
+  fill: $dividerColor;
+}
+
+#background-stripe {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: -1;
+  transform: translateX(-50%);
+  background-color: $background;
+  height: 100%;
+  width: $stripeWidth;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: $stripeWidth;
+}
+
+// .container {
+//   width: 100%;
+//   padding: 120px 0;
+//   background-color: $background;
+// }
+
+.loading {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.loadingContents {
+  text-align: center;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 404 */
+#not-found {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
