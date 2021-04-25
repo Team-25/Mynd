@@ -60,7 +60,7 @@ const NavbarVertical = (props: IProps) => {
                     </NavLink>
                 </li>
                 <li className="nv-item">
-                    <NavLink to="/profile" activeClassName="active">
+                    <NavLink to="/user" activeClassName="active">
                         <img src={photoURL} alt={displayName} className="avatar" />
                         <span className="link-text">{displayName}</span>
                     </NavLink>

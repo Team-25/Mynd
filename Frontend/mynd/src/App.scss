@@ -15,7 +15,6 @@
 */
 
 
-// These r not currently persistent across scss files
 $primary: white;
 $background: #2c2c2c;
 $dividerColor: black;
@@ -32,13 +31,19 @@ $stripeWidth: 1000px;
 }
 
 .app-container {
-  min-height: 80vh;
+  min-height: 100vh;
   margin-left: 90px;
 }
 
 .page-container {
   overflow: scroll;
   height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 20px 20px 20px;
 }
 
 body {
@@ -99,11 +104,11 @@ a {
   max-width: $stripeWidth;
 }
 
-.container {
-  width: 100%;
-  padding: 120px 0;
-  background-color: $background;
-}
+// .container {
+//   width: 100%;
+//   padding: 120px 0;
+//   background-color: $background;
+// }
 
 .loading {
   display: grid;

@@ -6,6 +6,7 @@ import HeroSection from './components/Homepage/HeroSection/user-hero-section';
 import Footer from './components/Footer/Footer';
 import CalendarPage from './pages/CalendarPage';
 import ChatPage from './pages/ChatPage';
+import UserProfile from './pages/UserProfile';
 import NotFound from './pages/404';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebase';
@@ -102,6 +103,9 @@ function App() {
               </Route>
               <Route path='/chat'>
                 <ChatPage />
+              </Route>
+              <Route path="/user">
+                <UserProfile />
               </Route>
               <Route exact path="/">
                 <Home />
