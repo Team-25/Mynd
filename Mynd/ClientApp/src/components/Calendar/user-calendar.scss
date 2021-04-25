@@ -1,0 +1,248 @@
+// RESET SCSS
+*{margin:0px;padding:0px;cursor: default;}
+::selection {
+  color: none;
+  background: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+$light-container: rgba(225, 244, 255, 0.493);
+$dark-container:rgba(79, 81, 82, 0.63);
+$box-shadow: 10px 1px 10px #00000041;
+
+//full page
+.calendar-page {
+  background: linear-gradient(rgba(122, 255, 233, 0.322), rgba(255, 200, 21, 0.226)),url('../../img/home.jpg') center center/cover no-repeat;
+  height: 100vh;
+  display:flex;
+}
+
+//div container for calendar
+.calendar-container {
+  font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+  background: $light-container;
+  text-align: center;
+  border-radius: 25px;
+  margin: 0 auto;
+  margin-top:2%;
+  margin-bottom: 25px;
+  padding: 10px;
+  padding-bottom: 30px;
+  box-shadow: $box-shadow;
+  width:95%;
+}
+
+//div container for events on selected day
+.selected-day-events {
+  text-align: center;
+  color: black;
+  background: $light-container;
+  border-radius: 25px;
+  margin: 0 auto;
+  width:95%;
+  overflow-y:auto;
+  overflow-x: hidden;
+  box-shadow: $box-shadow;
+  max-height: 35vh;
+}
+
+//div container for todays day events
+.calendar-upcoming-events {
+  background: $light-container;
+  color: black;
+  text-align: center;
+  border-radius: 25px;
+  overflow-y:auto;
+  max-height: 89vh;
+  margin: 0 auto;
+  margin-top:1%;
+  margin-left: 25px;
+  box-shadow: $box-shadow;
+}
+
+//header container for calendar month title
+.month-name {
+  background: $light-container;
+  color: rgb(0, 0, 0);
+  border-radius: 25px;
+}
+
+//calendar day headers
+.weekdays {
+  color: #ff47a0;
+  font-weight: bolder;
+  height: 4vw;
+}
+
+// calendar current day
+.calendar-current-day {
+  padding: 8px;
+  width: 70%;
+  font-weight: bolder;
+  background: rgb(160, 193, 255);
+  border-radius:4px;
+  border: 2px solid #666;
+  color: white;
+  text-align: center;
+  &:hover {
+    background: rgb(166, 195, 248);
+  }
+}
+
+// calendar days within same month
+.calendar-current-month {
+  padding: 8px;
+  width: 70%;
+  color: rgb(0, 0, 0);
+  background:rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+  &:hover {
+    background:rgb(235, 234, 234);
+  }
+}
+
+// calendar days not in month
+.calendar-standard {
+  padding: 8px;
+  width: 70%;
+  background:rgba(255, 255, 255, 0.418);
+  border: 1px solid rgba(0, 0, 0, 0.418);
+  color: rgb(185, 185, 185);
+  &:hover {
+    background:rgba(245, 245, 245, 0.418);
+  }
+}
+
+//calendar current selected day
+.calendar-selected-day {
+  padding: 8px;
+  width: 77%;
+  height:77%;
+  border-radius:4px;
+  color: rgb(255, 255, 255);
+  background:rgb(255, 142, 142);
+  border: 2px solid rgb(0, 0, 0);
+  &:hover {
+    background:rgb(233, 130, 130);
+  }
+}
+
+//event cards
+.calendar-events-items {
+  padding:5px;
+}
+
+//formating calendar grid
+.weekdays, .day {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 0.5em;
+}
+  
+//all list items (event cards and days)
+.calendar-events-items, .calendar-li, .day-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(20px + (21 - 16) * ((100vw - 300px) / (1600 - 300)));
+}
+
+//Weekdays when abrieviated
+ul.weekdays abbr[title] {
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+//Responsive design
+@media all and (max-width: 900px) {
+  .weekdays, .day {
+    grid-gap: .25em;
+  }
+
+  ul.weekdays li {
+    font-size: 0;
+  }
+  
+  ul.weekdays > li abbr:after {
+      content: attr(title);
+      font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+      text-align: center;
+    }
+}
+
+//dark mode
+  @mixin dark-mode {
+    .calendar-event-card {
+      color: rgb(255, 255, 255);
+    }
+
+    .calendar-container {
+      background: $dark-container;
+    }
+
+    .selected-day-events {
+      background: $dark-container;
+      color:#40d5aa; 
+    }
+
+    .calendar-upcoming-events {
+      background: $dark-container;
+      color: #40d5aa;
+    }
+
+    .month-name {
+      background: rgba(0, 0, 0, 0.308);
+      color: #40d5aa;
+    }
+
+    .weekdays {
+      color:rgb(238, 149, 198);
+    }
+
+    .calendar-current-day {
+      
+      border: 2px solid white;
+      color: white;
+      background-color:rgb(31, 70, 107);
+      &:hover {
+        background-color:rgb(42, 87, 129)
+      }
+    }
+
+    .calendar-current-month {
+      color: white;
+      background:rgba(129, 129, 129, 0.521);
+
+      &:hover {
+        background:rgba(165, 165, 165, 0.521);
+      }
+    }
+
+    .calendar-standard {
+      background:rgba(0, 0, 0, 0.192);
+      border: 1px solid rgba(0, 0, 0, 0.418);
+      &:hover {
+        background:rgba(24, 24, 24, 0.192);
+      }
+    }
+
+    .calendar-selected-day {
+      color: white;
+      border: 2px solid white;
+      background: #34ac8a;
+      &:hover {
+        background: #3bbd98;
+      }
+    }
+
+    .calendar-page {
+      background: url('../../img/calendar-bg.jpg') center center/cover no-repeat;
+    }
+  }
+  
+  .dark-mode {
+    @include dark-mode;
+  }
+  
