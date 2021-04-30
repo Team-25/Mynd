@@ -2,6 +2,7 @@ import { Paper } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
+import "./profile.scss";
 
 interface IProps {}
 
@@ -14,9 +15,9 @@ function ProfilePage(props: IProps) {
     <div>
       <Grid container spacing={2}>
         <Grid item xs={4}>
-          <Paper variant="outlined">
-            <img src={photoURL} />
-            <h2>{displayName}</h2>
+          <Paper className="profile_paper" variant="outlined">
+            <img className="profile_page_img" src={photoURL} />
+            <h2 className="profile_page_img">{displayName}</h2>
           </Paper>
         </Grid>
       </Grid>
