@@ -32,9 +32,23 @@ function ProfilePage(props: IProps) {
         <Grid item xs={7} className="profile_paper">
           <Grid item xs={12}>
             <Grid item xs={1}>
-              <div>
-                <span>Gender</span>
-              </div>
+              <span>Gender</span>
+            </Grid>
+            <Grid item xs={3}>
+              <TextField
+                variant="filled"
+                InputProps={{ className: classes.input }}
+                autoFocus
+                margin="dense"
+                id="name"
+                label="data"
+                type="name"
+              />
+            </Grid>
+          </Grid>
+          <Grid item xs={12}>
+            <Grid item xs={1}>
+              <span>Age</span>
             </Grid>
             <Grid item xs={3}>
               <TextField
@@ -49,38 +63,37 @@ function ProfilePage(props: IProps) {
             </Grid>
           </Grid>{" "}
           <Grid item xs={12}>
-            <TextField
-              variant="filled"
-              InputProps={{ className: classes.input }}
-              autoFocus
-              margin="dense"
-              id="name"
-              label="data"
-              type="name"
-            />
+            <Grid item xs={1}>
+              <span>Nickname</span>
+            </Grid>
+            <Grid item xs={3}>
+              <TextField
+                variant="filled"
+                InputProps={{ className: classes.input }}
+                autoFocus
+                margin="dense"
+                id="name"
+                label="data"
+                type="name"
+              />
+            </Grid>
           </Grid>{" "}
           <Grid item xs={12}>
-            <TextField
-              variant="filled"
-              InputProps={{ className: classes.input }}
-              autoFocus
-              margin="dense"
-              id="name"
-              label="data"
-              type="name"
-            />
+            <Grid item xs={1}>
+              <span>Orientation</span>
+            </Grid>
+            <Grid item xs={3}>
+              <TextField
+                variant="filled"
+                InputProps={{ className: classes.input }}
+                autoFocus
+                margin="dense"
+                id="name"
+                label="data"
+                type="name"
+              />
+            </Grid>
           </Grid>{" "}
-          <Grid item xs={12}>
-            <TextField
-              variant="filled"
-              InputProps={{ className: classes.input }}
-              autoFocus
-              margin="dense"
-              id="name"
-              label="data"
-              type="name"
-            />
-          </Grid>
         </Grid>
       </Grid>
     </div>
