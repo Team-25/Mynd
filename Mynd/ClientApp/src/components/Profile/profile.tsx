@@ -1,4 +1,4 @@
-import { Paper } from "@material-ui/core";
+import { Paper, TextField } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
@@ -19,6 +19,44 @@ function ProfilePage(props: IProps) {
             <img className="profile_page_img" src={photoURL} />
             <h2 className="profile_page_img">{displayName}</h2>
           </Paper>
+        </Grid>
+        <Grid item xs={7}>
+          <Grid item xs={12}>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label="data"
+              type="name"
+            />
+          </Grid>{" "}
+          <Grid item xs={12}>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label="data"
+              type="name"
+            />
+          </Grid>{" "}
+          <Grid item xs={12}>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label="data"
+              type="name"
+            />
+          </Grid>{" "}
+          <Grid item xs={12}>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label="data"
+              type="name"
+            />
+          </Grid>
         </Grid>
       </Grid>
     </div>
