@@ -18,14 +18,13 @@ namespace Mynd.Controllers
     {
 
 
-        IFirebaseConfig form = new FirebaseConfig();
-
-        [HttpGet("creators")]
-        public async Task<List<Creator>> GetCreators(bool PPisBig)
+        IFirebaseConfig form = new FirebaseConfig()
         {
+            AuthSecret = "cemsDaOcMEqOUGLQ94G3hqU93ODQBjscq4jGyOEC",
+            BasePath = "https://mynd-database-beta.europe-west1.firebasedatabase.app/"
+        };
 
-            return null;
+        IFirebaseClient client;
 
-        }
     }
 }
