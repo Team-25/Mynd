@@ -26,15 +26,12 @@ namespace Mynd.Controllers
 
         IFirebaseClient client;
 
-        [HttpPost("users")]
-        public async Task<T> PostUser(bool PPisBig)
-        {
+        //[HttpPost("users")]
+        //public async Task GetCreators(bool PPisBig)
+        //{
 
-            return null;
+        //    return null;
 
-        }
-
-
-
+        //}
     }
 }
