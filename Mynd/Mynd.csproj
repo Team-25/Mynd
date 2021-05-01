@@ -12,6 +12,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="FirebaseAdmin" Version="2.1.0" />
+		<PackageReference Include="FirebaseSharp" Version="2.0.4" />
+		<PackageReference Include="FireSharp" Version="2.0.4" />
 		<PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.4" />
 	</ItemGroup>
 	<ItemGroup>
