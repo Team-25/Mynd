@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FirebaseAdmin;
 
 namespace Mynd
 {
@@ -45,6 +46,10 @@ namespace Mynd
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            FirebaseApp.Create();
+            services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
