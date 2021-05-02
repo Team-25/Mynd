@@ -21,6 +21,7 @@ import Register from "./components/Login/Register";
 import { useDispatch } from "react-redux";
 import { login, logout } from "./extra/appSlice";
 import ProfilePage from "./components/Profile/profile";
+import NewsPage from "./pages/NewsPage";
 
 function App() {
   // loads user from firebase
@@ -106,6 +107,9 @@ function App() {
               </Route>
               <Route exact path="/profile">
                 <ProfilePage />
+              </Route>
+              <Route exact path="/news">
+                <NewsPage />
               </Route>
               <Route exact path="/">
                 <Home />
