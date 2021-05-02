@@ -15,8 +15,8 @@ const Banner = (props: IProps) => {
                 <div className="homepage-banner-text">
                     <h1><span>Talking</span> to others is the best form of <span>EPICNESS</span></h1>
                     <p>{props.description}</p>
-                    <a href="/sign-up">Sign Up!</a>
-                    <a href="/about">About Mynd</a>
+                    <a href="/register">Sign Up!</a>
+                    <a href="#about">About Mynd</a>
                 </div>
                 <img src={img} alt="test" />
             </div>
