@@ -35,8 +35,8 @@ class HeroSection extends React.Component<IProps> {
                     <p> "{this.state.selectedQuote.text}" - {this.state.selectedQuote.author}</p>
                 </div>
                 <div className="bg-buttons">
-                    <Button variant="contained" color="primary" size="large" className="h-btn">Jump in</Button>
-                    <Button variant="contained" color="primary" size="large" className="h-btn">DMs</Button>
+                    <Button variant="contained" color="primary" size="large" className="h-btn" href='/news'>Jump in</Button>
+                    <Button variant="contained" color="primary" size="large" className="h-btn"href='/chat'>DMs</Button>
                 </div>
             </div>
         )
