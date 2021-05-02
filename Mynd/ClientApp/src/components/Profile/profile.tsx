@@ -36,13 +36,11 @@ function ProfilePage(props: IProps) {
             </Grid>
             <Grid item xs={3}>
               <TextField
-                variant="filled"
+                variant="outlined"
                 InputProps={{ className: classes.input }}
-                autoFocus
-                margin="dense"
-                id="name"
-                label="data"
-                type="name"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  //  setCostLow(parseInt(e.target.value));
+                }}
               />
             </Grid>
           </Grid>
@@ -52,13 +50,11 @@ function ProfilePage(props: IProps) {
             </Grid>
             <Grid item xs={3}>
               <TextField
-                variant="filled"
+                variant="outlined"
                 InputProps={{ className: classes.input }}
-                autoFocus
-                margin="dense"
-                id="name"
-                label="data"
-                type="name"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  //  setCostLow(parseInt(e.target.value));
+                }}
               />
             </Grid>
           </Grid>{" "}
@@ -68,13 +64,11 @@ function ProfilePage(props: IProps) {
             </Grid>
             <Grid item xs={3}>
               <TextField
-                variant="filled"
+                variant="outlined"
                 InputProps={{ className: classes.input }}
-                autoFocus
-                margin="dense"
-                id="name"
-                label="data"
-                type="name"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  //  setCostLow(parseInt(e.target.value));
+                }}
               />
             </Grid>
           </Grid>{" "}
@@ -84,13 +78,11 @@ function ProfilePage(props: IProps) {
             </Grid>
             <Grid item xs={3}>
               <TextField
-                variant="filled"
+                variant="outlined"
                 InputProps={{ className: classes.input }}
-                autoFocus
-                margin="dense"
-                id="name"
-                label="data"
-                type="name"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  //  setCostLow(parseInt(e.target.value));
+                }}
               />
             </Grid>
           </Grid>{" "}
