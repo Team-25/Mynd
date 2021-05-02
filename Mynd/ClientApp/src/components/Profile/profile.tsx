@@ -1,4 +1,4 @@
-import { Paper, TextField } from "@material-ui/core";
+import { Button, Paper, TextField } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
@@ -45,7 +45,7 @@ function ProfilePage(props: IProps) {
                 variant="outlined"
                 InputProps={{ className: classes.input }}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  //  setCostLow(parseInt(e.target.value));
+                  setGender(e.target.value);
                 }}
               />
             </Grid>
@@ -59,7 +59,7 @@ function ProfilePage(props: IProps) {
                 variant="outlined"
                 InputProps={{ className: classes.input }}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  //  setCostLow(parseInt(e.target.value));
+                  setAge(parseInt(e.target.value));
                 }}
               />
             </Grid>
@@ -73,7 +73,7 @@ function ProfilePage(props: IProps) {
                 variant="outlined"
                 InputProps={{ className: classes.input }}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  //  setCostLow(parseInt(e.target.value));
+                  setNickname(e.target.value);
                 }}
               />
             </Grid>
@@ -87,11 +87,14 @@ function ProfilePage(props: IProps) {
                 variant="outlined"
                 InputProps={{ className: classes.input }}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  //  setCostLow(parseInt(e.target.value));
+                  setOrientation(e.target.value);
                 }}
               />
             </Grid>
           </Grid>{" "}
+          <Button variant="contained" color="primary" onClick={handleSave()}>
+            Save
+          </Button>
         </Grid>
       </Grid>
     </div>
