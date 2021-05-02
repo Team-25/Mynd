@@ -1,10 +1,11 @@
-import { Paper, TextField } from "@material-ui/core";
+import { Button, Paper, TextField } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
 import "./profile.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   input: {
@@ -20,6 +21,12 @@ function ProfilePage(props: IProps) {
   let displayName: string = user?.displayName?.split(" ")[0] || "";
   const classes = useStyles();
 
+  const [gender, setGender] = useState<string>("");
+  const [age, setAge] = useState<number>(0);
+  const [nickname, setNickname] = useState<string>("");
+  const [orientation, setOrientation] = useState<string>("");
+
+  const handleSave = () => (event: React.MouseEvent<HTMLElement>) => {};
   return (
     <div>
       <Grid container spacing={2}>
@@ -36,13 +43,11 @@ function ProfilePage(props: IProps) {
             </Grid>
             <Grid item xs={3}>
               <TextField
-                variant="filled"
+                variant="outlined"
                 InputProps={{ className: classes.input }}
-                autoFocus
-                margin="dense"
-                id="name"
-                label="data"
-                type="name"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setGender(e.target.value);
+                }}
               />
             </Grid>
           </Grid>
@@ -52,13 +57,11 @@ function ProfilePage(props: IProps) {
             </Grid>
             <Grid item xs={3}>
               <TextField
-                variant="filled"
+                variant="outlined"
                 InputProps={{ className: classes.input }}
-                autoFocus
-                margin="dense"
-                id="name"
-                label="data"
-                type="name"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setAge(parseInt(e.target.value));
+                }}
               />
             </Grid>
           </Grid>{" "}
@@ -68,13 +71,11 @@ function ProfilePage(props: IProps) {
             </Grid>
             <Grid item xs={3}>
               <TextField
-                variant="filled"
+                variant="outlined"
                 InputProps={{ className: classes.input }}
-                autoFocus
-                margin="dense"
-                id="name"
-                label="data"
-                type="name"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setNickname(e.target.value);
+                }}
               />
             </Grid>
           </Grid>{" "}
@@ -84,16 +85,17 @@ function ProfilePage(props: IProps) {
             </Grid>
             <Grid item xs={3}>
               <TextField
-                variant="filled"
+                variant="outlined"
                 InputProps={{ className: classes.input }}
-                autoFocus
-                margin="dense"
-                id="name"
-                label="data"
-                type="name"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setOrientation(e.target.value);
+                }}
               />
             </Grid>
           </Grid>{" "}
+          <Button variant="contained" color="primary" onClick={handleSave()}>
+            Save
+          </Button>
         </Grid>
       </Grid>
     </div>
