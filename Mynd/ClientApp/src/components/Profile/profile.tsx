@@ -5,6 +5,7 @@ import { auth } from "../../firebase";
 import "./profile.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   input: {
@@ -19,6 +20,11 @@ function ProfilePage(props: IProps) {
   let photoURL: string = user?.photoURL || "";
   let displayName: string = user?.displayName?.split(" ")[0] || "";
   const classes = useStyles();
+
+  const [gender, setGender] = useState<string>("");
+  const [age, setAge] = useState<number>(0);
+  const [nickname, setNickname] = useState<string>("");
+  const [orientation, setOrientation] = useState<string>("");
 
   return (
     <div>
