@@ -20,6 +20,7 @@ const NewsPage = (props: IProps) => {
                     <TwitterContainer account="WHO" />
                 </Grid>
                 <Grid item xs={6}>
+                <div style={{maxWidth:500, height: 300}}><iframe src="https://api-bridge.azurewebsites.net/conditions/?p=coronavirus-covid-19&aspect=name,overview_short,symptoms_short,symptoms_long,treatments_overview_short,other_treatments_long,self_care_long,prevention_short,causes_short&tab=3&uid=localhost:3000" title="NHS website - health a-z" style={{height: 500, width: 500}}></iframe></div>
                 </Grid>
             </Grid>
         </div>
