@@ -1,39 +1,41 @@
+.news-header {
+    padding: 5px;
+    border-radius: 20px;
+    margin-bottom:1%;
+    background-color:rgb(53, 53, 53);
+    color: #40e2b4;
+    text-align: center;
+}
+
+
 .news-grid{
     margin: 1%;
-    text-align: center;
     justify-content: center;
-    
-    .news-header {
-        padding: 5px;
-        border-radius: 20px;
-        margin-bottom:1%;
-        background-color:rgb(53, 53, 53);
-        color: #40e2b4;
+    display: flex;
+    margin: 0 auto;
+
+    * {
+        margin: 4px;
     }
 
     .NHS-widget-container {
         max-width:600;
         height:500;
         .NHS-widget {
-            height: 100%;
+            height: 98%;
             width: 100%;
         }
     }
+}
 
+@media all and (max-width: 900px) {
     .news-grid {
-        display:flex;
+        flex-direction: column;
     }
+}
 
-    @media all and (max-width: 900px) {
-        .news-grid {
-            flex-direction: column;
-        }
+@media all and (max-height: 720px) {
+    .news-grid {
+        flex-direction: column;
     }
-
-    @media all and (max-height: 720px) {
-        .news-grid {
-            flex-direction: column;
-        }
-    }
-
 }
