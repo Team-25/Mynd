@@ -26,6 +26,7 @@ function ProfilePage(props: IProps) {
   const [nickname, setNickname] = useState<string>("");
   const [orientation, setOrientation] = useState<string>("");
 
+  const handleSave = () => (event: React.MouseEvent<HTMLElement>) => {};
   return (
     <div>
       <Grid container spacing={2}>
