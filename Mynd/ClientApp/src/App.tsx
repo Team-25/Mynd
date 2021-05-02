@@ -70,7 +70,7 @@ function App() {
           <div className="app-container">
             <Switch>
               <Route exact path="/">
-                <Redirect to="/login" />
+                <Home />
               </Route>
               <Route path="/login">
                 <Login />
@@ -87,7 +87,7 @@ function App() {
       ) : (
         <>
           <NavbarVertical />
-          <div className="app-container">
+          <div className="app-container sidebar-margin">
             <Switch>
               <Route path="/login">
                 <Redirect to="/" />
