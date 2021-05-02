@@ -1,0 +1,67 @@
+$primary: rgb(0, 0, 0);
+$dividerColor: black;
+$stripeWidth: 1200px;
+
+/* Homepage Banner */
+
+.banner {
+  background-color: rgb(29, 29, 29);
+}
+
+.homepage-banner-img {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  
+    img {
+      max-width: 900px;
+    }
+  }
+  
+  .homepage-banner-text {
+    width: 580px;
+    flex-shrink: 0;
+    padding-right: 25px;
+
+      h1 {
+        font-weight: bold;
+        font-size: 42pt;
+        margin-bottom: 30px;
+        line-height: 74px;
+      }
+
+      span {
+        margin-bottom: 2px;
+        text-decoration: underline;
+      }
+  
+      p {
+        font-weight: 100;
+        font-size: 16pt;
+        margin-bottom: 60px;
+      }
+
+      a {
+        margin-top: 90px;
+        width: 180px;
+        height: 50px;
+        margin-right: 50px;
+        border: 2px solid #3dffc8;
+        background-color: #40e2b4;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 14px;
+      }
+  }
+  
+  .homepage-banner-img, .homepage-banner-text {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+  }
