@@ -4,7 +4,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
 import "./profile.scss";
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
