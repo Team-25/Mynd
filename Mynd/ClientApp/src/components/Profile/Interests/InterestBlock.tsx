@@ -4,21 +4,24 @@ import {useState} from 'react';
 
 interface IProps {
     category: string,
-    interests: Array<string>,
-    colour: string
+    interests: Array<string>
 }
 
 
 function InterestsBlock(props: IProps) {
+
+    for (let i = 0; i < props.interests.length; i++) {
+        props.interests[i] = props.interests[i].charAt(0).toUpperCase() + props.interests[i].slice(1);
+    }
 
     // For search results
     const [searchedInterests, updateSearchedInterests] = useState(props.interests);
     // For the ones they choose to select
     const [selectedInterests, updateSelectedInterests] = useState(['']);
 
-    const interestStyle = { "backgroundColor": props.colour }
+    const interestStyle = { "backgroundColor": "rgb(124, 124, 124)" }
 
-    const selected = { "border": "1px solid cyan" }
+    const selected = { "backgroundColor": "rgb(60, 171, 175)" }
 
     // Add/Remove an interest from the selected list 
     const select = (interest: string) => {
@@ -40,13 +43,15 @@ function InterestsBlock(props: IProps) {
     const searchInterests = (event: any) => {
         let y : Array<string> = new Array<string>();
         for (let i = 0; i < props.interests.length; i++) {
-            if (props.interests[i].includes(event.target.value)) {
+            if (props.interests[i].toLowerCase().includes(event.target.value)) {
                 y.push(props.interests[i])
             }
         }
         
         if (y.length !== 0) {
             updateSearchedInterests(y);
+        } else {
+            updateSearchedInterests([]);
         }
     }
     

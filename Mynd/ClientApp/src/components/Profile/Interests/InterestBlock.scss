@@ -1,14 +1,33 @@
 .interest-block {
+    max-width: 600px;
+
     input {
-        border: none;
-        width: 100%;
+        border: 2px solid rgb(255, 255, 255);
+        width: 588px;
         height: 45px;
         font-size: 20px;
         line-height: 45px;
-        padding: 5px;
+        padding-left: 12px;
 
         &:focus {
-            outline: 2px solid black;
+            outline: 2px solid rgb(34, 255, 237);
+        }
+    }
+
+    ul {
+        width: 100%;
+        overflow-y: scroll;
+        height: 300px;
+        color: white;
+        background-color: rgb(124, 124, 124);
+        border: 2px solid white;
+        display: flex;
+        flex-direction: column;
+        
+        li {
+            line-height: 25pt;
+            padding-left: 12px;
         }
     }
 }
+
