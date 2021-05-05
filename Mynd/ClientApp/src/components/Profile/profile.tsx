@@ -5,6 +5,7 @@ import { auth } from "../../firebase";
 import "./profile.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import { useState } from "react";
+import InterestBlock from './Interests/InterestBlock';
 
 const useStyles = makeStyles((theme) => ({
   input: {
@@ -97,6 +98,7 @@ function ProfilePage(props: IProps) {
           </Button>
         </Grid>
       </Grid>
+      <InterestBlock category="sports" interests={['swimming', 'running', 'archery', 'javelin', 'golf', 'hurdles']} colour="gray" />
     </div>
   );
 }
