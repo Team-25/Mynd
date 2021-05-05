@@ -58,6 +58,7 @@ function InterestsBlock(props: IProps) {
 
     return (
         <div className="interest-block">
+            <h2>{props.category}</h2>
             <input onChange={searchInterests} type="text" style={interestStyle}/>
             <ul>
                 {searchedInterests.map((interest) => 
