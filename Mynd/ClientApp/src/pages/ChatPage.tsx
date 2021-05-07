@@ -1,7 +1,6 @@
-import { Grid } from "@material-ui/core";
-import React from "react"
 import Chat from '../components/Chat/chat'
 import '../components/Chat/chat.scss'
+import ChatSidebar from '../components/Chat/chat-sidebar'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 interface IProps {
@@ -16,6 +15,7 @@ const ChatPage = (props: IProps) => {
                         <Chat />
                     </Route>
                     <Route path='/chat/'>
+                    <ChatSidebar />
                     </Route>
                 </Switch>
             </Router>
