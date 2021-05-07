@@ -32,7 +32,7 @@ const ChatSidebar = (props: IProps) => {
         <div className="chat-sidebar">
             <p> Your Chats: </p>
             {value && value.docs.map((doc) => (
-                isInChat(doc,String(user?.uid)) ? <Button href={'/chat/' + doc.id} key={doc.id} color='secondary'><p>{getName(doc, String(user?.uid))}</p></Button> : <></>
+                isInChat(doc,String(user?.uid)) ? <Button className="chat-sidebar-item" href={'/chat/' + doc.id} key={doc.id} color='secondary'><p>{getName(doc, String(user?.uid))}</p></Button> : <></>
             ))}
         </div>
     )

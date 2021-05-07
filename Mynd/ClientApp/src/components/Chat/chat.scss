@@ -5,6 +5,14 @@ $background: #2c2c2c;
     background: $background;
 }
 
+.chat-sidebar {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    overflow-y:auto;
+    max-height: 75vh;
+}
+
 .chat-container {
     background: $chat-container;
     height: 75vh;
