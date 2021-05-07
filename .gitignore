@@ -485,3 +485,7 @@ Backend/Mynd/.vs/Mynd/v16/.suo
 *.cache
 *.cache
 *.cache
+*.v2
+Backend/Mynd/Mynd.Data/obj/Debug/net5.0/Mynd.Data.assets.cache
+*.cache
+*.cache

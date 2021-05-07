@@ -1,0 +1,43 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mynd-ui
+  name: mynd-ui
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: mynd-ui
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mynd-ui
+    spec:
+      containers:
+      - image: 464444461112.dkr.ecr.eu-west-2.amazonaws.com/mynd.dev:v1
+        name: mynd-ui
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+          - containerPort: 5001 
+status: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mynd-ui
+  labels:
+    run: mynd-ui
+spec:
+  ports:
+  - port: 5001
+    protocol: TCP
+  selector:
+    app: mynd-ui
+  type: LoadBalancer
