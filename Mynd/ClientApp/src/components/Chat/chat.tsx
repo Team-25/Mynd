@@ -6,6 +6,7 @@ import firebase from 'firebase/app';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import ChatSidebar from './chat-sidebar'
 import { useParams } from 'react-router-dom';
+import NotFound from '../../pages/404';
 
 interface IProps {
 }
@@ -16,11 +17,13 @@ interface IState {
 const Chat = (props: IProps) => {
     const { roomId } = useParams<{ roomId: string }>();
     const [user] = useAuthState(auth);
+    const [roomDetails, setRoomDetails] = useState<any[]>([]);
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState<any[]>([]);
 
     useEffect(
         () => {
+            db.collection('chat-rooms').doc(roomId).onSnapshot((snapshot) => (setRoomDetails(snapshot.data()?.users)));
           const unsubscribe = firebase
             .firestore()
             .collection('chat-rooms')
@@ -41,7 +44,7 @@ const Chat = (props: IProps) => {
         setMessage(e.target.value)
       };
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => { 
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
         if (user && message != "") {
             setMessage('');
@@ -53,9 +56,10 @@ const Chat = (props: IProps) => {
         }
       };
 
+
     return (
-        <>   
-            <div className="chat-page-container">
+        <> 
+            {roomDetails.includes(user?.uid) ? <div className="chat-page-container">
                 <Grid container spacing={2}>
                     <Grid item xs={2}>
                         <ChatSidebar />
@@ -84,7 +88,8 @@ const Chat = (props: IProps) => {
                         </div>
                     </Grid>
                 </Grid>
-            </div>
+            </div> : <NotFound/>}
+            
             
         </>
     )
