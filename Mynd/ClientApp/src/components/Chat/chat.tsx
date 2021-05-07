@@ -23,7 +23,7 @@ const Chat = (props: IProps) => {
 
     useEffect(
         () => {
-            db.collection('chat-rooms').doc(roomId).onSnapshot((snapshot) => (setRoomDetails(snapshot.data()?.users)));
+            db.collection('chat-rooms').doc(roomId).onSnapshot((snapshot) => (setRoomDetails(Object.keys(snapshot.data()?.Users))))
           const unsubscribe = firebase
             .firestore()
             .collection('chat-rooms')
