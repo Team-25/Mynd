@@ -23,19 +23,29 @@ const Chat = (props: IProps) => {
 
     useEffect(
         () => {
-            db.collection('chat-rooms').doc(roomId).onSnapshot((snapshot) => (setRoomDetails(Object.keys(snapshot.data()?.Users))))
-          const unsubscribe = firebase
-            .firestore()
-            .collection('chat-rooms')
-            .doc(roomId)
-            .collection('messages')
-            .orderBy('createdAt', 'asc')
-            .onSnapshot(
-              snapshot => {
-                setMessages(snapshot.docs.map(doc => (doc)))
-              }
-            )
-          return () => unsubscribe()
+            var doc = db.collection("chat-rooms").doc(roomId)
+            doc.get().then((doc) => {
+                if (doc.exists) {
+                    db.collection('chat-rooms').doc(roomId).onSnapshot((snapshot) => (setRoomDetails(Object.keys(snapshot.data()?.Users))))
+                    const unsubscribe = firebase
+                      .firestore()
+                      .collection('chat-rooms')
+                      .doc(roomId)
+                      .collection('messages')
+                      .orderBy('createdAt', 'asc')
+                      .onSnapshot(
+                        snapshot => {
+                          setMessages(snapshot.docs.map(doc => (doc)))
+                        }
+                      )
+                    return () => unsubscribe()
+                } else {
+                    // doc.data() will be undefined in this case
+                    console.log("No such document!");
+                }
+            }).catch((error) => {
+                console.log("Error getting document:", error);
+            })
         },
         [roomId, messages]
       )
