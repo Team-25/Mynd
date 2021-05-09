@@ -54,17 +54,43 @@ function InterestsBlock(props: IProps) {
             updateSearchedInterests([]);
         }
     }
+
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const clearInterests = () => {
+        updateSelectedInterests([]);
+    }
+
+    const openClose = () => {
+        setIsOpen(!isOpen)
+    }
     
 
     return (
         <div className="interest-block">
             <h2>{props.category}</h2>
-            <input onChange={searchInterests} type="text" style={interestStyle}/>
-            <ul>
-                {searchedInterests.map((interest) => 
-                    <li key={interest} style={selectedInterests.includes(interest) ? selected : {}} onClick={() => select(interest)}>{interest}</li>
-                )}
-            </ul>
+            <div className="interests" style={isOpen ? {"display": "none"} : {"display": "block"}}>
+                {selectedInterests.length === 1 ? <p>No interests selected</p> :
+                    <p>
+                        {selectedInterests.map((interest) => 
+                            <span>{interest} </span>
+                        )}
+                    </p>
+                }
+                <button className="edit-button" onClick={openClose}>Edit</button>
+            </div>
+            <div className="interest-input-box" style={isOpen ? {"display": "block"} : {"display": "none"}}>
+                Pick 5
+                <input className="interest-input" onChange={searchInterests} type="text" style={interestStyle}/>
+                <ul>
+                    {searchedInterests.map((interest) => 
+                        <li key={interest} style={selectedInterests.includes(interest) ? selected : {}} onClick={() => select(interest)}> {interest}</li>
+                    )}
+                </ul>
+                <button className="clear-interests" onClick={clearInterests}>Clear</button>
+                <button className="edit-button" onClick={openClose}>Close</button>
+            </div>
         </div>
     );
 }

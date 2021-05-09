@@ -29,7 +29,7 @@ function ProfilePage(props: IProps) {
   const handleSave = () => (event: React.MouseEvent<HTMLElement>) => {};
   return (
     <div>
-      <Grid container spacing={2}>
+      {/* <Grid container spacing={2}>
         <Grid item xs={4}>
           <Paper className="profile_paper" variant="outlined">
             <img className="profile_page_img" src={photoURL} />
@@ -97,9 +97,31 @@ function ProfilePage(props: IProps) {
             Save
           </Button>
         </Grid>
-      </Grid>
-      <InterestBlock category="Sports" interests={['swimming', 'running', 'archery', 'javelin', 'golf', 'hurdles', 'test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7', 'test8', 'test9', 'test10', 'test11', 'test12', 'test13', 'test14', 'test15', 'test16', 'test17']} />
-      <InterestBlock category="Gaming" interests={['Doom', 'Nier', 'Minesweeper', 'Apex Legends', 'PUBG', 'Dota 2', 'LOL', 'OSU!', 'test3', 'test4', 'test5', 'test6', 'test7', 'test8', 'test9', 'test10', 'test11', 'test12', 'test13', 'test14', 'test15', 'test16', 'test17']} />
+      </Grid> */}
+      <div className="content">
+        <div className="user-details">
+            <div className="sec1">
+              <img src={photoURL} alt="profile-img"/>
+              <ul>
+                <li>Hi</li>
+              </ul>
+              <a href="/logout">Logout</a>
+            </div>
+            <div className="sec2">
+              <div className="upper">
+                <h2>{displayName}</h2>
+                <p>Loreum aoisdjasdlaskdh adshds ajdsa djsada dj</p>
+              </div>
+              <InterestBlock category="What are you interested in?" interests={['swimming', 'running', 'archery', 'javelin', 'golf', 'hurdles', 'test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7', 'test8', 'test9', 'test10', 'test11', 'test12', 'test13', 'test14', 'test15', 'test16', 'test17']} />
+              <InterestBlock category="How are you feeling?" interests={['Positive', 'Happy', 'Sad', 'Overwhelmed', 'Anxious', 'Stressed', 'Alright', 'Excited', 'Ready', 'test4', 'test5', 'test6', 'test7', 'test8', 'test9', 'test10', 'test11', 'test12', 'test13', 'test14', 'test15', 'test16', 'test17']} />
+              
+            </div>
+
+            
+        </div>
+        
+      </div>
+      
     </div>
   );
 }
