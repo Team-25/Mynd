@@ -7,7 +7,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import ChatSidebar from './chat-sidebar';
 import { useParams } from 'react-router-dom';
 import { Avatar } from '@material-ui/core';
-import VideoCalling from './video-calling';
+import VideoChatContainer from './VideoChatContainer';
 
 interface IProps {}
 
@@ -109,7 +109,7 @@ const Chat = (props: IProps) => {
           </div>
         </Grid>
       </Grid>
-      <VideoCalling />
+      <VideoChatContainer />
     </div>
   );
 };
