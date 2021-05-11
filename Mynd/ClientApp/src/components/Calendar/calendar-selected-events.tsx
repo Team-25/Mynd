@@ -23,7 +23,7 @@ const CalendarSelected = (props: IProps) => {
             <h1> Events on {format(props.selectedDate, 'dd MMMM YYY')}</h1>
             <Grid container spacing={2}>
                 {value && value.docs.map(
-                    (doc) => doc.data().time.toDate().getDate() == props.selectedDate.getDate() && doc.data().time.toDate().getMonth() == props.selectedDate.getMonth() ? <Grid item xs={4}> <li className="calendar-events-items"><CalendarEvent title={doc.data().title} speakers={doc.data().speakers.join(',')} time={doc.data().time.toDate()} /></li> </Grid> : <></>
+                    (doc) => doc.data().time.toDate().getDate() == props.selectedDate.getDate() && doc.data().time.toDate().getMonth() == props.selectedDate.getMonth() ? <Grid item xs={4}> <li className="calendar-events-items"><CalendarEvent title={doc.data().title} speakers={doc.data().speakers} time={doc.data().time.toDate()} /></li> </Grid> : <></>
                 )}
             </Grid>
         </div>
