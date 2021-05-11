@@ -25,7 +25,7 @@ const CalendarUpcoming = (props: IProps) => {
                 <ul>
                     {value && value.docs.map(
                         (doc) =>
-                            doc.data().time.toDate().getDay() ==currentDate.getDay() ? <li className="calendar-events-items"><CalendarEvent title={doc.data().title} speakers={doc.data().speakers.join(',')} time={doc.data().time.toDate()} /></li> : <></>
+                            doc.data().time.toDate().getDate() ==currentDate.getDate() && doc.data().time.toDate().getMonth() ==currentDate.getMonth() ? <li className="calendar-events-items"><CalendarEvent title={doc.data().title} speakers={doc.data().speakers.join(',')} time={doc.data().time.toDate()} /></li> : <></>
                     )}
                 </ul>
             </div>
