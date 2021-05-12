@@ -11,7 +11,7 @@ const CalendarUpcoming = (props: IProps) => {
 
     const currentDate = new Date();
     const [value, loading, error] = useCollection(
-        db.collection('events'),
+        db.collection('events').orderBy('time', 'asc'),
         {
           snapshotListenOptions: { includeMetadataChanges: true },
         }
