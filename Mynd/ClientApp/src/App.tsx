@@ -23,6 +23,7 @@ import { login, logout } from './extra/appSlice';
 import ProfilePage from './components/Profile/profile';
 import NewsPage from './pages/NewsPage';
 import News from './components/News/News';
+import VideoChatContainer from './components/Chat/VideoChatContainer';
 
 function App() {
   // loads user from firebase
@@ -112,8 +113,8 @@ function App() {
               <Route exact path='/news'>
                 <NewsPage />
               </Route>
-              <Route path='/news2'>
-                <News />
+              <Route path='/videocalling'>
+                <VideoChatContainer />
               </Route>
               <Route exact path='/'>
                 <Home />
