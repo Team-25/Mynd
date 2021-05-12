@@ -16,7 +16,6 @@ const AddEvent = (props: IProps) => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
-        console.log(state);
         db.collection('events').add({
             speakers:state.speakers,
             time:firebase.firestore.Timestamp.fromDate(new Date(state.time)),

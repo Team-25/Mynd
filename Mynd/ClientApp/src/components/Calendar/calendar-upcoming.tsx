@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react"
 import { format } from 'date-fns'
-import CalendarEvent from "./calendar-event";
-import { useCollection } from "react-firebase-hooks/firestore";
-import { db } from "../../firebase";
+import EventGrid from './events-grid';
 
 interface IProps {
 }
@@ -10,24 +7,13 @@ interface IProps {
 const CalendarUpcoming = (props: IProps) => {
 
     const currentDate = new Date();
-    const [value, loading, error] = useCollection(
-        db.collection('events').orderBy('time', 'asc'),
-        {
-          snapshotListenOptions: { includeMetadataChanges: true },
-        }
-      );
 
     return (
         <div className="calendar-upcoming-events">
             <h1>{format(currentDate, 'EEEE d MMMM yyyy')}</h1>
-            <h2>Your Events Today:</h2>
+            <h2>Events Today:</h2>
             <div className="calender-events-list">
-                <ul>
-                    {value && value.docs.map(
-                        (doc) =>
-                            doc.data().time.toDate().getDate() ==currentDate.getDate() && doc.data().time.toDate().getMonth() ==currentDate.getMonth() ? <li className="calendar-events-items"><CalendarEvent title={doc.data().title} speakers={doc.data().speakers} time={doc.data().time.toDate()} /></li> : <></>
-                    )}
-                </ul>
+                <EventGrid date={currentDate} spacing={0} size={12}/>
             </div>
         </div>
     )
