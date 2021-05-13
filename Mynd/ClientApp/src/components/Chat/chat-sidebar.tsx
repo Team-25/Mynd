@@ -2,6 +2,7 @@ import { TextField, Button, Grid, FormControl } from '@material-ui/core';
 import firebase from 'firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollection } from 'react-firebase-hooks/firestore';
+import Spinner from 'react-spinkit';
 import { db, auth } from '../../firebase';
 
 interface IProps {}
@@ -12,6 +13,16 @@ const ChatSidebar = (props: IProps) => {
   const [value, loading, error] = useCollection(db.collection('chat-rooms'), {
     snapshotListenOptions: { includeMetadataChanges: true },
   });
+
+  if (loading) {
+    return (
+      <div className='loading'>
+        <div className='loadingContents'>
+          <Spinner name='ball-spin-fade-loader' color='green' fadeIn='none' />
+        </div>
+      </div>
+    );
+  }
 
   function getName(doc: any, uid: string) {
     let users = Object.keys(doc.data()?.Users);
