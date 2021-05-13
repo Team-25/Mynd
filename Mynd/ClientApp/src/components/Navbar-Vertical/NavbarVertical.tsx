@@ -9,6 +9,7 @@ import {
   faInbox,
   faNewspaper,
   faUser,
+  faVideo,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { NavLink, Link } from 'react-router-dom';
@@ -62,6 +63,12 @@ const NavbarVertical = (props: IProps) => {
           <NavLink to='/calendar' activeClassName='active'>
             <FontAwesomeIcon icon={faCalendar} />
             <span className='link-text'>Calendar</span>
+          </NavLink>
+        </li>
+        <li className='nv-item'>
+          <NavLink to='/videocalling' activeClassName='active'>
+            <FontAwesomeIcon icon={faVideo} />
+            <span className='link-text'>Video Chat</span>
           </NavLink>
         </li>
         <li className='nv-item'>

@@ -1,6 +1,8 @@
 import React from 'react';
 import 'firebase/database';
 import classnames from 'classnames';
+import styled from 'styled-components';
+import { Button } from '@material-ui/core';
 
 export default class VideoChat extends React.Component {
   constructor(props, state) {
@@ -26,7 +28,7 @@ export default class VideoChat extends React.Component {
   renderVideos = () => {
     return (
       <div className={classnames('videos', { active: this.state.isLoggedIn })}>
-        <div>
+        <div className='localCamera'>
           <label>{this.state.username}</label>
 
           <video ref={this.props.setLocalVideoRef} autoPlay playsInline></video>
@@ -82,11 +84,21 @@ export default class VideoChat extends React.Component {
 
   render() {
     return (
-      <section id='container'>
+      <VideoContainer>
         {this.props.connectedUser ? null : this.renderForms()}
 
         {this.renderVideos()}
-      </section>
+        <Button></Button>
+      </VideoContainer>
     );
   }
 }
+
+const VideoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .form {
+  }
+`;

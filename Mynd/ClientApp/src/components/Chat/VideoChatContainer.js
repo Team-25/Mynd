@@ -156,6 +156,7 @@ export default VideoChatContainer;
 
 const VideoChatContainerStyle = styled.div`
   display: flex;
+  height: 100vh;
   justify-content: center;
   align-items: center;
 `;
