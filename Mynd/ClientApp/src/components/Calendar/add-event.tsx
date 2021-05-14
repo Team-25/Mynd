@@ -1,31 +1,38 @@
 import { Button, TextField } from "@material-ui/core";
 import firebase from "firebase";
 import React, { useState } from "react";
-import { db } from "../../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { db, auth } from "../../firebase";
 
 interface IProps {
 }
 
 const AddEvent = (props: IProps) => {
+    const [user] = useAuthState(auth);
 
     const [state, setState] = useState({
-        speakers: "",
+        description: "",
         time: new Date(),
         title: "",
+        uid: user?.uid,
       })
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
         db.collection('events').add({
-            speakers:state.speakers,
+            description:state.description,
             time:firebase.firestore.Timestamp.fromDate(new Date(state.time)),
             title:state.title,
+            uid: user?.uid,
         })
-        setState({
-            speakers: "",
-            time: new Date(),
-            title: "",
-        });
+        if (user) {
+            setState({
+                description: "",
+                time: new Date(),
+                title: "",
+                uid: user.uid,
+            });
+        }
       };
 
       const handleChange = (e: any) => {
@@ -49,10 +56,10 @@ const AddEvent = (props: IProps) => {
                     }}
                 />
                 <TextField
-                    id="speakers"
-                    label="Speakers"
+                    id="description"
+                    label="Description"
                     type="text"
-                    value={state.speakers}
+                    value={state.description}
                     InputLabelProps={{
                     shrink: true,
                     }}
