@@ -21,28 +21,37 @@ const Footer = (props: IProps) => {
         <div className='footer-bottom'>
           <div className='footer-brand'></div>
           <div className='footer-section'>
+            <a href='/'>
+              <p>Landing Page</p>
+            </a>
+            <a href='/home'>
+              <p>Homepage</p>
+            </a>
+            <a href='/news'>
+              <p>News</p>
+            </a>
+          </div>
+          <div className='footer-section'>
             <a href='/videocalling'>
               <p>Video Calling</p>
             </a>
-            <p>Link 2</p>
-            <p>Link 3</p>
-            <p>Link 4</p>
-          </div>
-          <div className='footer-section'>
-            <p>Link 1</p>
-            <p>Link 2</p>
-            <p>Link 3</p>
-            <p>Link 4</p>
+            <a href='/calendar'>
+              <p>Calendar</p>
+            </a>
+            <a href='/chat'>
+              <p>My Chats</p>
+            </a>
           </div>
           <div className='footer-section'>
             {user ? (
-              <button onClick={() => auth.signOut()}>Sign Out</button>
-            ) : (
+              <p onClick={() => auth.signOut()}>Sign Out</p>
+            ) : 
+            (
               <p>Logged Out</p>
             )}
-            <p>My Chats</p>
-            <p>Recent</p>
-            <p>Link 4</p>
+            <a href='/profile'>
+              <p>My Profile</p>
+            </a>
           </div>
         </div>
       </div>
