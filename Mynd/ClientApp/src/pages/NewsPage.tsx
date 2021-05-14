@@ -12,6 +12,7 @@ interface IState {
     tips: { [key: string]: string}[],
     guidelines: { [key: string]: string}[],
     canonicallinks: { [key: string]: string}[],
+    trackandtrace: { [key: string]: string}[],
 }
 
 class NewsPage extends React.Component<IProps> {
@@ -24,6 +25,7 @@ class NewsPage extends React.Component<IProps> {
         tips: [],
         guidelines: [],
         canonicallinks: [],
+        trackandtrace: [],
     }
 
     async componentDidMount() {
@@ -34,6 +36,7 @@ class NewsPage extends React.Component<IProps> {
            this.setState({guidelines: data.mainEntityOfPage[3].mainEntityOfPage});
            this.setState({loading: false});
            this.setState({canonicallinks: data.mainEntityOfPage[1].mainEntityOfPage});
+           this.setState({trackandtrace: data.mainEntityOfPage[2].mainEntityOfPage});
            console.log(data)
        });
     }
@@ -87,6 +90,15 @@ class NewsPage extends React.Component<IProps> {
                                 <h1> Other </h1>
                                 <div className="NHS-container">
                                     {this.state.guidelines.map( 
+                                        (data) => 
+                                            <a href={data.url}>
+                                                <div className="NHS-item">
+                                                    <h2>{data.headline}</h2>
+                                                </div>
+                                            </a>
+                                        )
+                                    }
+                                    {this.state.trackandtrace.map( 
                                         (data) => 
                                             <a href={data.url}>
                                                 <div className="NHS-item">
