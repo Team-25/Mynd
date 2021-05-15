@@ -29,9 +29,9 @@ class HeroSection extends React.Component<IProps> {
 
     render() {
         return (
-            <div className="hero-container">
+            <div className={"hero-container"  + (this.state.hr<=18 && this.state.hr>=5 ? " hero-day" : " hero-night")}>
                 <div className="bg-text">
-                    {(this.state.hr >= 18) ? <h1>Good Evening {this.props.name}</h1> : (this.state.hr >= 12) ? <h1>Good Afternoon {this.props.name}</h1> : <h1>Good Morning {this.props.name}</h1>}
+                    {(this.state.hr >= 18 || this.state.hr < 5) ? <h1>Good Evening {this.props.name}</h1> : (this.state.hr >= 12) ? <h1>Good Afternoon {this.props.name}</h1> : <h1>Good Morning {this.props.name}</h1>}
                     <p> "{this.state.selectedQuote.text}" - {this.state.selectedQuote.author}</p>
                 </div>
                 <div className="bg-buttons">
