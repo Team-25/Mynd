@@ -1,17 +1,17 @@
 .interest-block {
-    max-width: 600px;
+    margin-bottom: 50px;
 
     .interest-input {
         border: 2px solid rgb(255, 255, 255);
-        width: 588px;
+        width: 98%;
         height: 45px;
         font-size: 20px;
         line-height: 45px;
-        padding-left: 12px;
+        padding-left: 2%;
 
-        &:focus {
-            outline: 2px solid rgb(34, 255, 237);
-        }
+        // &:focus {
+        //     outline: 2px solid rgb(0, 204, 255);
+        // }
     }
 
     .interests {
@@ -26,7 +26,7 @@
         border: none;
         color: white;
         font-size: 12pt;
-        color:rgb(55, 211, 198);
+        color:rgb(0, 204, 255);
     }
 
     .interest-input-box {
@@ -52,7 +52,7 @@
         overflow-y: scroll;
         height: 200px;
         color: white;
-        background-color: rgb(124, 124, 124);
+        background-color: rgb(70, 70, 70);
         border: 2px solid white;
         display: flex;
         flex-direction: column;

@@ -13,7 +13,7 @@ const Banner = (props: IProps) => {
             <div className="homepage-banner-text">
                 <div>
                     <h1>Mynd</h1>
-                    <p>Wassup</p>
+                    <p>A place to socialise</p>
                 </div>
             </div>
         </div>

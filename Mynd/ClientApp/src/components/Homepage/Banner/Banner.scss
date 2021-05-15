@@ -12,7 +12,7 @@ $stripeWidth: 1200px;
   height: 100vh;
   padding-right: 25px;
   
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../img/hp1.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../img/hp2.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -23,7 +23,6 @@ $stripeWidth: 1200px;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
-    text-align: center;
   }
 
   h1 {
@@ -40,7 +39,7 @@ $stripeWidth: 1200px;
 
   p {
     font-weight: 100;
-    font-size: 16pt;
+    font-size: 20pt;
     margin-bottom: 60px;
   }
 
