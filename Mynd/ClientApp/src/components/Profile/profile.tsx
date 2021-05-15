@@ -27,88 +27,40 @@ function ProfilePage(props: IProps) {
   const [orientation, setOrientation] = useState<string>("");
 
   const handleSave = () => (event: React.MouseEvent<HTMLElement>) => {
-    // event.preventDefault();
-    // if (!gender || !age || age < 1 || !nickname || !orientation) {
-    //   return false;
-    // }
-    // db.collection('user-data').doc(user?.uid).collection('info').add({
-    //   gender: gender,
-    //   age: age,
-    //   nickname: nickname,
-    //   orientation: orientation,
-    // });
+    event.preventDefault();
+    if (!gender || !age || age < 1 || !nickname || !orientation) {
+      return false;
+    }
+    db.collection("user-data").doc(user?.uid).collection("info").add({
+      gender: gender,
+      age: age,
+      nickname: nickname,
+      orientation: orientation,
+    });
   };
   return (
     <div>
-      {/* <Grid container spacing={2}>
-        <Grid item xs={4}>
-          <Paper className='profile_paper' variant='outlined'>
-            <img className='profile_page_img' src={photoURL} />
-            <h2 className='profile_page_img'>{displayName}</h2>
-          </Paper>
-        </Grid>
-        <Grid item xs={7} className='profile_paper'>
+      <Grid container spacing={2}>
+        <Grid item xs={7} className="profile_paper">
           <Grid item xs={12}>
-            <Grid item xs={1}>
-              <span>Gender</span>
+            <Grid item xs={3}>
+              <span>How do you feel?</span>
             </Grid>
             <Grid item xs={3}>
               <TextField
-                variant='outlined'
-                InputProps={{ className: classes.input }}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  setGender(e.target.value);
-                }}
-              />
-            </Grid>
-          </Grid>
-          <Grid item xs={12}>
-            <Grid item xs={1}>
-              <span>Age</span>
-            </Grid>
-            <Grid item xs={3}>
-              <TextField
-                variant='outlined'
-                InputProps={{ className: classes.input }}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  setAge(parseInt(e.target.value));
-                }}
-              />
-            </Grid>
-          </Grid>{' '}
-          <Grid item xs={12}>
-            <Grid item xs={1}>
-              <span>Nickname</span>
-            </Grid>
-            <Grid item xs={3}>
-              <TextField
-                variant='outlined'
-                InputProps={{ className: classes.input }}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  setNickname(e.target.value);
-                }}
-              />
-            </Grid>
-          </Grid>{' '}
-          <Grid item xs={12}>
-            <Grid item xs={1}>
-              <span>Orientation</span>
-            </Grid>
-            <Grid item xs={3}>
-              <TextField
-                variant='outlined'
+                variant="outlined"
                 InputProps={{ className: classes.input }}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   setOrientation(e.target.value);
                 }}
               />
             </Grid>
-          </Grid>{' '}
-          <Button variant='contained' color='primary' onClick={handleSave()}>
+          </Grid>{" "}
+          <Button variant="contained" color="primary" onClick={handleSave()}>
             Save
           </Button>
         </Grid>
-      </Grid> */}
+      </Grid>
       <div className="content">
         <div className="user-details">
           <div className="sec1">
