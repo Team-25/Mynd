@@ -5,6 +5,7 @@ import { auth, db } from '../../firebase';
 import './profile.scss';
 import { makeStyles } from '@material-ui/core/styles';
 import { useState } from 'react';
+import Algo from './algo';
 
 const useStyles = makeStyles((theme) => ({
   input: {
@@ -110,6 +111,7 @@ function ProfilePage(props: IProps) {
           </Button>
         </Grid>
       </Grid>
+      <Algo />
     </div>
   );
 }

@@ -12,6 +12,7 @@ function algo() {
     });
     return termFreq;
   }
+
   function addKeysToDict(map, dict) {
     for (var key in map) {
       dict[key] = true;
