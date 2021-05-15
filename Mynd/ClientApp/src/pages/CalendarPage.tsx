@@ -18,7 +18,7 @@ const CalendarPage = (props: IProps) => {
     }
 
     useEffect(() => {
-        (hr > 19 || hr < 4) ? document.body.classList.toggle("dark-mode", true) : document.body.classList.toggle("dark-mode", false);
+        (hr > 19 || hr < 5) ? document.body.classList.toggle("dark-mode", true) : document.body.classList.toggle("dark-mode", false);
     })
 
     return (
