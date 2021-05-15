@@ -19,9 +19,9 @@ function InterestsBlock(props: IProps) {
     // For the ones they choose to select
     const [selectedInterests, updateSelectedInterests] = useState(['']);
 
-    const interestStyle = { "backgroundColor": "rgb(124, 124, 124)" }
+    const interestStyle = { "backgroundColor": "rgb(70, 70, 70)" }
 
-    const selected = { "backgroundColor": "rgb(60, 171, 175)" }
+    const selected = { "backgroundColor": "rgb(0, 204, 255)" }
 
     // Add/Remove an interest from the selected list 
     const select = (interest: string) => {
@@ -81,7 +81,7 @@ function InterestsBlock(props: IProps) {
                 <button className="edit-button" onClick={openClose}>Edit</button>
             </div>
             <div className="interest-input-box" style={isOpen ? {"display": "block"} : {"display": "none"}}>
-                Pick 5
+                <p>Pick 5</p>
                 <input className="interest-input" onChange={searchInterests} type="text" style={interestStyle}/>
                 <ul>
                     {searchedInterests.map((interest) => 

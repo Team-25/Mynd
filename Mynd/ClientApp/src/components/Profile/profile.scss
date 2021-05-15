@@ -18,21 +18,55 @@
 
 .user-details {
   display: flex;
-  margin: 40px;
   min-height: 100vh;
+  
 
   img {
     height: 200px;
     border-radius: 50%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .sec1 {
     width: 25%;
+    flex-shrink: 0;
+    padding: 20px 20px;
+    background-color: rgb(34, 34, 34);
+
+
+    ul {
+      list-style: none;
+      line-height: 30pt;
+      font-size: 16pt;
+
+      li:first-child {
+        margin: 42px 0 10px 0;
+      }
+
+      li {
+        position: relative;
+      }
+
+    }
+
+    span {
+      position: absolute;
+      right: 15px;
+      font-size: 20pt;
+      line-height: 30pt;
+    }
+
+    a {
+      margin-top: 90px;
+    }
   }
 
   .sec2 {
-    width: 75%;
-    padding-top: 30px;
+    margin-top: 30px;
+    padding: 20px;
+
 
     .upper {
       margin-bottom: 100px;
@@ -40,6 +74,18 @@
       h2 {
         line-height: 50px;
       }
+    }
+  }
+
+  
+}
+
+@media only screen and (max-width: 1045px) {
+  .user-details {
+    display: block;
+
+    .sec1 {
+      width: 100%;
     }
   }
 
