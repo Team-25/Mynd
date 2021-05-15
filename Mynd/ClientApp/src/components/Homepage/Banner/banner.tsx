@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import img from '../../../img/test.png'; // HAving an issue moving this to be a prop
+import img from "../../../img/test.png"; // HAving an issue moving this to be a prop
 import { db, auth } from "../../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -10,17 +10,15 @@ interface IProps {
 }
 
 const Banner = (props: IProps) => {
-    return (
-        <div className="banner">
-            <div className="homepage-banner-text">
-                <div>
-                    <h1>Mynd</h1>
-                    <p>Wassup</p>
-                </div>
-            </div>
+  return (
+    <div className="banner">
+      <div className="homepage-banner-text">
+        <div>
+          <h1>Mynd</h1>
+          <p>Wassup</p>
         </div>
-        <img src={img} alt='test' />
       </div>
+      {/* <img src={img} alt="test" /> */}
     </div>
   );
 };
