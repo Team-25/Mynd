@@ -2,9 +2,9 @@ import { Card, CardActionArea, CardContent, Typography } from "@material-ui/core
 import React from "react"
 
 interface IProps {
-    time: string,
+    time: Date,
     title: string,
-    speakers: string,
+    description: string,
 }
 
 class CalendarEvent extends React.Component<IProps> {
@@ -18,13 +18,13 @@ class CalendarEvent extends React.Component<IProps> {
                 <CardActionArea>
                     <CardContent>
                     <Typography variant="h6" component="h2">
-                            {this.props.time}
+                            {this.props.time.getHours()}:{(this.props.time.getMinutes()<10?'0':'') + this.props.time.getMinutes()}
                         </Typography>
                         <Typography gutterBottom variant="h5" component="h2">
                             {this.props.title}
                         </Typography>
                         <Typography variant="body2"component="p">
-                            Speaking by: {this.props.speakers}
+                            {this.props.description}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
