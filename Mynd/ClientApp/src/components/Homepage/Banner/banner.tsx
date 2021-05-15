@@ -1,5 +1,7 @@
 import React from 'react';
 import img from '../../../img/test.png'; // HAving an issue moving this to be a prop
+import { db, auth } from "../../../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 interface IProps {
   title: string;
@@ -7,6 +9,7 @@ interface IProps {
 }
 
 const Banner = (props: IProps) => {
+  const [user] = useAuthState(auth);
   return (
     <div className='banner'>
       <div className='homepage-banner-img'>
@@ -16,8 +19,14 @@ const Banner = (props: IProps) => {
             <span>EPICNESS</span>
           </h1>
           <p>{props.description}</p>
-          <a href='/register'>Sign Up!</a>
-          <a href='/login'>Or Log In!</a>
+          {user ? 
+            <></> 
+            : 
+            <>
+              <a href='/register'>Sign Up!</a>
+              <a href='/login'>Or Log In!</a>
+            </>
+          }
           <a href='#about'>About Mynd</a>
         </div>
         <img src={img} alt='test' />

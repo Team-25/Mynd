@@ -1,5 +1,9 @@
 export const doLogin = async (username, database, handleUpdate) => {
-  await database.ref('/calls/' + username).remove();
+  try{
+    await database.ref('/calls/' + username).remove();
+  } catch (exception) {
+    console.error(exception);
+  }
   database.ref('/calls/' + username).on('value', (snapshot) => {
     snapshot.exists() && handleUpdate(snapshot.val(), username);
   });

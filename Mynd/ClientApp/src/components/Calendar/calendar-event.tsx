@@ -4,7 +4,7 @@ import React from "react"
 interface IProps {
     time: Date,
     title: string,
-    speakers: string,
+    description: string,
 }
 
 class CalendarEvent extends React.Component<IProps> {
@@ -24,7 +24,7 @@ class CalendarEvent extends React.Component<IProps> {
                             {this.props.title}
                         </Typography>
                         <Typography variant="body2"component="p">
-                            Speaking by: {this.props.speakers}
+                            {this.props.description}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
