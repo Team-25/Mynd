@@ -27,20 +27,20 @@ function ProfilePage(props: IProps) {
   const [nickname, setNickname] = useState<string>('');
   const [orientation, setOrientation] = useState<string>('');
 
-  const handleSave = () => (event: React.MouseEvent<HTMLElement>) => {
-    event.preventDefault();
+  // const handleSave = () => (event: React.MouseEvent<HTMLElement>) => {
+  //   event.preventDefault();
 
-    if (!gender || !age || age < 1 || !nickname || !orientation) {
-      return false;
-    }
+  //   if (!gender || !age || age < 1 || !nickname || !orientation) {
+  //     return false;
+  //   }
 
-    db.collection('user-data').doc(user?.uid).collection('info').add({
-      gender: gender,
-      age: age,
-      nickname: nickname,
-      orientation: orientation,
-    });
-  };
+  //   db.collection('user-data').doc(user?.uid).collection('info').add({
+  //     gender: gender,
+  //     age: age,
+  //     nickname: nickname,
+  //     orientation: orientation,
+  //   });
+  // };
   return (
     <div>
       {/* <Grid container spacing={2}>
