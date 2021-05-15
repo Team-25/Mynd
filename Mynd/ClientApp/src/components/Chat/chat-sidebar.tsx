@@ -34,6 +34,10 @@ const ChatSidebar = (props: IProps) => {
     return Object.keys(doc.data()?.Users).includes(uid);
   }
 
+  const handleMatch = () => (event: React.MouseEvent<HTMLElement>) => {
+    db.collection("matches").doc((Math.floor(Math.random() * 1000000000000000000) + 1).toString()).set({})
+  };
+
   return (
     <div className='chat-sidebar'>
       <p> Your Chats: </p>
@@ -52,7 +56,14 @@ const ChatSidebar = (props: IProps) => {
             <></>
           )
         )}
-      <Button color='secondary'> Generate Match </Button>
+  
+            
+
+      <Button variant='contained' color='primary' onClick={handleMatch()}>
+            Generate Match
+          </Button>
+
+      
     </div>
   );
 };

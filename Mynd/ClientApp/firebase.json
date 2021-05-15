@@ -1,18 +1,24 @@
 {
-    "hosting": {
-        "public": "build", // "public" is the only required attribute for Hosting
-        "ignore": [
-            "firebase.json",
-            "**/.*",
-            "**/node_modules/**",
-            "public",
-            "src"
-        ],
-        "rewrites": [
-            {
-                "source": "**",
-                "destination": "/index.html"
-            }
-        ]
-    }
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "public",
+      "src"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "functions": {
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR\" run lint",
+      "npm --prefix \"$RESOURCE_DIR\" run build"
+    ]
+  }
 }
