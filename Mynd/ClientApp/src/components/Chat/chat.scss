@@ -2,38 +2,61 @@ $chat-container: #1f1f1f;
 $background: #2c2c2c;
 
 .chat-page-container {
-    background: $background;
+  background: $background;
+}
+
+.chat-sidebar {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  overflow-y: auto;
+  max-height: 94vh;
 }
 
 .chat-container {
-    background: $chat-container;
-    height: 75vh;
-    padding: 5px;
-    display: flex;
-    flex-direction: column-reverse;
-    overflow-y:auto;
+  background: $chat-container;
+  height: 94vh;
+  padding: 5px;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: auto;
 }
 .message {
-    border-radius: 25px;
-    width: fit-content;
-    max-width: 50%;
-    margin: 10px;
-    padding: 10px;
-    text-align:left;
+  border-radius: 25px;
+  width: fit-content;
+  max-width: 50%;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+
+  > .avatar {
+    object-fit: contain;
+  }
 }
 
 .matcher {
-    background:teal;
+  background: teal;
+
+  > .avatar {
+    margin-right: 10px;
+    order: 0;
+  }
 }
 
 .user {
-    margin-left: auto;
-    background:tomato;
+  margin-left: auto;
+  background: tomato;
+
+  > .avatar {
+    cursor: pointer;
+    margin-left: 10px;
+    order: 1;
+  }
 }
 
 .chat-message-input {
-    background: white;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 0 auto;
+  background: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0 auto;
 }

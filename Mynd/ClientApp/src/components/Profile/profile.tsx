@@ -7,9 +7,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useState } from "react";
 import InterestBlock from './Interests/InterestBlock';
 
+
 const useStyles = makeStyles((theme) => ({
   input: {
-    background: "rgb(232, 241, 250)",
+    background: 'rgb(232, 241, 250)',
   },
 }));
 
@@ -17,33 +18,46 @@ interface IProps {}
 
 function ProfilePage(props: IProps) {
   const [user] = useAuthState(auth);
-  let photoURL: string = user?.photoURL || "";
-  let displayName: string = user?.displayName?.split(" ")[0] || "";
+  let photoURL: string = user?.photoURL || '';
+  let displayName: string = user?.displayName?.split(' ')[0] || '';
   const classes = useStyles();
 
-  const [gender, setGender] = useState<string>("");
+  const [gender, setGender] = useState<string>('');
   const [age, setAge] = useState<number>(0);
-  const [nickname, setNickname] = useState<string>("");
-  const [orientation, setOrientation] = useState<string>("");
+  const [nickname, setNickname] = useState<string>('');
+  const [orientation, setOrientation] = useState<string>('');
 
-  const handleSave = () => (event: React.MouseEvent<HTMLElement>) => {};
+  const handleSave = () => (event: React.MouseEvent<HTMLElement>) => {
+    event.preventDefault();
+
+    if (!gender || !age || age < 1 || !nickname || !orientation) {
+      return false;
+    }
+
+    db.collection('user-data').doc(user?.uid).collection('info').add({
+      gender: gender,
+      age: age,
+      nickname: nickname,
+      orientation: orientation,
+    });
+  };
   return (
     <div>
       {/* <Grid container spacing={2}>
         <Grid item xs={4}>
-          <Paper className="profile_paper" variant="outlined">
-            <img className="profile_page_img" src={photoURL} />
-            <h2 className="profile_page_img">{displayName}</h2>
+          <Paper className='profile_paper' variant='outlined'>
+            <img className='profile_page_img' src={photoURL} />
+            <h2 className='profile_page_img'>{displayName}</h2>
           </Paper>
         </Grid>
-        <Grid item xs={7} className="profile_paper">
+        <Grid item xs={7} className='profile_paper'>
           <Grid item xs={12}>
             <Grid item xs={1}>
               <span>Gender</span>
             </Grid>
             <Grid item xs={3}>
               <TextField
-                variant="outlined"
+                variant='outlined'
                 InputProps={{ className: classes.input }}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   setGender(e.target.value);
@@ -57,43 +71,43 @@ function ProfilePage(props: IProps) {
             </Grid>
             <Grid item xs={3}>
               <TextField
-                variant="outlined"
+                variant='outlined'
                 InputProps={{ className: classes.input }}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   setAge(parseInt(e.target.value));
                 }}
               />
             </Grid>
-          </Grid>{" "}
+          </Grid>{' '}
           <Grid item xs={12}>
             <Grid item xs={1}>
               <span>Nickname</span>
             </Grid>
             <Grid item xs={3}>
               <TextField
-                variant="outlined"
+                variant='outlined'
                 InputProps={{ className: classes.input }}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   setNickname(e.target.value);
                 }}
               />
             </Grid>
-          </Grid>{" "}
+          </Grid>{' '}
           <Grid item xs={12}>
             <Grid item xs={1}>
               <span>Orientation</span>
             </Grid>
             <Grid item xs={3}>
               <TextField
-                variant="outlined"
+                variant='outlined'
                 InputProps={{ className: classes.input }}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   setOrientation(e.target.value);
                 }}
               />
             </Grid>
-          </Grid>{" "}
-          <Button variant="contained" color="primary" onClick={handleSave()}>
+          </Grid>{' '}
+          <Button variant='contained' color='primary' onClick={handleSave()}>
             Save
           </Button>
         </Grid>

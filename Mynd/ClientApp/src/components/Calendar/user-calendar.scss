@@ -17,6 +17,14 @@ $box-shadow: 10px 1px 10px #00000041;
   display:flex;
 }
 
+.add-event-calendar {
+  border-radius: 20px;
+  padding: 10px;
+  background-color: white;
+  position: absolute;
+  z-index: 2;
+}
+
 //div container for calendar
 .calendar-container {
   font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
@@ -43,6 +51,7 @@ $box-shadow: 10px 1px 10px #00000041;
   overflow-y:auto;
   overflow-x: hidden;
   box-shadow: $box-shadow;
+  min-height: 23vh;
   max-height: 35vh;
 }
 

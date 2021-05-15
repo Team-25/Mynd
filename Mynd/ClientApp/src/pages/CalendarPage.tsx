@@ -1,40 +1,44 @@
 import {Grid, Switch} from "@material-ui/core";
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Calendar from '../components/Calendar/user-calendar'
 import CalendarUpcoming from '../components/Calendar/calendar-upcoming'
+import AddEvent from '../components/Calendar/add-event';
 import '../components/Calendar/user-calendar.scss'
+import Button from '@material-ui/core/Button';
 
 interface IProps {
-
 }
 
-interface IState {
-}
+const CalendarPage = (props: IProps) => {
+    const hr = new Date().getHours();
+    const [isHidden, setIsHidden] = useState(true);
 
-class CalendarPage extends React.Component<IProps> {
-    constructor(props: IProps) {
-        super(props);
+    function toggleHidden() {
+        setIsHidden(!isHidden);
     }
 
-    state: IState = {
-    }
+    useEffect(() => {
+        (hr > 19 || hr < 5) ? document.body.classList.toggle("dark-mode", true) : document.body.classList.toggle("dark-mode", false);
+    })
 
-    render() {
-        return (
-            <>
-                <div className="calendar-page">
-                    <Grid container spacing={2}>
-                        <Grid item xs={3}>
-                            <Switch size="small" onChange={() => document.body.classList.toggle("dark-mode")} />
-                            <CalendarUpcoming />
-                        </Grid>
-                        <Grid item xs={9}>
-                            <Calendar />
-                        </Grid>
+    return (
+        <>
+            <div className="calendar-page">
+                <Grid container spacing={2}>
+                    <Grid item xs={3}>
+                        <Button variant="contained" onClick={toggleHidden}>Add an Event</Button>
+                        {!isHidden && <div id="add-event" className="add-event-calendar">
+                         <AddEvent />
+                        </div> }
+                        <CalendarUpcoming />
                     </Grid>
-                </div>
-            </>
-        )
-    }
+                    <Grid item xs={9}>
+                        <Calendar />
+                    </Grid>
+                </Grid>
+            </div>
+        </>
+    )
 }
+
 export default CalendarPage;

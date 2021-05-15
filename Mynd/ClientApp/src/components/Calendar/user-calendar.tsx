@@ -2,6 +2,7 @@ import React from "react"
 import { format, startOfMonth, startOfWeek, isBefore, endOfWeek, add , endOfMonth, isSameMonth, isSameDay} from 'date-fns'
 import CalendarEvent from "./calendar-event";
 import { Grid } from "@material-ui/core";
+import CalendarSelected from './calendar-selected-events'
 
 interface IProps {
 
@@ -66,47 +67,10 @@ class Calendar extends React.Component<IProps> {
                         </ol>
                     </div>
                 </div>
-                <div className="selected-day-events">
-                    <h1> Events on {format(this.state.selectedDate, 'dd MMMM YYY')}</h1>
-                    <Grid container spacing={2}>
-                        {/* TODO QUERY EVENTS OF SELECTED DAY */}
-                        {[{
-                        "title": "Some kinda speaking event",
-                        "speakers": "Alex, Sam",
-                        "time": "9:15",
-                        }, {
-                        "title": "Some kinda speaking event",
-                        "speakers": "Alex",
-                        "time": "10:15",
-                        }, {
-                        "title": "This is just dummy data lmao",
-                        "speakers": "Alex, Harvey",
-                        "time": "19:15",
-                        }, {
-                        "title": "hiya",
-                        "speakers": "Bob",
-                        "time": "21:15",
-                        }, {
-                        "title": "This is gettin late",
-                        "speakers": "Bob",
-                        "time": "23:15",
-                        }, {
-                        "title": "Lorem Ipsum amiright",
-                        "speakers": "Bob",
-                        "time": "23:35",
-                        }, {
-                        "title": "John i think",
-                        "speakers": "John",
-                        "time": "23:45",
-                        }].map(
-                            (data) => <Grid item xs={4}>
-                            <li className="calendar-events-items"><CalendarEvent title={data.title} speakers={data.speakers} time={data.time}/></li>
-                        </Grid>
-                        )}
-                    </Grid>
-                </div>
+                <CalendarSelected currentDate={this.state.currentDate} selectedDate={this.state.selectedDate}/>
             </>    
         )
     }
 }
+
 export default Calendar;

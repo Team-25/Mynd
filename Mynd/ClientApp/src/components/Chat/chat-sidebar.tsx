@@ -1,33 +1,49 @@
-import { TextField, Button, Grid, FormControl  } from '@material-ui/core';
-import React, {useState, useEffect} from 'react';
+import { TextField, Button, Grid, FormControl } from '@material-ui/core';
+import firebase from 'firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { db, auth } from '../../firebase';
-import firebase from 'firebase/app';
-import { useAuthState } from 'react-firebase-hooks/auth';
 
-interface IProps {
-}
+interface IProps {}
 
-interface IState {
-}
+interface IState {}
 const ChatSidebar = (props: IProps) => {
-    const [value, loading, error] = useCollection(
-        db.collection('chat-rooms'),
-        {
-          snapshotListenOptions: { includeMetadataChanges: true },
-        }
-      );
-    
-    return (
-        <div className="chat-sidebar">
-            <p> Change these to some generate new chat? </p>
-            {value && value.docs.map((doc) => (
-                <div key={doc.id}>
-                    <p> - {doc.id}</p>
-                </div>
-            ))}
-        </div>
-    )
-}
+  const [user] = useAuthState(auth);
+  const [value, loading, error] = useCollection(db.collection('chat-rooms'), {
+    snapshotListenOptions: { includeMetadataChanges: true },
+  });
 
-export default ChatSidebar
+  function getName(doc: any, uid: string) {
+    let users = Object.keys(doc.data()?.Users);
+    users.splice(users.indexOf(uid), 1);
+    return doc.data()?.Users[String(users[0])];
+  }
+
+  function isInChat(doc: any, uid: string) {
+    return Object.keys(doc.data()?.Users).includes(uid);
+  }
+
+  return (
+    <div className='chat-sidebar'>
+      <p> Your Chats: </p>
+      {value &&
+        value.docs.map((doc) =>
+          isInChat(doc, String(user?.uid)) ? (
+            <Button
+              className='chat-sidebar-item'
+              href={'/chat/' + doc.id}
+              key={doc.id}
+              color='primary'
+            >
+              <p>{getName(doc, String(user?.uid))}</p>
+            </Button>
+          ) : (
+            <></>
+          )
+        )}
+      <Button color='secondary'> Generate Match </Button>
+    </div>
+  );
+};
+
+export default ChatSidebar;
