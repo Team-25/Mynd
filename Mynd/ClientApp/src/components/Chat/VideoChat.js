@@ -31,7 +31,7 @@ export default class VideoChat extends React.Component {
         <div className='localCamera'>
           <label>{this.state.username}</label>
 
-          <video ref={this.props.setLocalVideoRef} autoPlay playsInline></video>
+          <video ref={this.props.setLocalVideoRef} autoPlay muted="muted" playsInline></video>
         </div>
         <div>
           <label>{this.props.connectedUser}</label>
