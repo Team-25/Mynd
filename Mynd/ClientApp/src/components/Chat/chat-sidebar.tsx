@@ -34,8 +34,10 @@ const ChatSidebar = (props: IProps) => {
     return Object.keys(doc.data()?.Users).includes(uid);
   }
 
+  
+  //a crude way to create a new document with a random ID in firestore
   const handleMatch = () => (event: React.MouseEvent<HTMLElement>) => {
-    db.collection("matches").doc((Math.floor(Math.random() * 1000000000000000000) + 1).toString()).set({})
+    db.collection("matches").doc((Math.floor(Math.random() * 100000000000000000000) + 1).toString()).set({})
   };
 
   return (
