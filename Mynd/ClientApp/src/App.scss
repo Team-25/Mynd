@@ -145,7 +145,8 @@ a {
 }
 
 /* 404 */
-#not-found {
+.not-found {
+  text-align: center;
   position: fixed;
   top: 50%;
   left: 50%;

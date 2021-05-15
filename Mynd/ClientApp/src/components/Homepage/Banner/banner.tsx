@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from "react";
 
 interface IProps {
     title: string;
@@ -7,7 +6,6 @@ interface IProps {
 }
 
 const Banner = (props: IProps) => {
-
     return (
         <div className="banner">
             <div className="homepage-banner-text">
@@ -19,5 +17,6 @@ const Banner = (props: IProps) => {
         </div>
     )
 }
+
 
 export default Banner;
