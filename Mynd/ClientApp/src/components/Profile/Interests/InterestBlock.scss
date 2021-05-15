@@ -1,0 +1,68 @@
+.interest-block {
+    max-width: 600px;
+
+    .interest-input {
+        border: 2px solid rgb(255, 255, 255);
+        width: 588px;
+        height: 45px;
+        font-size: 20px;
+        line-height: 45px;
+        padding-left: 12px;
+
+        &:focus {
+            outline: 2px solid rgb(34, 255, 237);
+        }
+    }
+
+    .interests {
+        width: 100%;
+    }
+
+    .edit-button {
+        float: right;
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 0);
+        outline: none;
+        border: none;
+        color: white;
+        font-size: 12pt;
+        color:rgb(55, 211, 198);
+    }
+
+    .interest-input-box {
+        width: 100%;
+        display: none;
+    }
+
+    .clear-interests {
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 0);
+        outline: none;
+        border: none;
+        color: white;
+        font-size: 12pt;
+    }
+
+    h2 {
+        line-height: 50pt;
+    }
+
+    ul {
+        width: 100%;
+        overflow-y: scroll;
+        height: 200px;
+        color: white;
+        background-color: rgb(124, 124, 124);
+        border: 2px solid white;
+        display: flex;
+        flex-direction: column;
+        
+        li {
+            line-height: 25pt;
+            padding-left: 12px;
+        }
+    }
+
+    
+}
+

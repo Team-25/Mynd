@@ -10,3 +10,38 @@
   margin-right: auto;
   width: 50%;
 }
+
+
+
+
+
+
+.user-details {
+  display: flex;
+  margin: 40px;
+  min-height: 100vh;
+
+  img {
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  .sec1 {
+    width: 25%;
+  }
+
+  .sec2 {
+    width: 75%;
+    padding-top: 30px;
+
+    .upper {
+      margin-bottom: 100px;
+      
+      h2 {
+        line-height: 50px;
+      }
+    }
+  }
+
+  
+}

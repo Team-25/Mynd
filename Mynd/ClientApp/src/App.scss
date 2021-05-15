@@ -64,6 +64,26 @@ a {
   color: white;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(49, 49, 49);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(51, 89, 92);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 
 
 /* Page Divider */
