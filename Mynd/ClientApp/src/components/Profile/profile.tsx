@@ -1,7 +1,7 @@
 import { Button, Paper, TextField } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../../firebase";
+import { auth, db } from "../../firebase";
 import "./profile.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import { useState } from "react";
@@ -21,22 +21,19 @@ function ProfilePage(props: IProps) {
   let displayName: string = user?.displayName?.split(" ")[0] || "";
   const classes = useStyles();
 
-  const [gender, setGender] = useState<string>("");
-  const [age, setAge] = useState<number>(0);
-  const [nickname, setNickname] = useState<string>("");
-  const [orientation, setOrientation] = useState<string>("");
+  const [feelings, setFeelings] = useState<string>("");
 
   const handleSave = () => (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
-    if (!gender || !age || age < 1 || !nickname || !orientation) {
+    if (!feelings) {
       return false;
     }
-    db.collection("user-data").doc(user?.uid).collection("info").add({
-      gender: gender,
-      age: age,
-      nickname: nickname,
-      orientation: orientation,
-    });
+    db.collection("user-data")
+      .doc(user?.uid)
+      .collection("User Feelings status")
+      .add({
+        feelings: feelings,
+      });
   };
   return (
     <div>
@@ -51,7 +48,7 @@ function ProfilePage(props: IProps) {
                 variant="outlined"
                 InputProps={{ className: classes.input }}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  setOrientation(e.target.value);
+                  setFeelings(e.target.value);
                 }}
               />
             </Grid>
