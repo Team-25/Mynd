@@ -30,9 +30,9 @@ export default class VideoChat extends React.Component {
     });
   };
 
-  onStartCallClicked = () => {
+  onStartCallClicked = async () => {
     //this.props.getCallerIds();
-    this.props.startCall(this.state.username, this.state.userToCall);
+    await this.props.startCall(this.state.username, this.state.userToCall);
   };
 
   onEndCallClicked = () => {
@@ -101,10 +101,10 @@ export default class VideoChat extends React.Component {
       </div>
     ) : (
       <div key='b' className='form'>
-        <label>Type a name</label>
         <input
           value={this.state.username}
           type='text'
+          hidden
           onChange={(e) => this.setState({ username: e.target.value })}
           readOnly={true}
         />
