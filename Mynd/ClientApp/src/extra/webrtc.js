@@ -1,3 +1,5 @@
+import { parseCommandLine } from "typescript";
+
 export const createOffer = async (
   connection,
   localStream,
@@ -7,9 +9,14 @@ export const createOffer = async (
   username
 ) => {
   try {
+    connection.removeStream(localStream);
+  } catch (exception) {
+    console.error(exception);
+  }
+  try {
     connection.addStream(localStream);
 
-    const offer = await connection.createOffer();
+    const offer = await connection.createOffer({ offerToReceiveAudio: true, offerToReceiveVideo: true });
     await connection.setLocalDescription(offer);
 
     doOffer(userToCall, offer, database, username);
@@ -92,7 +99,8 @@ export const listenToConnectionEvents = (
   remoteUsername,
   database,
   remoteVideoRef,
-  doCandidate
+  doCandidate,
+  onEndCall
 ) => {
   conn.onicecandidate = function (event) {
     if (event.candidate) {
@@ -106,6 +114,15 @@ export const listenToConnectionEvents = (
       remoteVideoRef.srcObject = e.streams[0];
     }
   };
+
+  conn.oniceconnectionstatechange = function (event) {
+    if (conn.iceConnectionState === "failed" ||
+      conn.iceConnectionState === "disconnected" ||
+      conn.iceConnectionState === "closed") {
+      // Handle the failure
+      onEndCall();
+    }
+  };
 };
 
 export const sendAnswer = async (
@@ -117,13 +134,18 @@ export const sendAnswer = async (
   username
 ) => {
   try {
+    conn.removeStream(localStream);
+  } catch (exception) {
+    console.error(exception);
+  }
+  try {
     conn.addStream(localStream);
 
     const offer = JSON.parse(call.offer);
     conn.setRemoteDescription(offer);
 
     // create an answer to an offer
-    const answer = await conn.createAnswer();
+    const answer = await conn.createAnswer({ offerToReceiveAudio: true, offerToReceiveVideo: true });
     conn.setLocalDescription(answer);
 
     doAnswer(call.from, answer, database, username);
@@ -140,5 +162,5 @@ export const startCall = (yourConn, call) => {
 export const addCandidate = (yourConn, call) => {
   // apply the new received candidate to the connection
   const candidate = JSON.parse(call.candidate);
-  yourConn.addIceCandidate(new RTCIceCandidate(candidate));
+  if (candidate) yourConn.addIceCandidate(new RTCIceCandidate(candidate));
 };

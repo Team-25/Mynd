@@ -1,0 +1,15 @@
+.videoContainer {              
+    object-fit: cover;           
+    margin: 0 auto;              
+    padding: 0;
+    width:100%;
+    height:100%;            
+}                              
+
+video {
+    max-height: 300px;
+    max-width: 500px;                
+    border-radius: 10px;         
+    border: 5px double #f2f2f2;
+    margin: 20px;  
+}
