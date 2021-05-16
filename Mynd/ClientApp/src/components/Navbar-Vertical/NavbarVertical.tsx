@@ -22,8 +22,8 @@ interface IProps {}
 
 const NavbarVertical = (props: IProps) => {
   const [user] = useAuthState(auth);
-  let photoURL: string = user?.photoURL || '';
-  let displayChar: string = user?.displayName?.charAt(0) || '';
+  let displayChar: string = user?.displayName?.charAt(0)!;
+  let photoURL: string = user?.photoURL! || displayChar;
   let displayName: string = 'Hi, ' + (user?.displayName?.split(' ')[0] || '');
 
   return (
@@ -67,7 +67,7 @@ const NavbarVertical = (props: IProps) => {
         </li>
         <li className='nv-item'>
           <NavLink to='/profile' activeClassName='active'>
-            <img src={photoURL} alt={displayChar} className='avatar' />
+            <Avatar className='avatar' src={photoURL} alt={displayChar} />
             <span className='link-text'>{displayName}</span>
           </NavLink>
         </li>

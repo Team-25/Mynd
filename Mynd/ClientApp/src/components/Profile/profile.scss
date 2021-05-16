@@ -11,15 +11,9 @@
   width: 50%;
 }
 
-
-
-
-
-
 .user-details {
   display: flex;
   min-height: 100vh;
-  
 
   img {
     height: 200px;
@@ -30,11 +24,10 @@
   }
 
   .sec1 {
-    width: 25%;
+    width: 45%;
     flex-shrink: 0;
     padding: 20px 20px;
     background-color: rgb(34, 34, 34);
-
 
     ul {
       list-style: none;
@@ -48,7 +41,6 @@
       li {
         position: relative;
       }
-
     }
 
     span {
@@ -67,17 +59,14 @@
     margin-top: 30px;
     padding: 20px;
 
-
     .upper {
       margin-bottom: 100px;
-      
+
       h2 {
         line-height: 50px;
       }
     }
   }
-
-  
 }
 
 @media only screen and (max-width: 1045px) {
@@ -88,6 +77,4 @@
       width: 100%;
     }
   }
-
-  
 }
