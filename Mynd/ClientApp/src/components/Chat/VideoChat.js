@@ -25,21 +25,35 @@ export default class VideoChat extends React.Component {
     this.props.startCall(this.state.username, this.state.userToCall);
   };
 
+  onEndCallClicked = () => {
+    this.props.onEndCall();
+  };
+
   renderVideos = () => {
     return (
       <div className={classnames('videos', { active: this.state.isLoggedIn })}>
         <div className='localCamera'>
           <label>{this.state.username}</label>
 
-          <video ref={this.props.setLocalVideoRef} autoPlay muted="muted" playsInline></video>
+          <video ref={this.props.setLocalVideoRef} autoPlay muted="muted" poster="../../src/img/face.jpg" playsInline></video>
         </div>
         <div>
           <label>{this.props.connectedUser}</label>
           <video
             ref={this.props.setRemoteVideoRef}
+            poster="../../src/img/face.jpg"
             autoPlay
             playsInline
           ></video>
+        </div>
+        <div>
+          <button
+            onClick={this.onEndCallClicked}
+            id='end-call-btn'
+            className='btn btn-primary'
+          >
+            End Call
+        </button>
         </div>
       </div>
     );

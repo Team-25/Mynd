@@ -69,7 +69,8 @@ class VideoChatContainer extends React.Component {
       userToCall,
       database,
       this.remoteVideoRef,
-      doCandidate
+      doCandidate,
+      this.onEndCall
     );
     // create an offer
     createOffer(
@@ -81,6 +82,19 @@ class VideoChatContainer extends React.Component {
       username
     );
   };
+
+  onEndCall = () => {
+    try {
+      this.state.localConnection.removeStream(this.state.localStream);
+    } catch (exception) {
+      console.error(exception);
+    }
+    this.state.localConnection.close()
+    this.setState({
+      connectedUser: null,
+    });
+    this.componentDidMount()
+  }
 
   onLogin = async (username) => {
     return await doLogin(username, this.state.database, this.handleUpdate);
@@ -96,7 +110,7 @@ class VideoChatContainer extends React.Component {
 
   handleUpdate = (calls, username) => {
     const { localConnection, database, localStream } = this.state;
-
+    console.log('OMFG AT handleUpdate')
     if (calls) {
       switch (calls.type) {
         case 'offer':
@@ -110,7 +124,8 @@ class VideoChatContainer extends React.Component {
             calls.from,
             database,
             this.remoteVideoRef,
-            doCandidate
+            doCandidate,
+            this.onEndCall
           );
 
           sendAnswer(
@@ -146,6 +161,7 @@ class VideoChatContainer extends React.Component {
           setLocalVideoRef={this.setLocalVideoRef}
           setRemoteVideoRef={this.setRemoteVideoRef}
           connectedUser={this.state.connectedUser}
+          onEndCall={this.onEndCall}
         />
       </VideoChatContainerStyle>
     );

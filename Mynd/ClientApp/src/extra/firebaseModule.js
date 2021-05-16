@@ -1,6 +1,7 @@
 export const doLogin = async (username, database, handleUpdate) => {
   try{
     await database.ref('/calls/' + username).remove();
+    console.log('removed /calls/' + username)
   } catch (exception) {
     console.error(exception);
   }
@@ -15,6 +16,7 @@ export const doOffer = async (to, offer, database, username) => {
     from: username,
     offer: JSON.stringify(offer),
   });
+  console.log('offer from: ' + username + ' to ' + to)
 };
 
 export const doAnswer = async (to, answer, database, username) => {
@@ -23,6 +25,7 @@ export const doAnswer = async (to, answer, database, username) => {
     from: username,
     answer: JSON.stringify(answer),
   });
+  console.log('answer set from: ' + username + ' to ' + to)
 };
 
 export const doLeaveNotif = async (to, database, username) => {
@@ -30,6 +33,7 @@ export const doLeaveNotif = async (to, database, username) => {
     type: 'leave',
     from: username,
   });
+  console.log('leave notif from: ' + username + ' to ' + to)
 };
 
 export const doCandidate = async (to, candidate, database, username) => {
@@ -39,4 +43,5 @@ export const doCandidate = async (to, candidate, database, username) => {
     from: username,
     candidate: JSON.stringify(candidate),
   });
+  console.log('candidate set from: ' + username + ' to ' + to)
 };
