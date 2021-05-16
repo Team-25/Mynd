@@ -4,6 +4,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import Spinner from 'react-spinkit';
 import { db, auth } from '../../firebase';
+import { v4 as uuidv4 } from 'uuid';
+import id from 'date-fns/esm/locale/id/index';
 
 interface IProps {}
 
@@ -34,10 +36,11 @@ const ChatSidebar = (props: IProps) => {
     return Object.keys(doc.data()?.Users).includes(uid);
   }
 
-  
-  //a crude way to create a new document with a random ID in firestore
-  const handleMatch = () => (event: React.MouseEvent<HTMLElement>) => {
-    db.collection("matches").doc((Math.floor(Math.random() * 100000000000000000000) + 1).toString()).set({})
+  var id;
+
+  const handleMatch = () => (event: React.MouseEvent<HTMLElement>) => {  
+    id = uuidv4();
+    db.collection("matches").doc(id.toString()).set({})
   };
 
   return (
