@@ -54,12 +54,6 @@ const NavbarVertical = (props: IProps) => {
           </NavLink>
         </li>
         <li className='nv-item'>
-          <NavLink to='/inbox' activeClassName='active'>
-            <FontAwesomeIcon icon={faInbox} />
-            <span className='link-text'>Inbox</span>
-          </NavLink>
-        </li>
-        <li className='nv-item'>
           <NavLink to='/calendar' activeClassName='active'>
             <FontAwesomeIcon icon={faCalendar} />
             <span className='link-text'>Calendar</span>
