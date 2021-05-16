@@ -113,7 +113,7 @@ function App() {
                 <NewsPage />
               </Route>
               <Route path='/videocalling'>
-                <VideoChatContainer />
+                <VideoChatContainer userName={user} />
               </Route>
               <Route exact path='/'>
                 <Home />

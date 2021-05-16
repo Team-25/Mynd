@@ -47,7 +47,7 @@ namespace Mynd
                 configuration.RootPath = "ClientApp/build";
             });
 
-            FirebaseApp.Create();
+            //FirebaseApp.Create();
             services.AddMvc();
 
         }

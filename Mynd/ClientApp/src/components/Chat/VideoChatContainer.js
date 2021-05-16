@@ -19,6 +19,8 @@ import {
 import 'webrtc-adapter';
 import VideoChat from './VideoChat';
 import styled from 'styled-components';
+import { useCollection } from "react-firebase-hooks/firestore";
+import { db, auth } from "../../firebase";
 
 class VideoChatContainer extends React.Component {
   constructor(props) {
@@ -69,7 +71,8 @@ class VideoChatContainer extends React.Component {
       userToCall,
       database,
       this.remoteVideoRef,
-      doCandidate
+      doCandidate,
+      this.onEndCall
     );
     // create an offer
     createOffer(
@@ -81,6 +84,19 @@ class VideoChatContainer extends React.Component {
       username
     );
   };
+
+  onEndCall = () => {
+    try {
+      this.state.localConnection.removeStream(this.state.localStream);
+    } catch (exception) {
+      console.error(exception);
+    }
+    this.state.localConnection.close()
+    this.setState({
+      connectedUser: null,
+    });
+    this.componentDidMount()
+  }
 
   onLogin = async (username) => {
     return await doLogin(username, this.state.database, this.handleUpdate);
@@ -96,7 +112,6 @@ class VideoChatContainer extends React.Component {
 
   handleUpdate = (calls, username) => {
     const { localConnection, database, localStream } = this.state;
-
     if (calls) {
       switch (calls.type) {
         case 'offer':
@@ -110,7 +125,8 @@ class VideoChatContainer extends React.Component {
             calls.from,
             database,
             this.remoteVideoRef,
-            doCandidate
+            doCandidate,
+            this.onEndCall
           );
 
           sendAnswer(
@@ -137,6 +153,26 @@ class VideoChatContainer extends React.Component {
     }
   };
 
+  getCallerIds = async() => {
+    // db.collection("callers").doc("tests").get().then(doc => {
+    //   const data = doc.data();
+    //   console.log(data);
+    //   return(data);
+    // });
+    let dict = []
+    await db.collection("callers").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        dict.push({ 'name': doc.data().name, 'id': doc.data().id });
+        //console.log(dict);
+      }
+        //dict = querySnapshot.docs;//.map(doc => {dict.push(<option value={doc.data().id}>{doc.data().name}</option>)}));
+      )
+    });
+    //console.log(dict);
+    return dict;
+  }
+
   render() {
     return (
       <VideoChatContainerStyle>
@@ -146,6 +182,9 @@ class VideoChatContainer extends React.Component {
           setLocalVideoRef={this.setLocalVideoRef}
           setRemoteVideoRef={this.setRemoteVideoRef}
           connectedUser={this.state.connectedUser}
+          onEndCall={this.onEndCall}
+          userName={this.props.userName}
+          getCallerIds={this.getCallerIds}
         />
       </VideoChatContainerStyle>
     );
