@@ -1,4 +1,4 @@
-import functions = require('firebase-functions');
+const functions = require('firebase-functions');
 
 export const Matching = functions.firestore
   .document('/matches/{id}')

@@ -6,6 +6,7 @@ import './profile.scss';
 import { makeStyles } from '@material-ui/core/styles';
 import { useState } from 'react';
 import InterestBlock from './Interests/InterestBlock';
+import Algo from './algo';
 
 const useStyles = makeStyles((theme) => ({
   input: {
@@ -72,6 +73,7 @@ function ProfilePage(props: IProps) {
                 odio. Quisque volutpat mattis eros.
               </p>
             </div>
+            <Algo />
             <InterestBlock
               type='interests'
               category='What are you interested in?'
