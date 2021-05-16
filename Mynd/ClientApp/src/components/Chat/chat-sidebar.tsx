@@ -38,9 +38,9 @@ const ChatSidebar = (props: IProps) => {
 
   var id;
 
-  const handleMatch = () => (event: React.MouseEvent<HTMLElement>) => {  
+  const handleMatch = () => (event: React.MouseEvent<HTMLElement>) => {
     id = uuidv4();
-    db.collection("matches").doc(id.toString()).set({})
+    //db.collection("matches").doc(id.toString()).set({})
   };
 
   return (
@@ -61,14 +61,10 @@ const ChatSidebar = (props: IProps) => {
             <></>
           )
         )}
-  
-            
 
       <Button variant='contained' color='primary' onClick={handleMatch()}>
-            Generate Match
-          </Button>
-
-      
+        Generate Match
+      </Button>
     </div>
   );
 };
