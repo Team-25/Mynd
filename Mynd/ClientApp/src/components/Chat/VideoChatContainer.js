@@ -19,6 +19,8 @@ import {
 import 'webrtc-adapter';
 import VideoChat from './VideoChat';
 import styled from 'styled-components';
+import { useCollection } from "react-firebase-hooks/firestore";
+import { db, auth } from "../../firebase";
 
 class VideoChatContainer extends React.Component {
   constructor(props) {
@@ -110,7 +112,6 @@ class VideoChatContainer extends React.Component {
 
   handleUpdate = (calls, username) => {
     const { localConnection, database, localStream } = this.state;
-    console.log('OMFG AT handleUpdate')
     if (calls) {
       switch (calls.type) {
         case 'offer':
@@ -152,6 +153,26 @@ class VideoChatContainer extends React.Component {
     }
   };
 
+  getCallerIds = async() => {
+    // db.collection("callers").doc("tests").get().then(doc => {
+    //   const data = doc.data();
+    //   console.log(data);
+    //   return(data);
+    // });
+    let dict = []
+    await db.collection("callers").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        dict.push({ 'name': doc.data().name, 'id': doc.data().id });
+        //console.log(dict);
+      }
+        //dict = querySnapshot.docs;//.map(doc => {dict.push(<option value={doc.data().id}>{doc.data().name}</option>)}));
+      )
+    });
+    //console.log(dict);
+    return dict;
+  }
+
   render() {
     return (
       <VideoChatContainerStyle>
@@ -162,6 +183,8 @@ class VideoChatContainer extends React.Component {
           setRemoteVideoRef={this.setRemoteVideoRef}
           connectedUser={this.state.connectedUser}
           onEndCall={this.onEndCall}
+          userName={this.props.userName}
+          getCallerIds={this.getCallerIds}
         />
       </VideoChatContainerStyle>
     );
