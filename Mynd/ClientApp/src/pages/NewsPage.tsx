@@ -56,7 +56,7 @@ class NewsPage extends React.Component<IProps> {
             <div className='loadingContents'>
               <Spinner
                 name='ball-spin-fade-loader'
-                color='purple'
+                color='green'
                 fadeIn='none'
               />
             </div>
@@ -69,14 +69,14 @@ class NewsPage extends React.Component<IProps> {
             <div className='news-grid'>
               <div>
                 {' '}
-                <h1> Tweets by NHS </h1> <TwitterContainer account='NHS' />{' '}
+                <h2> Tweets by NHS </h2> <TwitterContainer account='NHS' />{' '}
               </div>
               <div>
                 {' '}
-                <h1> Tweets by WHO </h1> <TwitterContainer account='WHO' />{' '}
+                <h2> Tweets by WHO </h2> <TwitterContainer account='WHO' />{' '}
               </div>
               <div>
-                <h1> Tips </h1>
+                <h2> Tips </h2>
                 <div className='NHS-container'>
                   {this.state.tips.map((data) => (
                     <div
@@ -87,13 +87,13 @@ class NewsPage extends React.Component<IProps> {
                 </div>
               </div>
               <div>
-                <h1> Links </h1>
+                <h2> Links </h2>
                 <div className='NHS-container links'>
                   {this.state.canonicallinks.map((data) => (
                     <a href={'https://www.nhs.uk/' + data.url}>
                       <div className='NHS-item'>
                         <header>
-                          <h2>{data.headline}</h2>
+                          <h3>{data.headline}</h3>
                         </header>
                         <div className='NHS-text'>
                           <p dangerouslySetInnerHTML={{ __html: data.text }} />
@@ -102,19 +102,19 @@ class NewsPage extends React.Component<IProps> {
                     </a>
                   ))}
                 </div>
-                <h1> Other </h1>
-                <div className='NHS-container'>
+                <h2> Other </h2>
+                <div className='NHS-container NHS-other'>
                   {this.state.guidelines.map((data) => (
                     <a href={data.url}>
                       <div className='NHS-item'>
-                        <h2>{data.headline}</h2>
+                        <h3>{data.headline}</h3>
                       </div>
                     </a>
                   ))}
                   {this.state.trackandtrace.map((data) => (
                     <a href={data.url}>
                       <div className='NHS-item'>
-                        <h2>{data.headline}</h2>
+                        <h3>{data.headline}</h3>
                       </div>
                     </a>
                   ))}
