@@ -13,6 +13,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import ChatSidebar from './chat-sidebar';
 import { useParams } from 'react-router-dom';
 import NotFound from '../../pages/404';
+import Spinner from 'react-spinkit';
 
 interface IProps {}
 
@@ -136,7 +137,11 @@ const Chat = (props: IProps) => {
           </Grid>
         </div>
       ) : (
-        <NotFound />
+        <div className='loading'>
+          <div className='loadingContents'>
+            <Spinner name='ball-spin-fade-loader' color='green' fadeIn='none' />
+          </div>
+        </div>
       )}
     </>
   );

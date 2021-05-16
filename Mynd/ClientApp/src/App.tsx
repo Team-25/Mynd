@@ -55,7 +55,7 @@ function App() {
     return (
       <div className='loading'>
         <div className='loadingContents'>
-          <Spinner name='ball-spin-fade-loader' color='purple' fadeIn='none' />
+          <Spinner name='ball-spin-fade-loader' color='green' fadeIn='none' />
         </div>
       </div>
     );

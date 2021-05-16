@@ -1,65 +1,82 @@
 .news-header {
-    padding: 5px;
-    border-radius: 20px;
-    margin-bottom:1%;
-    background-color:rgb(53, 53, 53);
-    color: #40e2b4;
-    text-align: center;
+  padding: 5px;
+  border-radius: 20px;
+  margin-bottom: 1%;
+  background-color: rgb(53, 53, 53);
+  color: #40e2b4;
+  text-align: center;
 }
 
 .news-grid {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    * {
+  margin: 1%;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
+
+  * {
+    margin: 4px;
+  }
+
+  .NHS-widget-container {
+    max-width: 600;
+    height: 500;
+    .NHS-widget {
+      height: 98%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      * {
         margin: 3px;
-    }
-    
-    .NHS-container {
-        max-height:80vh;
-        overflow-y:auto;
-        display:flex;
+      }
+
+      .NHS-container {
+        max-height: 80vh;
+        overflow-y: auto;
+        display: flex;
         flex-direction: column;
-    }
+      }
 
-    .links {
+      .links {
         max-height: 50vh;
-    }
+      }
 
-    .NHS-item {
-        font-size:smaller;
+      .NHS-item {
+        font-size: smaller;
         text-align: left;
         padding: 5px;
         p {
-            font-size:medium;
+          font-size: medium;
         }
-        max-width:500px;
+        max-width: 500px;
         margin-bottom: 10px;
-        background-color:white;
+        background-color: white;
         color: black;
-        header{
-            padding: 5px;
-            color: white;
-            background-color:rgb(55, 55, 145);
-            border-radius: 25px;
+        header {
+          padding: 5px;
+          color: white;
+          background-color: rgb(55, 55, 145);
+          border-radius: 25px;
         }
         border-radius: 25px;
-        
+
         .NHS-widget {
-            height: 98%;
-            width: 100%;
+          height: 98%;
+          width: 100%;
         }
+      }
     }
+  }
 }
 
 @media all and (max-width: 900px) {
-    .news-grid {
-        flex-direction: column;
-    }
+  .news-grid {
+    flex-direction: column;
+  }
 }
 
 @media all and (max-height: 720px) {
-    .news-grid {
-        flex-direction: column;
-    }
+  .news-grid {
+    flex-direction: column;
+  }
 }

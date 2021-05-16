@@ -2,7 +2,10 @@ import { TextField, Button, Grid, FormControl } from '@material-ui/core';
 import firebase from 'firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollection } from 'react-firebase-hooks/firestore';
+import Spinner from 'react-spinkit';
 import { db, auth } from '../../firebase';
+import { v4 as uuidv4 } from 'uuid';
+import id from 'date-fns/esm/locale/id/index';
 
 interface IProps {}
 
@@ -13,6 +16,16 @@ const ChatSidebar = (props: IProps) => {
     snapshotListenOptions: { includeMetadataChanges: true },
   });
 
+  if (loading) {
+    return (
+      <div className='loading'>
+        <div className='loadingContents'>
+          <Spinner name='ball-spin-fade-loader' color='green' fadeIn='none' />
+        </div>
+      </div>
+    );
+  }
+
   function getName(doc: any, uid: string) {
     let users = Object.keys(doc.data()?.Users);
     users.splice(users.indexOf(uid), 1);
@@ -22,6 +35,13 @@ const ChatSidebar = (props: IProps) => {
   function isInChat(doc: any, uid: string) {
     return Object.keys(doc.data()?.Users).includes(uid);
   }
+
+  var id;
+
+  const handleMatch = () => (event: React.MouseEvent<HTMLElement>) => {  
+    id = uuidv4();
+    db.collection("matches").doc(id.toString()).set({})
+  };
 
   return (
     <div className='chat-sidebar'>
@@ -41,7 +61,14 @@ const ChatSidebar = (props: IProps) => {
             <></>
           )
         )}
-      <Button color='secondary'> Generate Match </Button>
+  
+            
+
+      <Button variant='contained' color='primary' onClick={handleMatch()}>
+            Generate Match
+          </Button>
+
+      
     </div>
   );
 };
