@@ -11,8 +11,9 @@ $stripeWidth: 1200px;
     justify-content: center;
     font-size: 30pt;
     
-    &.container {
+    &.container-fluid {
         background-color: rgb(29, 29, 29);
+        height: 250px;
     }
 
     span {

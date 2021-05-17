@@ -13,13 +13,12 @@
 
 
 
-
+.profile {
+}
 
 
 .user-details {
-  display: flex;
   min-height: 100vh;
-  
 
   img {
     height: 200px;
@@ -30,19 +29,17 @@
   }
 
   .sec1 {
-    width: 25%;
-    flex-shrink: 0;
-    padding: 20px 20px;
     background-color: rgb(34, 34, 34);
-
+    padding: 20px;
 
     ul {
       list-style: none;
       line-height: 30pt;
-      font-size: 16pt;
+      font-size: 12pt;
 
       li:first-child {
         margin: 42px 0 10px 0;
+        font-size: 14pt;
       }
 
       li {
@@ -54,7 +51,7 @@
     span {
       position: absolute;
       right: 15px;
-      font-size: 20pt;
+      font-size: 12pt;
       line-height: 30pt;
     }
 
@@ -64,8 +61,6 @@
   }
 
   .sec2 {
-    margin-top: 30px;
-    padding: 20px;
 
 
     .upper {

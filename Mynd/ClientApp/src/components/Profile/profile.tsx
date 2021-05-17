@@ -60,9 +60,9 @@ function ProfilePage(props: IProps) {
           </Button>
         </Grid>
       </Grid>
-      <div className="content">
-        <div className="user-details">
-          <div className="sec1">
+      <div className="container-fluid profile">
+        <div className="user-details row">
+          <div className="sec1 col-3">
             <img src={photoURL} alt="profile-img" />
             <ul>
               <li>User Details</li>
@@ -83,7 +83,8 @@ function ProfilePage(props: IProps) {
               </li>
             </ul>
           </div>
-          <div className="sec2">
+          <div className="col-1"></div>
+          <div className="sec2 col-8">
             <div className="upper">
               <h2>{displayName}</h2>
               <p>

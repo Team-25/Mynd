@@ -63,6 +63,10 @@ p {
 a {
   text-decoration: none;
   color: white;
+
+  &:hover {
+    color: white;
+  }
 }
 
 /* width */
@@ -125,7 +129,6 @@ a {
 
 .container {
   width: 100%;
-  padding: 120px 0;
   background-color: $background;
 }
 
