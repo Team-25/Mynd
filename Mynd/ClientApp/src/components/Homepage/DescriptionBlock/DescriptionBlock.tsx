@@ -15,18 +15,18 @@ const DescriptionBlock = (props: IProps) => {
 
   return (
     <div className="container">
-      {!user ? (
-        <>
-          <h3>
-            Hello, <Link to="login"> Login</Link> or{" "}
-            <Link to="/register">Register</Link> to use our best features.
-          </h3>
-        </>
-      ) : (
-        <span></span>
-      )}
       <div className="content">
         <div id="about" className="homepage-description">
+          {!user ? (
+            <>
+              <h3 className="homepage-login-register">
+                Hello, <Link to="login" className="homepage-link"> Login</Link> or{" "}
+                <Link to="/register" className="homepage-link">Register</Link> to use our best features.
+              </h3>
+            </>
+          ) : (
+            <span></span>
+          )}
           <h1>What is Mynd?</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue

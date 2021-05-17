@@ -13,7 +13,7 @@ $box-shadow: 10px 1px 10px #00000041;
 //full page
 .calendar-page {
   background: linear-gradient(rgba(122, 255, 233, 0.322), rgba(255, 200, 21, 0.226)),url('../../img/home.jpg') center center/cover no-repeat;
-  height: 100vh;
+  min-height: 100vh;
   display:flex;
 }
 
@@ -125,8 +125,7 @@ $box-shadow: 10px 1px 10px #00000041;
 //calendar current selected day
 .calendar-selected-day {
   padding: 8px;
-  width: 77%;
-  height:77%;
+  width: 70%;
   border-radius:4px;
   color: rgb(255, 255, 255);
   background:rgb(255, 142, 142);

@@ -3,8 +3,17 @@ $background: rgb(248, 248, 248);
 $dividerColor: black;
 $stripeWidth: 1200px;
 
-
+.homepage-login-register {
+  margin-bottom: 35px;
+}
 /* Homepage Description Block*/
+.homepage-link {
+  text-decoration:underline;
+  &:hover {
+    color:#40e2b4;
+  }
+
+}
 
 .homepage-description {
     padding-left: 32px;

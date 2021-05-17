@@ -6,6 +6,7 @@ import Spinner from 'react-spinkit';
 import { db, auth } from '../../firebase';
 import { v4 as uuidv4 } from 'uuid';
 import id from 'date-fns/esm/locale/id/index';
+import { NavLink, Link } from 'react-router-dom';
 
 interface IProps {}
 
@@ -49,14 +50,17 @@ const ChatSidebar = (props: IProps) => {
       {value &&
         value.docs.map((doc) =>
           isInChat(doc, String(user?.uid)) ? (
-            <Button
-              className='chat-sidebar-item'
-              href={'/chat/' + doc.id}
-              key={doc.id}
-              color='primary'
-            >
-              <p>{getName(doc, String(user?.uid))}</p>
-            </Button>
+            <NavLink className="chat-item" to={'/chat/' + doc.id} activeClassName='chat-active'>
+              <span>{getName(doc, String(user?.uid))}</span>
+            </NavLink>
+            // 
+            //   className='chat-sidebar-item'
+            //   href=
+            //   key={doc.id}
+            //   color='primary'z
+            // >
+            //   <p></p>
+            // </Button>
           ) : (
             <></>
           )
