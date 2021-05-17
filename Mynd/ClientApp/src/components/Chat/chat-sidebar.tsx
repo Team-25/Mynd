@@ -41,7 +41,8 @@ const ChatSidebar = (props: IProps) => {
 
   const handleMatch = () => (event: React.MouseEvent<HTMLElement>) => {  
     id = uuidv4();
-    db.collection("matches").doc(id.toString()).set({})
+    db.collection("matches").doc(id.toString()).set({});
+    db.collection("matches").doc(id).update({timestamp: new Date().toString()});
   };
 
   return (

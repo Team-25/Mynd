@@ -13,6 +13,7 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^5.0.1",
+    "compute-cosine-similarity": "^1.0.0",
     "date-fns": "^2.19.0",
     "firebase": "^8.3.3",
     "firebase-tools": "^9.9.0",
