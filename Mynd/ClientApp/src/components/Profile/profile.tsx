@@ -46,19 +46,16 @@ function ProfilePage(props: IProps) {
             <ul>
               <li>User Details</li>
               <li>
-                Forename: <span>********</span>
+                Forename: <span>{user?.displayName?.split(' ')[0]}</span>
               </li>
               <li>
-                Surname: <span>********</span>
+                Surname: <span>{user?.displayName?.split(' ')[1]}</span>
               </li>
               <li>
-                Username: <span>********</span>
+                Password: <span>***********</span>
               </li>
               <li>
-                Password: <span>********</span>
-              </li>
-              <li>
-                Email: <span>********</span>
+                Email: <span>{user?.email}</span>
               </li>
             </ul>
           </div>
