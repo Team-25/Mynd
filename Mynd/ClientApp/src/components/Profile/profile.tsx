@@ -39,27 +39,6 @@ function ProfilePage(props: IProps) {
 
   return (
     <div>
-      <Grid container spacing={2}>
-        <Grid item xs={7} className="profile_paper">
-          <Grid item xs={12}>
-            <Grid item xs={3}>
-              <span>How do you feel?</span>
-            </Grid>
-            <Grid item xs={3}>
-              <TextField
-                variant="outlined"
-                InputProps={{ className: classes.input }}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  setFeelings(e.target.value);
-                }}
-              />
-            </Grid>
-          </Grid>{" "}
-          <Button variant="contained" color="primary" onClick={handleSave()}>
-            Save
-          </Button>
-        </Grid>
-      </Grid>
       <div className="container-fluid profile">
         <div className="user-details row">
           <div className="sec1 col-3">
