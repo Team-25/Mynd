@@ -46,10 +46,10 @@ function ProfilePage(props: IProps) {
             <ul>
               <li>User Details</li>
               <li>
-                Forename: <span>{user?.displayName?.split(' ')[0]}</span>
+                Forename: <span>{user?.displayName?.split(" ")[0]}</span>
               </li>
               <li>
-                Surname: <span>{user?.displayName?.split(' ')[1]}</span>
+                Surname: <span>{user?.displayName?.split(" ")[1]}</span>
               </li>
               <li>
                 Password: <span>***********</span>
@@ -62,11 +62,8 @@ function ProfilePage(props: IProps) {
           <div className="col-1"></div>
           <div className="sec2 col-8">
             <div className="upper">
-              <h2>{displayName}</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                odio. Quisque volutpat mattis eros.
-              </p>
+              {/* <h2>{displayName}</h2> */}
+              <h3>Thank you, {displayName} for being part of our journey!</h3>
             </div>
             <InterestBlock
               category="What are you interested in?"
