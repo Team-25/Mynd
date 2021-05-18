@@ -45,6 +45,55 @@ const ChatSidebar = (props: IProps) => {
     db.collection("matches").doc(id).update({timestamp: new Date().toString()});
   };
 
+  // var similarity = require('compute-cosine-similarity');
+
+  // function matchAlgorithm() {
+  //   var CurrentUser = user;
+  //   var matchingScoreFeelings = 0;
+  //   var CurrentHighestMatch = 0;
+  //   var userData: any;
+  //   var matchData: any;
+
+  //   const users = db.collection("user-data");
+  //   const usersQuery = users.where("User Feelings status", "==", true)
+  //   var userID = CurrentUser?.uid;
+  //   db.collection("user-data").doc(userID).collection("User Feelings status").orderBy("timestamp", "desc").limit(1).get().then(snapshot => {
+  //     snapshot.forEach((doc) => {
+  //       userData = doc.data().feelings.toString()
+  //       console.log(userData);
+  //     })
+  //   })
+
+  //   usersQuery.get().then(snapshot => {
+  //     var MatchID: string;
+  //     console.log("banana");
+  //     snapshot.docs.forEach(user => {
+  //       db.collection("user-data").doc(user.id).collection("User Feelings status").orderBy("timestamp", "desc").limit(1).get().then(snapshot => {
+  //         snapshot.forEach((doc) => {
+  //           matchData = doc.data().feelings.toString()
+  //           console.log("not gonna be here let's be honest");
+  //         })
+  //       })
+  //       matchingScoreFeelings = similarity(userData, matchData);
+
+  //       if (matchingScoreFeelings > CurrentHighestMatch) {
+  //         CurrentHighestMatch = matchingScoreFeelings;
+  //         MatchID = user.id
+  //       }
+  //     })
+  //     if (CurrentUser != null) {
+  //       var currentID = CurrentUser.uid;
+  //       db.collection("matches").orderBy("timestamp", "desc").limit(1).get().then(snapshot => {
+  //         snapshot.forEach(doc => {
+  //           var matchDocID = doc.id
+  //           db.collection("matches").doc(matchDocID).update({ user_1: currentID.toString() });
+  //           db.collection("matches").doc(matchDocID).update({ user_2: MatchID.toString() });
+  //         })
+  //       })
+  //     }
+  //   });
+  // }
+
   return (
     <div className='chat-sidebar'>
       <p> Your Chats: </p>
