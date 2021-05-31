@@ -16,8 +16,9 @@ function InterestsBlock(props: IProps) {
 
     // For search results
     const [searchedInterests, updateSearchedInterests] = useState(props.interests);
+
     // For the ones they choose to select
-    const [selectedInterests, updateSelectedInterests] = useState(['']);
+    const [selectedInterests, updateSelectedInterests] = useState<Array<string>>([]);
 
     const interestStyle = { "backgroundColor": "rgb(70, 70, 70)" }
 
@@ -71,10 +72,11 @@ function InterestsBlock(props: IProps) {
         <div className="interest-block">
             <h2>{props.category}</h2>
             <div className="interests" style={isOpen ? {"display": "none"} : {"display": "block"}}>
-                {selectedInterests.length === 1 ? <p>No interests selected</p> :
+                {(selectedInterests.length === 0) ? <p>No interests selected</p> :
                     <p>
-                        {selectedInterests.map((interest) => 
-                            <span>{interest} </span>
+                        {selectedInterests.map((interest, i ) => 
+                            <span>{interest}{i === selectedInterests.length - 1 ? '' : ','}&nbsp;</span>
+                        
                         )}
                     </p>
                 }
